@@ -6,10 +6,15 @@ module managers {
             //let P1: math.Vec2 = new math.Vec2(object1.x, object1.y);
             //let P2: math.Vec2 = new math.Vec2(object2.x, object2.y);
             //if (math.Vec2.Distance(P1, P2) < (object1.halfHeight + object2.halfHeight)) {
-
-            console.log(object1.A.x + " < " + object2.A.x);
+            
+            let A1 = new math.Vec2(object1.x-object1.halfWidth, object1.y-object1.halfHeight);
+            let B1 = new math.Vec2(object1.x+object1.halfWidth, object1.y+object1.halfHeight);
+            
+            let A2 = new math.Vec2(object2.x-object2.halfWidth, object2.y-object2.halfHeight);
+            let B2 = new math.Vec2(object2.x+object2.halfWidth, object2.y+object2.halfHeight);
+            console.log(A1.x + " < " + A2.x + " < " + B1.x + " and " + A1.y + " < " + A2.y + " < " + B1.y);
             //AABB Method
-            if((object1.A.x<=object2.A.x)&&(object2.A.x<=object1.B.x)&&(object1.A.y<=object2.A.y)&&(object2.A.y<=object2.B.y)){
+            if((A1.x<=A2.x)&&(A2.x<=B1.x)&&(A1.y<=A2.y)&&(A2.y<=B1.y)){
                 if (!object2.isColliding) {
                     console.log("Collision!!!");
                     object2.isColliding = true;

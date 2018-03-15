@@ -11,8 +11,8 @@ module objects {
     public halfWidth: number;
     public halfHeight: number;
     public isColliding: boolean;
-    public A: math.Vec2; //left apper corner
-    public B: math.Vec2; //right bottom corner
+    // public A: math.Vec2; //left apper corner
+    // public B: math.Vec2; //right bottom corner
 
     // constructors
     constructor(assetManager: createjs.LoadQueue, imageString:string) {
@@ -33,8 +33,8 @@ module objects {
       this.halfHeight = this.height * 0.5;
       this.regX = this.halfWidth;
       this.regY = this.halfHeight;
-      this.A = new math.Vec2(this.x-this.halfWidth, this.y-this.halfHeight); 
-      this.B = new math.Vec2(this.x+this.halfWidth, this.y+this.halfHeight);
+      // this.A = new math.Vec2(this.x-this.halfWidth, this.y-this.halfHeight); 
+      // this.B = new math.Vec2(this.x+this.halfWidth, this.y+this.halfHeight);
       this.isColliding = false;
     }
 
