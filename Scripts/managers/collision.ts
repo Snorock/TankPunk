@@ -7,14 +7,17 @@ module managers {
             //let P2: math.Vec2 = new math.Vec2(object2.x, object2.y);
             //if (math.Vec2.Distance(P1, P2) < (object1.halfHeight + object2.halfHeight)) {
             
-            let A1 = new math.Vec2(object1.x-object1.halfWidth, object1.y-object1.halfHeight);
-            let B1 = new math.Vec2(object1.x+object1.halfWidth, object1.y+object1.halfHeight);
+            let overlaps = 5;
             
-            let A2 = new math.Vec2(object2.x-object2.halfWidth, object2.y-object2.halfHeight);
-            let B2 = new math.Vec2(object2.x+object2.halfWidth, object2.y+object2.halfHeight);
-            console.log(A1.x + " < " + A2.x + " < " + B1.x + " and " + A1.y + " < " + A2.y + " < " + B1.y);
+            let A1 = new math.Vec2(object1.x-object1.halfWidth + overlaps, object1.y-object1.halfHeight + overlaps);
+            let B1 = new math.Vec2(object1.x+object1.halfWidth - overlaps, object1.y+object1.halfHeight - overlaps);
+            
+            let A2 = new math.Vec2(object2.x-object2.halfWidth + overlaps, object2.y-object2.halfHeight + overlaps);
+            let B2 = new math.Vec2(object2.x+object2.halfWidth - overlaps, object2.y+object2.halfHeight - overlaps);
+            
             //AABB Method
-            if((A1.x<=A2.x)&&(A2.x<=B1.x)&&(A1.y<=A2.y)&&(A2.y<=B1.y)){
+            //if((A1.x<=A2.x)&&(A2.x<=B1.x)&&(A1.y<=A2.y)&&(A2.y<=B1.y)){
+            if(!(B1.x<A2.x||B2.x<A1.x||B1.y<A2.y||B2.y<A1.y)){
                 if (!object2.isColliding) {
                     console.log("Collision!!!");
                     object2.isColliding = true;
