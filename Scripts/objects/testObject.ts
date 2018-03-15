@@ -16,7 +16,7 @@ module objects {
   
       // Initializes variables and creates new objects
       public Start():void {
-        this.y = 430;
+        this.y = 200;
         this.x = 180;
       }
   
