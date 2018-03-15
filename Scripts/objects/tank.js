@@ -43,15 +43,15 @@ var objects;
                 this.x -= speed;
                 this.rotation = -90;
             }
-            if (objects.Game.keyboardManager.moveRight) {
+            else if (objects.Game.keyboardManager.moveRight) {
                 this.x += speed;
                 this.rotation = 90;
             }
-            if (objects.Game.keyboardManager.moveForward) {
+            else if (objects.Game.keyboardManager.moveForward) {
                 this.y -= speed;
                 this.rotation = 0;
             }
-            if (objects.Game.keyboardManager.moveBackward) {
+            else if (objects.Game.keyboardManager.moveBackward) {
                 this.y += speed;
                 this.rotation = 180;
             }
