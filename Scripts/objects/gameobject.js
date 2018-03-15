@@ -20,13 +20,21 @@ var objects;
             return _this;
         }
         // private methods
-        GameObject.prototype._initialize = function () {
+        GameObject.prototype._initialize = function (t) {
+            if (t) {
+                this.tag = t;
+            }
+            else {
+                this.tag = "";
+            }
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.halfWidth = this.width * 0.5;
             this.halfHeight = this.height * 0.5;
             this.regX = this.halfWidth;
             this.regY = this.halfHeight;
+            this.A = new math.Vec2(this.x - this.halfWidth, this.y - this.halfHeight);
+            this.B = new math.Vec2(this.x + this.halfWidth, this.y + this.halfHeight);
             this.isColliding = false;
         };
         // public methods

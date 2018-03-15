@@ -7,6 +7,7 @@ module managers {
             //let P2: math.Vec2 = new math.Vec2(object2.x, object2.y);
             //if (math.Vec2.Distance(P1, P2) < (object1.halfHeight + object2.halfHeight)) {
 
+            console.log(object1.A.x + " < " + object2.A.x);
             //AABB Method
             if((object1.A.x<=object2.A.x)&&(object2.A.x<=object1.B.x)&&(object1.A.y<=object2.A.y)&&(object2.A.y<=object2.B.y)){
                 if (!object2.isColliding) {
