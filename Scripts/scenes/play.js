@@ -16,6 +16,7 @@ var scenes;
         // Constructor
         function PlayScene(assetManager) {
             var _this = _super.call(this, assetManager) || this;
+            _this._bulletFire = _this._bulletFire.bind(_this);
             _this.Start();
             return _this;
         }
@@ -29,12 +30,22 @@ var scenes;
             this._exitBtn = new objects.Button(this.assetManager, "exitBtn", 60, 25, 0.3);
             this._testObject = new objects.testObject(this.assetManager);
             this._tank = new objects.Tank(this.assetManager);
+            this._bulletNum = 50;
+            this._bullets = new Array();
+            this._bulletCounter = 0;
+            for (var count = 0; count < this._bulletNum; count++) {
+                this._bullets[count] = new objects.Bullet(this.assetManager);
+                this.addChild(this._bullets[count]);
+            }
             this.Main();
         };
         // triggered every frame
         PlayScene.prototype.Update = function () {
             this._testObject.Update();
             this._tank.Update();
+            this._bullets.forEach(function (bullet) {
+                bullet.Update();
+            });
             // check collision between test object and tank
             managers.Collision.Check(this._tank, this._testObject);
             if (this._testObject.isColliding == true) {
@@ -49,7 +60,16 @@ var scenes;
             this.addChild(this._tank);
             // add the backButton to the scene
             this.addChild(this._exitBtn);
+            window.addEventListener("mousedown", this._bulletFire);
             this._exitBtn.on("click", this._backBtnClick);
+        };
+        PlayScene.prototype._bulletFire = function () {
+            this._bullets[this._bulletCounter].x = this._tank.x;
+            this._bullets[this._bulletCounter].y = this._tank.y;
+            this._bulletCounter++;
+            if (this._bulletCounter >= this._bulletNum - 1) {
+                this._bulletCounter = 0;
+            }
         };
         return PlayScene;
     }(objects.Scene));

@@ -13,7 +13,7 @@
 
 /// <reference path="../../Scripts/managers/collision.ts"/>
 
-/// <reference path="../../Scripts/objects/ocean.ts"/>
+/// <reference path="../../Scripts/objects/bullet.ts"/>
 /// <reference path="../../Scripts/objects/testObject.ts"/>
 /// <reference path="../../Scripts/objects/tank.ts"/>
 /// <reference path="../../Scripts/objects/island.ts"/>
