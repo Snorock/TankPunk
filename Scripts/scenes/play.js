@@ -41,9 +41,13 @@ var scenes;
         };
         // triggered every frame
         PlayScene.prototype.Update = function () {
+            var _this = this;
             this._testObject.Update();
             this._tank.Update();
             this._bullets.forEach(function (bullet) {
+                if (managers.Collision.Check(bullet, _this._testObject)) {
+                    _this.removeChild(_this._testObject);
+                }
                 bullet.Update();
             });
             // check collision between test object and tank

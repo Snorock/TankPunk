@@ -10,6 +10,10 @@ module managers {
     public jump: boolean;
     public enabled: boolean;
     public paused: boolean;
+    public shootForward: boolean;
+    public shootBackward: boolean;
+    public shootLeft: boolean;
+    public shootRight: boolean;
 
     // constructors
     constructor() {
@@ -21,60 +25,74 @@ module managers {
     // private methods
 
     // public methods
-    public onKeyDown(event:KeyboardEvent):void {
-      switch(event.keyCode) {
+    public onKeyDown(event: KeyboardEvent): void {
+      switch (event.keyCode) {
         case config.Keys.W:
-        case config.Keys.UP_ARROW:
           this.moveForward = true;
-        break;
+          break;
 
         case config.Keys.A:
-        case config.Keys.LEFT_ARROW:
           this.moveLeft = true;
-        break;
+          break;
 
         case config.Keys.S:
-        case config.Keys.DOWN_ARROW:
           this.moveBackward = true;
-        break;
+          break;
 
         case config.Keys.D:
-        case config.Keys.RIGHT_ARROW:
           this.moveRight = true;
-        break;
+          break;
+
+        case config.Keys.UP_ARROW:
+          this.moveForward = true;
+          break;
+        case config.Keys.LEFT_ARROW:
+          this.shootLeft;
+          break;
+        case config.Keys.RIGHT_ARROW:
+          this.shootRight = true;
+          break;
+        case config.Keys.DOWN_ARROW:
+          this.shootBackward = true;
+          break;
 
         case config.Keys.SPACE:
           this.jump = true;
-        break;
+          break;
 
       }
     }
 
-    public onKeyUp(event:KeyboardEvent): void {
-      switch(event.keyCode) {
-        case config.Keys.W:
-        case config.Keys.UP_ARROW:
-          this.moveForward = false;
+    public onKeyUp(event: KeyboardEvent): void {
+      switch (event.keyCode) {case config.Keys.W:
+        this.moveForward = false;
+        break;
+      case config.Keys.A:
+        this.moveLeft = false;
+        break;
+      case config.Keys.S:
+        this.moveBackward = false;
+        break;
+      case config.Keys.D:
+        this.moveRight = false;
         break;
 
-        case config.Keys.A:
-        case config.Keys.LEFT_ARROW:
-          this.moveLeft = false;
+      case config.Keys.UP_ARROW:
+        this.moveForward = false;
         break;
-
-        case config.Keys.S:
-        case config.Keys.DOWN_ARROW:
-          this.moveBackward = false;
+      case config.Keys.LEFT_ARROW:
+        this.shootLeft;
         break;
-
-        case config.Keys.D:
-        case config.Keys.RIGHT_ARROW:
-          this.moveRight = false;
+      case config.Keys.RIGHT_ARROW:
+        this.shootRight = false;
+        break;
+      case config.Keys.DOWN_ARROW:
+        this.shootBackward = false;
         break;
 
         case config.Keys.SPACE:
           this.jump = false;
-        break;
+          break;
 
       }
     }

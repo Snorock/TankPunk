@@ -53,6 +53,9 @@ module scenes {
       this._tank.Update();
 
       this._bullets.forEach(bullet => {
+        if(managers.Collision.Check(bullet, this._testObject)){
+          this.removeChild(this._testObject);
+        }
         bullet.Update();
       });
 

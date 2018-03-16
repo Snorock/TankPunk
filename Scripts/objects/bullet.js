@@ -25,7 +25,7 @@ var objects;
             this.x = -1000;
         };
         Bullet.prototype._checkBounds = function () {
-            if (this.y <= 0 + this.height) {
+            if (this.y <= 0 + this.height || this.isColliding) {
                 this._reset();
             }
         };

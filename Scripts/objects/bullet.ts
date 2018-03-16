@@ -18,7 +18,7 @@ module objects {
       }
   
       private _checkBounds(): void {
-        if (this.y <= 0 + this.height) {
+        if (this.y <= 0 + this.height || this.isColliding) {
           this._reset();
         }
       }
