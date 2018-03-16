@@ -15,7 +15,7 @@ var objects;
         // public properties
         // Constructor
         function Tank(assetManager) {
-            var _this = _super.call(this, assetManager, "tankSmall") || this;
+            var _this = _super.call(this, assetManager, "tank") || this;
             _this.Start();
             return _this;
         }
@@ -23,7 +23,9 @@ var objects;
         // public methods
         // Initializes variables and creates new objects
         Tank.prototype.Start = function () {
-            this.y = 430;
+            this.x = 20;
+            this.y = 434;
+            this.rotation = 90;
         };
         // updates the game object every frame
         Tank.prototype.Update = function () {

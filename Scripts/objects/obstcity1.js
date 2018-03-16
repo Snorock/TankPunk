@@ -16,7 +16,7 @@ var objects;
         // public properties
         // Constructor
         function ObstCity1(assetManager, /*obst1: objects.GameObject*/ coorX, coorY) {
-            var _this = _super.call(this, assetManager, "cityObstacle1") || this;
+            var _this = _super.call(this, assetManager, "house") || this;
             _this.coorX = coorX;
             _this.coorY = coorY;
             // let obstBuilding = new math.Vec2(obst1.x, obst1.y);

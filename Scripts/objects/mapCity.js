@@ -15,7 +15,7 @@ var objects;
         // public properties
         // Constructor
         function MapCity(assetManager) {
-            var _this = _super.call(this, assetManager.getResult("city")) || this;
+            var _this = _super.call(this, assetManager.getResult("level1Background")) || this;
             _this.Start();
             return _this;
         }
