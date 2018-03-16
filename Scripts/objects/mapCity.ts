@@ -7,7 +7,7 @@ module objects {
   
       // Constructor
       constructor(assetManager: createjs.LoadQueue) {
-        super(assetManager.getResult("city"));
+        super(assetManager.getResult("level1Background"));
         this.Start();
       }
   
