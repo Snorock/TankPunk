@@ -6,7 +6,7 @@ module objects {
     
     // Constructor
     constructor(assetManager: createjs.LoadQueue) {
-      super(assetManager, "tankSmall");
+      super(assetManager, "tank");
       this.Start();
     }
 
@@ -16,7 +16,9 @@ module objects {
 
     // Initializes variables and creates new objects
     public Start():void {
-      this.y = 430;
+      this.x = 20;
+      this.y = 434;
+      this.rotation = 90;
     }
 
     // updates the game object every frame
