@@ -30,7 +30,7 @@
     { id: "green-tank", src: "./Assets/images/tanks/green-tank.png" },
     { id: "blue-tank", src: "./Assets/images/tanks/blue-tank.png" },
     { id: "dark-tank", src: "./Assets/images/tanks/dark-tank.png" },
-    { id: "white-tank", src: "./Assets/images/tanks/white-tank.png" },
+    { id: "light-tank", src: "./Assets/images/tanks/light-tank.png" },
     { id: "bullet1", src: "./Assets/images/bullet1.png" },
     { id: "test", src: "./Assets/images/test.png" },
     { id: "island", src: "./Assets/images/island.png" },

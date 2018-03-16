@@ -15,7 +15,7 @@ var objects;
         // public properties
         // Constructor
         function Tank(assetManager) {
-            var _this = _super.call(this, assetManager, "green-tank") || this;
+            var _this = _super.call(this, assetManager, "dark-tank") || this;
             _this.Start();
             return _this;
         }

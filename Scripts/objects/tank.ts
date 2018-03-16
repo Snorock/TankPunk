@@ -6,7 +6,7 @@ module objects {
     
     // Constructor
     constructor(assetManager: createjs.LoadQueue) {
-      super(assetManager, "green-tank");
+      super(assetManager, "dark-tank");
       this.Start();
     }
 
