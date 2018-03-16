@@ -35,41 +35,38 @@ module objects {
       }
   
       private _updatePosition(): void {
-        this.x = this.x + this.speedX;
-        this.y = this.y + this.speedY;
+        this.x -= this.speedX;
+        this.y -= this.speedY;
       }
   
       public Update(): void {          
           this._checkBounds();
       }
       public shootLeft(x:number,y:number):void{
-        console.log("L");
         this.x = x - this.shootRoom;
         this.y=y;
-        this.speedX = -this.speed;
+        this.speedX = this.speed;
         this.speedY=0;
         console.log(this.speedX);
       }
       public shootRight(x:number,y:number):void{
-        console.log("R");
         this.x = x + this.shootRoom;
         this.y=y;
-        this.speedX = this.speed;
+        this.speedX = -this.speed;
         this.speedY=0;
       }
       public shootForward(x:number,y:number):void{
         this.x = x;
         this.y=y - this.shootRoom;
         this.speedX =0;
-        this.speedY= -this.speed;
+        this.speedY= this.speed;
         console.log(this.speedY);
       }
       public shootBack(x:number,y:number):void{
-        console.log("B");
         this.x = x;
         this.y=y + this.shootRoom;
         this.speedX =0;
-        this.speedY= this.speed;
+        this.speedY= -this.speed;
       }
     }
   }

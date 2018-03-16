@@ -55,10 +55,10 @@ var managers;
                     this.moveRight = false;
                     break;
                 case config.Keys.UP_ARROW:
-                    this.moveForward = false;
+                    this.shootForward = false;
                     break;
                 case config.Keys.LEFT_ARROW:
-                    this.shootLeft;
+                    this.shootLeft = false;
                     break;
                 case config.Keys.RIGHT_ARROW:
                     this.shootRight = false;

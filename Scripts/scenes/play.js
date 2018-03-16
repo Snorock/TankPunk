@@ -72,15 +72,20 @@ var scenes;
                 var shot = false;
                 if (objects.Game.keyboardManager.shootLeft) {
                     this._bullets[this._bulletCounter].shootLeft(this._tank.x, this._tank.y);
+                    shot = true;
+                    objects.Game.keyboardManager.shootLeft = false;
                 }
                 else if (objects.Game.keyboardManager.shootRight) {
                     this._bullets[this._bulletCounter].shootRight(this._tank.x, this._tank.y);
+                    shot = true;
                 }
                 else if (objects.Game.keyboardManager.shootForward) {
                     this._bullets[this._bulletCounter].shootForward(this._tank.x, this._tank.y);
+                    shot = true;
                 }
                 else if (objects.Game.keyboardManager.shootBackward) {
                     this._bullets[this._bulletCounter].shootBack(this._tank.x, this._tank.y);
+                    shot = true;
                 }
                 if (shot) {
                     this._canShoot = false;
@@ -90,7 +95,7 @@ var scenes;
                     }
                 }
             }
-            else {
+            else if (!(objects.Game.keyboardManager.shootBackward || objects.Game.keyboardManager.shootForward || objects.Game.keyboardManager.shootRight || objects.Game.keyboardManager.shootLeft)) {
                 this._canShoot = true;
             }
         };
