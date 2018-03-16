@@ -25,23 +25,54 @@ var objects;
             this.x = -1000;
         };
         Bullet.prototype._checkBounds = function () {
-            if (this.y <= 0 + this.height || this.isColliding) {
+            if (this.x <= 0 || this.x >= 640 || this.y <= 0 || this.y >= 480 || this.isColliding) {
                 this._reset();
+            }
+            else {
+                this._updatePosition();
             }
         };
         // PUBLIC METHODS
         Bullet.prototype.Start = function () {
-            this.speed = -10;
+            this.speed = 10;
+            this.shootRoom = 100; // must be a little more than half bullet+halftank
             this._reset();
         };
         Bullet.prototype._updatePosition = function () {
-            this.y += this.speed;
+            this.x = this.x + this.speedX;
+            this.y = this.y + this.speedY;
         };
         Bullet.prototype.Update = function () {
-            if (this.y > 0) {
-                this._updatePosition();
-                this._checkBounds();
-            }
+            this._checkBounds();
+        };
+        Bullet.prototype.shootLeft = function (x, y) {
+            console.log("L");
+            this.x = x - this.shootRoom;
+            this.y = y;
+            this.speedX = -this.speed;
+            this.speedY = 0;
+            console.log(this.speedX);
+        };
+        Bullet.prototype.shootRight = function (x, y) {
+            console.log("R");
+            this.x = x + this.shootRoom;
+            this.y = y;
+            this.speedX = this.speed;
+            this.speedY = 0;
+        };
+        Bullet.prototype.shootForward = function (x, y) {
+            this.x = x;
+            this.y = y - this.shootRoom;
+            this.speedX = 0;
+            this.speedY = -this.speed;
+            console.log(this.speedY);
+        };
+        Bullet.prototype.shootBack = function (x, y) {
+            console.log("B");
+            this.x = x;
+            this.y = y + this.shootRoom;
+            this.speedX = 0;
+            this.speedY = this.speed;
         };
         return Bullet;
     }(objects.GameObject));

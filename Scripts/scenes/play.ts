@@ -8,6 +8,7 @@ module scenes {
     private _bullets: objects.Bullet[];
     private _bulletNum: number;
     private _bulletCounter: number;
+    private _canShoot: boolean;
 
     // Public Properties
 
@@ -37,6 +38,7 @@ module scenes {
       this._bulletNum = 50;
       this._bullets = new Array<objects.Bullet>();
       this._bulletCounter = 0;
+      this._canShoot = true;
 
 
       for (let count = 0; count < this._bulletNum; count++) {
@@ -51,18 +53,17 @@ module scenes {
     public Update(): void {
       this._testObject.Update();
       this._tank.Update();
+      this._bulletFire()
 
       this._bullets.forEach(bullet => {
-        if(managers.Collision.Check(bullet, this._testObject)){
+        if (managers.Collision.Check(bullet, this._testObject)) {
           this.removeChild(this._testObject);
         }
         bullet.Update();
       });
 
       // check collision between test object and tank
-      managers.Collision.Check(this._tank, this._testObject);
-
-      if (this._testObject.isColliding == true) {
+      if (managers.Collision.Check(this._tank, this._testObject)) {
         objects.Game.currentScene = config.Scene.OVER;
       }
 
@@ -81,16 +82,34 @@ module scenes {
       // add the backButton to the scene
       this.addChild(this._exitBtn);
 
-      window.addEventListener("mousedown", this._bulletFire);
       this._exitBtn.on("click", this._backBtnClick);
     }
     private _bulletFire(): void {
-      this._bullets[this._bulletCounter].x = this._tank.x;
-      this._bullets[this._bulletCounter].y = this._tank.y;
+      if (this._canShoot) {
+        let shot = false;
+        if (objects.Game.keyboardManager.shootLeft) {
+          this._bullets[this._bulletCounter].shootLeft(this._tank.x,this._tank.y);
+        }
+        else if (objects.Game.keyboardManager.shootRight) {
+          this._bullets[this._bulletCounter].shootRight(this._tank.x,this._tank.y);
+        }
+        else if (objects.Game.keyboardManager.shootForward) {
+          this._bullets[this._bulletCounter].shootForward(this._tank.x,this._tank.y);
+        }
+        else if (objects.Game.keyboardManager.shootBackward) {
+          this._bullets[this._bulletCounter].shootBack(this._tank.x,this._tank.y);
+        }
 
-      this._bulletCounter++;
-      if (this._bulletCounter >= this._bulletNum - 1) {
-        this._bulletCounter = 0;
+        if (shot){
+          this._canShoot = false;
+          this._bulletCounter++;
+          if (this._bulletCounter >= this._bulletNum - 1) {
+            this._bulletCounter = 0;
+          }
+        }
+      }
+      else {
+        this._canShoot = true;
       }
     }
   }

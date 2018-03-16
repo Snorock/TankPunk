@@ -1,9 +1,9 @@
 module objects {
   export class Tank extends objects.GameObject {
     // private instance variables
-    
+    private spawnRoom: number;
     // public properties
-
+    
     // Constructor
     constructor(assetManager: createjs.LoadQueue) {
       super(assetManager, "tank");

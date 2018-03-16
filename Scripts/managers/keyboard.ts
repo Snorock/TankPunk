@@ -44,10 +44,10 @@ module managers {
           break;
 
         case config.Keys.UP_ARROW:
-          this.moveForward = true;
+          this.shootForward = true;
           break;
         case config.Keys.LEFT_ARROW:
-          this.shootLeft;
+          this.shootLeft = true;
           break;
         case config.Keys.RIGHT_ARROW:
           this.shootRight = true;

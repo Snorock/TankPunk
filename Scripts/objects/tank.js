@@ -12,7 +12,6 @@ var objects;
 (function (objects) {
     var Tank = /** @class */ (function (_super) {
         __extends(Tank, _super);
-        // private instance variables
         // public properties
         // Constructor
         function Tank(assetManager) {
