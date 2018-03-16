@@ -16,25 +16,10 @@ var scenes;
         // Constructor
         function CityScene(assetManager) {
             var _this = _super.call(this, assetManager) || this;
-            // The following arrays are used to place obstacles
-            _this._obstX = [
-                0, 40, 80, 120, 160, 200, 240,
-                120, 160, 200, 240, 280, 320, 360,
-                200, 240, 320, 400, 440, 480, 600, 640,
-                0, 40, 80, 120, 300, 340, 380, 500, 540, 580, 620,
-                // Second part is horizontal
-                520, 520, 520,
-                340, 340, 340,
-            ];
-            _this._obstY = [
-                0, 0, 0, 0, 0, 0, 0,
-                100, 100, 100, 100, 100, 100, 100,
-                180, 180, 180, 180, 180, 180, 180, 180,
-                300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300,
-                // Second part is horizontal
-                0, 60, 100,
-                340, 380, 420,
-            ];
+            // The following arrays are used to place obstacles (houses)
+            _this._obstX = [308, 595, 80, 290, 560, 167, 370, 575];
+            _this._obstY = [46, 46, 178, 200, 185, 337, 412, 402];
+            _this._obstRotation = [false, true, false, true, false, true, false, true];
             // enemy array
             _this._obstPX = [40, 150, 260, 300, 340, 380, 450, 520, 600];
             _this._obstPY = [150, 200, 120, 100, 190, 400, 300, 110, 240];
@@ -63,12 +48,14 @@ var scenes;
             }
             this._obstPlanes = new Array();
             // _obstNum should be the exact number of obstacle objects, excessive ones will be undefined
-            this._obstNum = 200;
+            this._obstNum = this._obstX.length;
             for (var count = 0; count < this._obstNum; count++) {
                 this._obstPlanes[count] = new objects.ObstCity1(this.assetManager, this._obstX.shift(), this._obstY.shift());
+                if (this._obstRotation[count])
+                    this._obstPlanes[count].rotation = 90;
             }
             this._enemyPlanes = new Array();
-            this._obstPNum = 20;
+            this._obstPNum = this._obstPX.length;
             for (var count = 0; count < this._obstPNum; count++) {
                 this._enemyPlanes[count] = new objects.EnemyCity1(this.assetManager, this._obstPX.shift(), this._obstPY.shift());
             }
