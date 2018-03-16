@@ -9,7 +9,7 @@ module objects {
       public shootRoom: number;
       // Constructor
       constructor(assetManager: createjs.LoadQueue) {
-        super(assetManager, "island");
+        super(assetManager, "bullet1");
         this.Start();
       }
   
@@ -30,7 +30,8 @@ module objects {
       // PUBLIC METHODS
       public Start(): void {
         this.speed = 10;
-        this.shootRoom = 100; // must be a little more than half bullet+halftank
+        this.shootRoom = 5; // must be a little more than half bullet+halftank
+        this.rotation = 90;
         this._reset();
       }
   

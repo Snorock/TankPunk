@@ -15,7 +15,7 @@ var objects;
         __extends(Bullet, _super);
         // Constructor
         function Bullet(assetManager) {
-            var _this = _super.call(this, assetManager, "island") || this;
+            var _this = _super.call(this, assetManager, "bullet1") || this;
             _this.Start();
             return _this;
         }
@@ -35,7 +35,8 @@ var objects;
         // PUBLIC METHODS
         Bullet.prototype.Start = function () {
             this.speed = 10;
-            this.shootRoom = 100; // must be a little more than half bullet+halftank
+            this.shootRoom = 5; // must be a little more than half bullet+halftank
+            this.rotation = 90;
             this._reset();
         };
         Bullet.prototype._updatePosition = function () {
