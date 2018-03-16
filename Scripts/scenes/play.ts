@@ -51,22 +51,27 @@ module scenes {
 
     // triggered every frame
     public Update(): void {
-      this._testObject.Update();
       this._tank.Update();
-      this._bulletFire()
+      this._bulletFire();
 
-      this._bullets.forEach(bullet => {
-        if (managers.Collision.Check(bullet, this._testObject)) {
-          this.removeChild(this._testObject);
+      if (this._testObject != null) {
+        this._testObject.Update();
+
+        this._bullets.forEach(bullet => {
+          if (managers.Collision.Check(bullet, this._testObject)) {
+            this.removeChild(this._testObject);
+            this._testObject = null;
+          }
+        });
+
+        // check collision between test object and tank
+        if (managers.Collision.Check(this._tank, this._testObject)) {
+          objects.Game.currentScene = config.Scene.CITY;
         }
+      }
+      this._bullets.forEach(bullet => {
         bullet.Update();
       });
-
-      // check collision between test object and tank
-      if (managers.Collision.Check(this._tank, this._testObject)) {
-        objects.Game.currentScene = config.Scene.CITY;
-      }
-
     }
 
     // This is where the fun happens
@@ -88,23 +93,22 @@ module scenes {
       if (this._canShoot) {
         let shot = false;
         if (objects.Game.keyboardManager.shootLeft) {
-          this._bullets[this._bulletCounter].shootLeft(this._tank.x,this._tank.y);
-          shot=true;
-          objects.Game.keyboardManager.shootLeft=false;
+          this._bullets[this._bulletCounter].shootLeft(this._tank.x, this._tank.y);
+          shot = true;
         }
         else if (objects.Game.keyboardManager.shootRight) {
-          this._bullets[this._bulletCounter].shootRight(this._tank.x,this._tank.y);
-          shot=true;
+          this._bullets[this._bulletCounter].shootRight(this._tank.x, this._tank.y);
+          shot = true;
         }
         else if (objects.Game.keyboardManager.shootForward) {
-          this._bullets[this._bulletCounter].shootForward(this._tank.x,this._tank.y);
-          shot=true;
+          this._bullets[this._bulletCounter].shootForward(this._tank.x, this._tank.y);
+          shot = true;
         }
         else if (objects.Game.keyboardManager.shootBackward) {
-          this._bullets[this._bulletCounter].shootBack(this._tank.x,this._tank.y);
-          shot=true;
+          this._bullets[this._bulletCounter].shootBack(this._tank.x, this._tank.y);
+          shot = true;
         }
-        if (shot){
+        if (shot) {
           this._canShoot = false;
           this._bulletCounter++;
           if (this._bulletCounter >= this._bulletNum - 1) {
@@ -112,7 +116,7 @@ module scenes {
           }
         }
       }
-      else if (!(objects.Game.keyboardManager.shootBackward||objects.Game.keyboardManager.shootForward||objects.Game.keyboardManager.shootRight||objects.Game.keyboardManager.shootLeft)) {
+      else if (!(objects.Game.keyboardManager.shootBackward || objects.Game.keyboardManager.shootForward || objects.Game.keyboardManager.shootRight || objects.Game.keyboardManager.shootLeft)) {
         this._canShoot = true;
       }
     }
