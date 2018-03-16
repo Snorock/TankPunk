@@ -19,10 +19,17 @@ var managers;
                 if (!object2.isColliding) {
                     console.log("Collision!!!");
                     object2.isColliding = true;
+                    object1.isColliding = true;
+                    return true;
                 }
             }
             else {
                 object2.isColliding = false;
+                object1.isColliding = false;
+                return false;
+                // // if (object2.isColliding) {
+                //     object2.isColliding = false;
+                // // }
             }
         };
         return Collision;

@@ -1,11 +1,11 @@
 /// <reference path="_references.ts"/>
 
 // IIFE - Immediately Invoked Function Expression
-(function(){
+(function () {
 
   // Game Variables
   let canvas = document.getElementById("canvas");
-  let stage:createjs.Stage;
+  let stage: createjs.Stage;
   let helloLabel: objects.Label;
   let clickMeButton: objects.Button;
   let assetManager: createjs.LoadQueue;
@@ -15,21 +15,28 @@
   let keyboardManager: managers.Keyboard;
 
   assetManifest = [
-    {id: "clickMeButton", src:"./Assets/images/clickMeButton.png"},
-    {id: "startButton", src:"./Assets/images/startButton.png"},
-    {id: "nextButton", src:"./Assets/images/nextButton.png"},
-    {id: "backButton", src:"./Assets/images/backButton.png"},
-    {id: "ocean", src:"./Assets/images/ocean.gif"},
-    {id: "tank", src:"./Assets/images/tank.png"},
-    {id: "test", src:"./Assets/images/test.png"},
-    {id: "island", src:"./Assets/images/island.png"},
-    {id: "cloud", src:"./Assets/images/cloud.png"},
-    {id: "startBtn", src:"./Assets/images/startBtn.png"},
-    {id: "exitBtn", src:"./Assets/images/exitBtn.png"}
+    { id: "clickMeButton", src: "./Assets/images/clickMeButton.png" },
+    { id: "startButton", src: "./Assets/images/startButton.png" },
+    { id: "nextButton", src: "./Assets/images/nextButton.png" },
+    { id: "backButton", src: "./Assets/images/backButton.png" },
+    { id: "ocean", src: "./Assets/images/ocean.gif" },
+    { id: "city", src: "./Assets/images/city1.png" },
+    { id: "cityObstacle1", src: "./Assets/images/Building1Small.png" },
+    { id: "cityEnemyWolf", src: "./Assets/images/enemyWolf.png" },
+    { id: "desert", src: "./Assets/images/desert.png" },
+    { id: "frost", src: "./Assets/images/frost.png" },
+    { id: "tank", src: "./Assets/images/tank.png" },
+    { id: "tankSmall", src: "./Assets/images/tankSmall.png" },
+    { id: "test", src: "./Assets/images/test.png" },
+    { id: "island", src: "./Assets/images/island.png" },
+    { id: "cloud", src: "./Assets/images/cloud.png" },
+    { id: "startBtn", src: "./Assets/images/startBtn.png" },
+    { id: "exitBtn", src: "./Assets/images/exitBtn.png" }
   ];
 
+  // let imgArray: Array<string> = ["tank", "island"];
   // preloads assets
-  function Init():void {
+  function Init(): void {
     console.log("Initialization Started...");
     assetManager = new createjs.LoadQueue(); // creates the assetManager object
     assetManager.installPlugin(createjs.Sound); // asset manager can also load sounds
@@ -37,7 +44,7 @@
     assetManager.on("complete", Start, this);
   }
 
-  function Start():void {
+  function Start(): void {
     console.log("Starting Application...")
 
     stage = new createjs.Stage(canvas);
@@ -55,10 +62,10 @@
     Main();
   }
 
-  function Update():void {
+  function Update(): void {
     // if the scene that is playing returns another current scene
     // then call Main again and switch the scene
-    if(currentState!= objects.Game.currentScene) {
+    if (currentState != objects.Game.currentScene) {
       Main();
     }
 
@@ -67,19 +74,28 @@
     stage.update(); // redraws the stage
   }
 
-  function Main():void {
+  function Main(): void {
     stage.removeAllChildren();
 
-    switch(objects.Game.currentScene) {
+    switch (objects.Game.currentScene) {
       case config.Scene.START:
         currentScene = new scenes.StartScene(assetManager);
-      break;
+        break;
       case config.Scene.PLAY:
         currentScene = new scenes.PlayScene(assetManager);
-      break;
+        break;
+      case config.Scene.CITY:
+        currentScene = new scenes.CityScene(assetManager);
+        break;
+      case config.Scene.DESERT:
+        currentScene = new scenes.DesertScene(assetManager);
+        break;
+      case config.Scene.FROST:
+        currentScene = new scenes.FrostScene(assetManager);
+        break;
       case config.Scene.OVER:
         currentScene = new scenes.OverScene(assetManager);
-      break;
+        break;
     }
 
     currentState = objects.Game.currentScene;

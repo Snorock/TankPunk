@@ -12,11 +12,10 @@ var objects;
 (function (objects) {
     var Tank = /** @class */ (function (_super) {
         __extends(Tank, _super);
-        // private instance variables
         // public properties
         // Constructor
         function Tank(assetManager) {
-            var _this = _super.call(this, assetManager, "tank") || this;
+            var _this = _super.call(this, assetManager, "tankSmall") || this;
             _this.Start();
             return _this;
         }
@@ -37,7 +36,7 @@ var objects;
         // move the object to some new location
         Tank.prototype.Move = function () {
             //Speed
-            var speed = 5;
+            var speed = 1.5;
             // keyboard controls
             if (objects.Game.keyboardManager.moveLeft) {
                 this.x -= speed;

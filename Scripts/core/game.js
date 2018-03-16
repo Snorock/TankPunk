@@ -17,13 +17,20 @@
         { id: "nextButton", src: "./Assets/images/nextButton.png" },
         { id: "backButton", src: "./Assets/images/backButton.png" },
         { id: "ocean", src: "./Assets/images/ocean.gif" },
+        { id: "city", src: "./Assets/images/city1.png" },
+        { id: "cityObstacle1", src: "./Assets/images/Building1Small.png" },
+        { id: "cityEnemyWolf", src: "./Assets/images/enemyWolf.png" },
+        { id: "desert", src: "./Assets/images/desert.png" },
+        { id: "frost", src: "./Assets/images/frost.png" },
         { id: "tank", src: "./Assets/images/tank.png" },
+        { id: "tankSmall", src: "./Assets/images/tankSmall.png" },
         { id: "test", src: "./Assets/images/test.png" },
         { id: "island", src: "./Assets/images/island.png" },
         { id: "cloud", src: "./Assets/images/cloud.png" },
         { id: "startBtn", src: "./Assets/images/startBtn.png" },
         { id: "exitBtn", src: "./Assets/images/exitBtn.png" }
     ];
+    // let imgArray: Array<string> = ["tank", "island"];
     // preloads assets
     function Init() {
         console.log("Initialization Started...");
@@ -62,6 +69,15 @@
                 break;
             case config.Scene.PLAY:
                 currentScene = new scenes.PlayScene(assetManager);
+                break;
+            case config.Scene.CITY:
+                currentScene = new scenes.CityScene(assetManager);
+                break;
+            case config.Scene.DESERT:
+                currentScene = new scenes.DesertScene(assetManager);
+                break;
+            case config.Scene.FROST:
+                currentScene = new scenes.FrostScene(assetManager);
                 break;
             case config.Scene.OVER:
                 currentScene = new scenes.OverScene(assetManager);

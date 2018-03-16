@@ -16,8 +16,8 @@ module objects {
   
       // Initializes variables and creates new objects
       public Start():void {
-        this.y = 200;
-        this.x = 180;
+        this.y = 40;
+        this.x = 610;
       }
   
       // updates the game object every frame

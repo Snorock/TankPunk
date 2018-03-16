@@ -15,6 +15,7 @@ module scenes {
     // Private Mathods
     private _startBtnClick():void {
       objects.Game.currentScene = config.Scene.PLAY;
+      console.log(objects.Game.currentScene);
     }
 
 
