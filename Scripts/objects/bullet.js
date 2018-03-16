@@ -40,40 +40,37 @@ var objects;
             this._reset();
         };
         Bullet.prototype._updatePosition = function () {
-            this.x = this.x + this.speedX;
-            this.y = this.y + this.speedY;
+            this.x -= this.speedX;
+            this.y -= this.speedY;
         };
         Bullet.prototype.Update = function () {
             this._checkBounds();
         };
         Bullet.prototype.shootLeft = function (x, y) {
-            console.log("L");
             this.x = x - this.shootRoom;
             this.y = y;
-            this.speedX = -this.speed;
+            this.speedX = this.speed;
             this.speedY = 0;
             console.log(this.speedX);
         };
         Bullet.prototype.shootRight = function (x, y) {
-            console.log("R");
             this.x = x + this.shootRoom;
             this.y = y;
-            this.speedX = this.speed;
+            this.speedX = -this.speed;
             this.speedY = 0;
         };
         Bullet.prototype.shootForward = function (x, y) {
             this.x = x;
             this.y = y - this.shootRoom;
             this.speedX = 0;
-            this.speedY = -this.speed;
+            this.speedY = this.speed;
             console.log(this.speedY);
         };
         Bullet.prototype.shootBack = function (x, y) {
-            console.log("B");
             this.x = x;
             this.y = y + this.shootRoom;
             this.speedX = 0;
-            this.speedY = this.speed;
+            this.speedY = -this.speed;
         };
         return Bullet;
     }(objects.GameObject));
