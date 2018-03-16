@@ -22,7 +22,8 @@ var scenes;
         // Private Mathods
         StartScene.prototype._startBtnClick = function () {
             //objects.Game.currentScene = config.Scene.PLAY;
-            objects.Game.currentScene = config.Scene.CITY;
+            //objects.Game.currentScene = config.Scene.CITY;
+            objects.Game.currentScene = config.Scene.DESERT;
             console.log(objects.Game.currentScene);
         };
         // Public Methods

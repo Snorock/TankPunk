@@ -23,6 +23,7 @@
     { id: "cityBackground", src: "./Assets/images/levels/city/background-level-1-with-trees.png" },
     { id: "desertBackground", src: "./Assets/images/levels/desert/background-level-2.png" },
     { id: "house", src: "./Assets/images/levels/city/house.png" },
+    { id: "desertTree", src: "./Assets/images/levels/desert/desert-tree.png" },
     { id: "city", src: "./Assets/images/city1.png" },
     { id: "cityObstacle1", src: "./Assets/images/Building1Small.png" },
     { id: "cityEnemyWolf", src: "./Assets/images/enemyWolf.png" },
