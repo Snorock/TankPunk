@@ -64,7 +64,7 @@ module scenes {
 
       // check collision between test object and tank
       if (managers.Collision.Check(this._tank, this._testObject)) {
-        objects.Game.currentScene = config.Scene.OVER;
+        objects.Game.currentScene = config.Scene.CITY;
       }
 
     }

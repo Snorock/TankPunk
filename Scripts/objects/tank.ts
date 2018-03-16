@@ -6,7 +6,7 @@ module objects {
     
     // Constructor
     constructor(assetManager: createjs.LoadQueue) {
-      super(assetManager, "tank");
+      super(assetManager, "tankSmall");
       this.Start();
     }
 
@@ -33,7 +33,7 @@ module objects {
     // move the object to some new location
     public Move():void {
       //Speed
-      const speed: number = 5;
+      const speed: number = 1.5;
         // keyboard controls
      if(objects.Game.keyboardManager.moveLeft) {
       this.x -= speed;

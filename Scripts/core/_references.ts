@@ -14,11 +14,20 @@
 /// <reference path="../../Scripts/managers/collision.ts"/>
 
 /// <reference path="../../Scripts/objects/bullet.ts"/>
+/// <reference path="../../Scripts/objects/mapFrost.ts"/>
+/// <reference path="../../Scripts/objects/mapDesert.ts"/>
+/// <reference path="../../Scripts/objects/mapCity.ts"/>
+/// <reference path="../../Scripts/objects/ocean.ts"/>
 /// <reference path="../../Scripts/objects/testObject.ts"/>
 /// <reference path="../../Scripts/objects/tank.ts"/>
 /// <reference path="../../Scripts/objects/island.ts"/>
+/// <reference path="../../Scripts/objects/enemycity1.ts"/>
+/// <reference path="../../Scripts/objects/obstcity1.ts"/>
 /// <reference path="../../Scripts/objects/cloud.ts"/>
 
 /// <reference path="../../Scripts/scenes/over.ts"/>
+/// <reference path="../../Scripts/scenes/frost.ts"/>
+/// <reference path="../../Scripts/scenes/desert.ts"/>
+/// <reference path="../../Scripts/scenes/city.ts"/>
 /// <reference path="../../Scripts/scenes/play.ts"/>
 /// <reference path="../../Scripts/scenes/start.ts"/>

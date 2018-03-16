@@ -22,6 +22,7 @@ var scenes;
         // Private Mathods
         StartScene.prototype._startBtnClick = function () {
             objects.Game.currentScene = config.Scene.PLAY;
+            console.log(objects.Game.currentScene);
         };
         // Public Methods
         // Initialize Game Variables and objects

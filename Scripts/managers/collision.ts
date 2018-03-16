@@ -28,6 +28,9 @@ module managers {
                 object2.isColliding = false;
                 object1.isColliding = false;
                 return false;
+                // // if (object2.isColliding) {
+                //     object2.isColliding = false;
+                // // }
             }
         }
     }
