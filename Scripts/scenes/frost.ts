@@ -29,7 +29,7 @@ module scenes {
   
       // Initialize Game Variables and objects
       public Start(): void {
-        this._exitBtn = new objects.Button(this.assetManager, "exitBtn", 60, 25, 0.3);
+        this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
         this._ocean = new objects.Ocean(this.assetManager);
         this._mapFrost = new objects.MapFrost(this.assetManager);
         this._testObject = new objects.testObject(this.assetManager);
