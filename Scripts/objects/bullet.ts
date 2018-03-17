@@ -44,6 +44,7 @@ module objects {
           this._checkBounds();
       }
       public shootLeft(x:number,y:number):void{
+        this.rotation=-90;
         this.x = x - this.shootRoom;
         this.y=y;
         this.speedX = this.speed;
@@ -51,12 +52,14 @@ module objects {
         console.log(this.speedX);
       }
       public shootRight(x:number,y:number):void{
+        this.rotation=90;
         this.x = x + this.shootRoom;
         this.y=y;
         this.speedX = -this.speed;
         this.speedY=0;
       }
       public shootForward(x:number,y:number):void{
+        this.rotation=0;
         this.x = x;
         this.y=y - this.shootRoom;
         this.speedX =0;
@@ -64,6 +67,7 @@ module objects {
         console.log(this.speedY);
       }
       public shootBack(x:number,y:number):void{
+        this.rotation=180;
         this.x = x;
         this.y=y + this.shootRoom;
         this.speedX =0;
