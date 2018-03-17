@@ -58,7 +58,7 @@ module scenes {
         this._testObject.Update();
 
         this._bullets.forEach(bullet => {
-          if (managers.Collision.Check(bullet, this._testObject)) {
+          if (bullet.active && managers.Collision.Check(bullet, this._testObject)) {
             this.removeChild(this._testObject);
             this._testObject = null;
           }

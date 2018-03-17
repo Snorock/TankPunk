@@ -48,7 +48,7 @@ var scenes;
             if (this._testObject != null) {
                 this._testObject.Update();
                 this._bullets.forEach(function (bullet) {
-                    if (managers.Collision.Check(bullet, _this._testObject)) {
+                    if (bullet.active && managers.Collision.Check(bullet, _this._testObject)) {
                         _this.removeChild(_this._testObject);
                         _this._testObject = null;
                     }
