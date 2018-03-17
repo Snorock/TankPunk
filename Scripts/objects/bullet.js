@@ -47,6 +47,7 @@ var objects;
             this._checkBounds();
         };
         Bullet.prototype.shootLeft = function (x, y) {
+            this.rotation = -90;
             this.x = x - this.shootRoom;
             this.y = y;
             this.speedX = this.speed;
@@ -54,12 +55,14 @@ var objects;
             console.log(this.speedX);
         };
         Bullet.prototype.shootRight = function (x, y) {
+            this.rotation = 90;
             this.x = x + this.shootRoom;
             this.y = y;
             this.speedX = -this.speed;
             this.speedY = 0;
         };
         Bullet.prototype.shootForward = function (x, y) {
+            this.rotation = 0;
             this.x = x;
             this.y = y - this.shootRoom;
             this.speedX = 0;
@@ -67,6 +70,7 @@ var objects;
             console.log(this.speedY);
         };
         Bullet.prototype.shootBack = function (x, y) {
+            this.rotation = 180;
             this.x = x;
             this.y = y + this.shootRoom;
             this.speedX = 0;
