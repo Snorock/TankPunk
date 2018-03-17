@@ -31,7 +31,7 @@ module scenes {
 
     // Initialize Game Variables and objects
     public Start(): void {
-      this._exitBtn = new objects.Button(this.assetManager, "exitBtn", 60, 25, 0.3);
+      this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
       this._testObject = new objects.testObject(this.assetManager);
       this._tank = new objects.Tank(this.assetManager);
 

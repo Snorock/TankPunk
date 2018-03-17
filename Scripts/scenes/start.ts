@@ -3,6 +3,7 @@ module scenes {
     // Private Instance Variables
     private _gameLabel: objects.Label;
     private startBtn: objects.Button;
+    private _mapBackground: objects.MapBackground;
 
     // Public Properties
     // Constructor
@@ -24,8 +25,9 @@ module scenes {
     // Public Methods
     // Initialize Game Variables and objects
     public Start(): void {
-      this._gameLabel = new objects.Label("TankPunk", "30px", "jabjai", "#333333", 270, 150, true);
-      this.startBtn = new objects.Button(this.assetManager, "startBtn", 320, 340, 0.1);
+      this._mapBackground = new objects.MapBackground(this.assetManager, "startGameBackground");
+      this._gameLabel = new objects.Label("TankPunk", "45px", "jabjai", "#333333", 320, 120, true);
+      this.startBtn = new objects.Button(this.assetManager, "startButton", 320, 370);
       this.Main();
     }
 
@@ -35,6 +37,8 @@ module scenes {
 
     // This is where the fun happens
     public Main(): void {
+      this.addChild(this._mapBackground);
+      
       // add the welcome label to the scene
       this.addChild(this._gameLabel);
 
