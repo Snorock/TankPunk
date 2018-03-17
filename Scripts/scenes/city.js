@@ -33,7 +33,7 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         CityScene.prototype.Start = function () {
-            this._exitBtn = new objects.Button(this.assetManager, "exitBtn", 60, 25, 0.3);
+            this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
             this._ocean = new objects.Ocean(this.assetManager);
             this._mapCity = new objects.MapCity(this.assetManager);
             this._testObject = new objects.testObject(this.assetManager);

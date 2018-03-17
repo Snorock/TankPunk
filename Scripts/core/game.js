@@ -12,30 +12,32 @@
     var currentState;
     var keyboardManager;
     assetManifest = [
-        { id: "clickMeButton", src: "./Assets/images/clickMeButton.png" },
-        { id: "startButton", src: "./Assets/images/startButton.png" },
+        { id: "startGameBackground", src: "./Assets/images/milestones/background-start-game.png" },
+        { id: "gameOverBackground", src: "./Assets/images/milestones/background-game-over.png" },
+        { id: "startButton", src: "./Assets/images/buttons/start-button.png" },
+        { id: "exitButton", src: "./Assets/images/buttons/exit-button.png" },
+        { id: "nextButton", src: "./Assets/images/buttons/next-button.png" },
+        { id: "backButton", src: "./Assets/images/buttons/back-button.png" },
         { id: "nextButton", src: "./Assets/images/nextButton.png" },
-        { id: "backButton", src: "./Assets/images/backButton.png" },
-        { id: "ocean", src: "./Assets/images/ocean.gif" },
         { id: "cityBackground", src: "./Assets/images/levels/city/background-level-1-with-trees.png" },
         { id: "desertBackground", src: "./Assets/images/levels/desert/background-level-2.png" },
         { id: "house", src: "./Assets/images/levels/city/house.png" },
         { id: "desertTree", src: "./Assets/images/levels/desert/desert-tree.png" },
-        { id: "city", src: "./Assets/images/city1.png" },
-        { id: "cityObstacle1", src: "./Assets/images/Building1Small.png" },
-        { id: "cityEnemyWolf", src: "./Assets/images/enemyWolf.png" },
-        { id: "desert", src: "./Assets/images/desert.png" },
-        { id: "frost", src: "./Assets/images/frost.png" },
         { id: "green-tank", src: "./Assets/images/tanks/green-tank.png" },
         { id: "blue-tank", src: "./Assets/images/tanks/blue-tank.png" },
         { id: "dark-tank", src: "./Assets/images/tanks/dark-tank.png" },
         { id: "light-tank", src: "./Assets/images/tanks/light-tank.png" },
         { id: "bullet1", src: "./Assets/images/bullet1.png" },
+        // TODO: Replace assets below
+        { id: "ocean", src: "./Assets/images/ocean.gif" },
+        { id: "city", src: "./Assets/images/city1.png" },
+        { id: "cityObstacle1", src: "./Assets/images/Building1Small.png" },
+        { id: "cityEnemyWolf", src: "./Assets/images/enemyWolf.png" },
+        { id: "desert", src: "./Assets/images/desert.png" },
+        { id: "frost", src: "./Assets/images/frost.png" },
         { id: "test", src: "./Assets/images/test.png" },
         { id: "island", src: "./Assets/images/island.png" },
         { id: "cloud", src: "./Assets/images/cloud.png" },
-        { id: "startBtn", src: "./Assets/images/startBtn.png" },
-        { id: "exitBtn", src: "./Assets/images/exitBtn.png" }
     ];
     // let imgArray: Array<string> = ["tank", "island"];
     // preloads assets
