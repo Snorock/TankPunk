@@ -24,7 +24,7 @@ module scenes {
     // Public Methods
     // Initialize Game Variables and objects
     public Start(): void {
-      this._gameLabel = new objects.Label("TankPunk", "60px", "Consolas", "#000000", 320, 240, true);
+      this._gameLabel = new objects.Label("TankPunk", "30px", "jabjai", "#333333", 270, 150, true);
       this.startBtn = new objects.Button(this.assetManager, "startBtn", 320, 340, 0.1);
       this.Main();
     }

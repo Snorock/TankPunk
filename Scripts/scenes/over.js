@@ -26,7 +26,7 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         OverScene.prototype.Start = function () {
-            this._overLabel = new objects.Label("Game Over", "40px", "Consolas", "#000000", 320, 240, true);
+            this._overLabel = new objects.Label("Game Over", "40px", "fluo-gums", "#000000", 320, 240, true);
             this._backButton = new objects.Button(this.assetManager, "backButton", 320, 340);
             this.Main();
         };
