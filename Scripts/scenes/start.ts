@@ -15,9 +15,11 @@ module scenes {
 
     // Private Mathods
     private _startBtnClick():void {
-      objects.Game.currentScene = config.Scene.PLAY;
+      //objects.Game.currentScene = config.Scene.PLAY;
       //objects.Game.currentScene = config.Scene.CITY;
       //objects.Game.currentScene = config.Scene.DESERT;
+      //objects.Game.currentScene = config.Scene.FROST;
+      objects.Game.currentScene = config.Scene.OVER;
       console.log(objects.Game.currentScene);
     }
 

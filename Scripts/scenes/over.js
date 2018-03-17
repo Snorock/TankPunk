@@ -26,14 +26,16 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         OverScene.prototype.Start = function () {
-            this._overLabel = new objects.Label("Game Over", "40px", "fluo-gums", "#000000", 320, 240, true);
-            this._backButton = new objects.Button(this.assetManager, "backButton", 320, 340);
+            this._mapBackground = new objects.MapBackground(this.assetManager, "gameOverBackground");
+            this._overLabel = new objects.Label("Game Over", "45px", "jabjai", "#333333", 320, 120, true);
+            this._backButton = new objects.Button(this.assetManager, "backButton", 320, 370);
             this.Main();
         };
         OverScene.prototype.Update = function () {
         };
         // This is where the fun happens
         OverScene.prototype.Main = function () {
+            this.addChild(this._mapBackground);
             // add the welcome label to the scene
             this.addChild(this._overLabel);
             // add the backButton to the scene
