@@ -23,6 +23,7 @@ var objects;
         Bullet.prototype._reset = function () {
             this.y = -1000;
             this.x = -1000;
+            this.active = false;
         };
         Bullet.prototype._checkBounds = function () {
             if (this.x <= 0 || this.x >= 640 || this.y <= 0 || this.y >= 480 || this.isColliding) {
@@ -52,7 +53,7 @@ var objects;
             this.y = y;
             this.speedX = this.speed;
             this.speedY = 0;
-            console.log(this.speedX);
+            this.active = true;
         };
         Bullet.prototype.shootRight = function (x, y) {
             this.rotation = 90;
@@ -60,6 +61,7 @@ var objects;
             this.y = y;
             this.speedX = -this.speed;
             this.speedY = 0;
+            this.active = true;
         };
         Bullet.prototype.shootForward = function (x, y) {
             this.rotation = 0;
@@ -67,7 +69,7 @@ var objects;
             this.y = y - this.shootRoom;
             this.speedX = 0;
             this.speedY = this.speed;
-            console.log(this.speedY);
+            this.active = true;
         };
         Bullet.prototype.shootBack = function (x, y) {
             this.rotation = 180;
@@ -75,6 +77,7 @@ var objects;
             this.y = y + this.shootRoom;
             this.speedX = 0;
             this.speedY = -this.speed;
+            this.active = true;
         };
         return Bullet;
     }(objects.GameObject));

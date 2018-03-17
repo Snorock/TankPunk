@@ -7,6 +7,7 @@ module objects {
       // public properties
       public speed: number;
       public shootRoom: number;
+      public active: boolean;
       // Constructor
       constructor(assetManager: createjs.LoadQueue) {
         super(assetManager, "bullet1");
@@ -17,6 +18,7 @@ module objects {
     private _reset(): void {
         this.y = -1000;
         this.x = -1000;
+        this.active = false;
       }
   
       private _checkBounds(): void {
@@ -49,7 +51,7 @@ module objects {
         this.y=y;
         this.speedX = this.speed;
         this.speedY=0;
-        console.log(this.speedX);
+        this.active = true;
       }
       public shootRight(x:number,y:number):void{
         this.rotation=90;
@@ -57,6 +59,7 @@ module objects {
         this.y=y;
         this.speedX = -this.speed;
         this.speedY=0;
+        this.active = true;
       }
       public shootForward(x:number,y:number):void{
         this.rotation=0;
@@ -64,7 +67,7 @@ module objects {
         this.y=y - this.shootRoom;
         this.speedX =0;
         this.speedY= this.speed;
-        console.log(this.speedY);
+        this.active = true;
       }
       public shootBack(x:number,y:number):void{
         this.rotation=180;
@@ -72,6 +75,7 @@ module objects {
         this.y=y + this.shootRoom;
         this.speedX =0;
         this.speedY= -this.speed;
+        this.active = true;
       }
     }
   }
