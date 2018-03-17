@@ -23,6 +23,7 @@
 /// <reference path="../../Scripts/objects/island.ts"/>
 /// <reference path="../../Scripts/objects/enemycity1.ts"/>
 /// <reference path="../../Scripts/objects/obstcity1.ts"/>
+/// <reference path="../../Scripts/objects/obstDesert1.ts"/>
 /// <reference path="../../Scripts/objects/cloud.ts"/>
 
 /// <reference path="../../Scripts/scenes/over.ts"/>
