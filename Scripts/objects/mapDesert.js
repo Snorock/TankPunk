@@ -15,7 +15,7 @@ var objects;
         // public properties
         // Constructor
         function MapDesert(assetManager) {
-            var _this = _super.call(this, assetManager.getResult("desert")) || this;
+            var _this = _super.call(this, assetManager.getResult("desertBackground")) || this;
             _this.Start();
             return _this;
         }
