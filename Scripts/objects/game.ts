@@ -4,5 +4,6 @@ module objects {
     public static assetManager: createjs.LoadQueue;
     public static currentScene: number;
     public static keyboardManager: managers.Keyboard;
+    public static livesBoard: managers.LivesBoard;
   }
 }

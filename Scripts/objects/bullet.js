@@ -47,6 +47,40 @@ var objects;
         Bullet.prototype.Update = function () {
             this._checkBounds();
         };
+        Bullet.prototype.shoot = function (x, y, facing) {
+            if (facing == -90) {
+                this.rotation = -90;
+                this.x = x - this.shootRoom;
+                this.y = y;
+                this.speedX = this.speed;
+                this.speedY = 0;
+                this.active = true;
+            }
+            else if (facing == 90) {
+                this.rotation = 90;
+                this.x = x + this.shootRoom;
+                this.y = y;
+                this.speedX = -this.speed;
+                this.speedY = 0;
+                this.active = true;
+            }
+            else if (facing == 0) {
+                this.rotation = 0;
+                this.x = x;
+                this.y = y - this.shootRoom;
+                this.speedX = 0;
+                this.speedY = this.speed;
+                this.active = true;
+            }
+            else if (facing == 180) {
+                this.rotation = 180;
+                this.x = x;
+                this.y = y + this.shootRoom;
+                this.speedX = 0;
+                this.speedY = -this.speed;
+                this.active = true;
+            }
+        };
         Bullet.prototype.shootLeft = function (x, y) {
             this.rotation = -90;
             this.x = x - this.shootRoom;

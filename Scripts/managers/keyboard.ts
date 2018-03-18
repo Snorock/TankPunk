@@ -14,6 +14,7 @@ module managers {
     public shootBackward: boolean;
     public shootLeft: boolean;
     public shootRight: boolean;
+    public shoot: boolean;
 
     // constructors
     constructor() {
@@ -43,6 +44,10 @@ module managers {
           this.moveRight = true;
           break;
 
+        case config.Keys.J:
+          this.shoot = true;
+          break;
+
         case config.Keys.UP_ARROW:
           this.shootForward = true;
           break;
@@ -64,31 +69,36 @@ module managers {
     }
 
     public onKeyUp(event: KeyboardEvent): void {
-      switch (event.keyCode) {case config.Keys.W:
-        this.moveForward = false;
-        break;
-      case config.Keys.A:
-        this.moveLeft = false;
-        break;
-      case config.Keys.S:
-        this.moveBackward = false;
-        break;
-      case config.Keys.D:
-        this.moveRight = false;
-        break;
+      switch (event.keyCode) {
+        case config.Keys.W:
+          this.moveForward = false;
+          break;
+        case config.Keys.A:
+          this.moveLeft = false;
+          break;
+        case config.Keys.S:
+          this.moveBackward = false;
+          break;
+        case config.Keys.D:
+          this.moveRight = false;
+          break;
 
-      case config.Keys.UP_ARROW:
-        this.shootForward = false;
-        break;
-      case config.Keys.LEFT_ARROW:
-        this.shootLeft=false;
-        break;
-      case config.Keys.RIGHT_ARROW:
-        this.shootRight = false;
-        break;
-      case config.Keys.DOWN_ARROW:
-        this.shootBackward = false;
-        break;
+        case config.Keys.J:
+          this.shoot = false;
+          break;
+
+        case config.Keys.UP_ARROW:
+          this.shootForward = false;
+          break;
+        case config.Keys.LEFT_ARROW:
+          this.shootLeft = false;
+          break;
+        case config.Keys.RIGHT_ARROW:
+          this.shootRight = false;
+          break;
+        case config.Keys.DOWN_ARROW:
+          this.shootBackward = false;
+          break;
 
         case config.Keys.SPACE:
           this.jump = false;

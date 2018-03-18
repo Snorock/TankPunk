@@ -6,6 +6,8 @@
 /// <reference path="../../Scripts/objects/scene.ts"/>
 /// <reference path="../../Scripts/math/vec2.ts"/>
 /// <reference path="../../Scripts/objects/gameobject.ts"/>
+/// <reference path="../../Scripts/managers/keyboard.ts"/>
+/// <reference path="../../Scripts/managers/livesboard.ts"/>
 /// <reference path="../../Scripts/managers/collision.ts"/>
 /// <reference path="../../Scripts/objects/bullet.ts"/>
 /// <reference path="../../Scripts/objects/mapFrost.ts"/>

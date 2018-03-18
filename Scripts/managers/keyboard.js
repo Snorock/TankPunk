@@ -23,6 +23,9 @@ var managers;
                 case config.Keys.D:
                     this.moveRight = true;
                     break;
+                case config.Keys.J:
+                    this.shoot = true;
+                    break;
                 case config.Keys.UP_ARROW:
                     this.shootForward = true;
                     break;
@@ -53,6 +56,9 @@ var managers;
                     break;
                 case config.Keys.D:
                     this.moveRight = false;
+                    break;
+                case config.Keys.J:
+                    this.shoot = false;
                     break;
                 case config.Keys.UP_ARROW:
                     this.shootForward = false;

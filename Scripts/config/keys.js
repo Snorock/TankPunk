@@ -13,6 +13,8 @@ var config;
         Keys.A = 65;
         Keys.S = 83;
         Keys.D = 68;
+        // shoot keys
+        Keys.J = 74;
         // space bar
         Keys.SPACE = 32;
         return Keys;

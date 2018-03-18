@@ -20,6 +20,13 @@ var managers;
                     console.log("Collision!!!");
                     object2.isColliding = true;
                     object1.isColliding = true;
+                    switch (object2.name) {
+                        case "cityEnemyWolf":
+                            objects.Game.livesBoard.Lives -= 1;
+                            break;
+                        default:
+                            break;
+                    }
                     return true;
                 }
             }

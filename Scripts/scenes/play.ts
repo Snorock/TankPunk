@@ -74,21 +74,6 @@ module scenes {
       });
     }
 
-    // This is where the fun happens
-    public Main(): void {
-
-      // add the testObject to the scene
-      this.addChild(this._testObject);
-
-      // add the tank to the scene
-      this.addChild(this._tank);
-
-
-      // add the backButton to the scene
-      this.addChild(this._exitBtn);
-
-      this._exitBtn.on("click", this._backBtnClick);
-    }
     private _bulletFire(): void {
       if (this._canShoot) {
         let shot = false;
@@ -108,6 +93,11 @@ module scenes {
           this._bullets[this._bulletCounter].shootBack(this._tank.x, this._tank.y);
           shot = true;
         }
+        else if (objects.Game.keyboardManager.shoot) {
+          this._bullets[this._bulletCounter].shoot(this._tank.x, this._tank.y, this._tank.rotation);
+          shot = true;
+        }
+
         if (shot) {
           this._canShoot = false;
           this._bulletCounter++;
@@ -116,10 +106,27 @@ module scenes {
           }
         }
       }
-      else if (!(objects.Game.keyboardManager.shootBackward || objects.Game.keyboardManager.shootForward || objects.Game.keyboardManager.shootRight || objects.Game.keyboardManager.shootLeft)) {
+      else if (!(objects.Game.keyboardManager.shootBackward || objects.Game.keyboardManager.shootForward || objects.Game.keyboardManager.shootRight || objects.Game.keyboardManager.shootLeft || objects.Game.keyboardManager.shoot)) {
         this._canShoot = true;
       }
     }
+    
+    // This is where the fun happens
+    public Main(): void {
+
+      // add the testObject to the scene
+      this.addChild(this._testObject);
+
+      // add the tank to the scene
+      this.addChild(this._tank);
+
+
+      // add the backButton to the scene
+      this.addChild(this._exitBtn);
+
+      this._exitBtn.on("click", this._backBtnClick);
+    }
+    
   }
 }
 

@@ -11,6 +11,8 @@
 
 /// <reference path="../../Scripts/objects/gameobject.ts"/>
 
+/// <reference path="../../Scripts/managers/keyboard.ts"/>
+/// <reference path="../../Scripts/managers/livesboard.ts"/>
 /// <reference path="../../Scripts/managers/collision.ts"/>
 
 /// <reference path="../../Scripts/objects/bullet.ts"/>

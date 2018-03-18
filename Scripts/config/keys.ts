@@ -12,6 +12,9 @@ module config {
     public static S: number = 83;
     public static D: number = 68;
 
+    // shoot keys
+    public static J: number = 74;
+
     // space bar
     public static SPACE: number = 32;
   }
