@@ -72,4 +72,4 @@ var objects;
     }(objects.GameObject));
     objects.ObstCity3 = ObstCity3;
 })(objects || (objects = {}));
-//# sourceMappingURL=obstCity3.js.map
+//# sourceMappingURL=obstcity3.js.map

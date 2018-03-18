@@ -114,10 +114,6 @@ var scenes;
             // liveboard UI for the scene
             this._livesBoard = new managers.LivesBoard();
             objects.Game.livesBoard = this._livesBoard;
-            for (var count = 0; count < this._bulletNum; count++) {
-                this._bullets[count] = new objects.Bullet(this.assetManager);
-                this.addChild(this._bullets[count]);
-            }
             this.Main();
         };
         // triggered every frame
@@ -174,6 +170,11 @@ var scenes;
                 if (_this._tank.rotation != 180) {
                     config.Keys.S = 83;
                 }
+                _this._bullets.forEach(function (bullet) {
+                    if (managers.Collision.Check(obstHouse1, bullet)) {
+                        bullet.alpha = 0;
+                    }
+                });
             });
             // End of collision check for _obstHouse1
             // Collision detection for _obstHouse2
@@ -216,6 +217,11 @@ var scenes;
                 if (_this._tank.rotation != 180) {
                     config.Keys.S = 83;
                 }
+                _this._bullets.forEach(function (bullet) {
+                    if (managers.Collision.Check(obstHouse2, bullet)) {
+                        bullet.alpha = 0;
+                    }
+                });
             });
             // End of collision check for _obstHouse2
             // Collision detection for _obstCar1
@@ -258,6 +264,11 @@ var scenes;
                 if (_this._tank.rotation != 180) {
                     config.Keys.S = 83;
                 }
+                _this._bullets.forEach(function (bullet) {
+                    if (managers.Collision.Check(obstCar1, bullet)) {
+                        bullet.alpha = 0;
+                    }
+                });
             });
             // End of collision check for _obstCar1
             this._enemyWolfs.forEach(function (enemyWolf) {
@@ -265,7 +276,7 @@ var scenes;
                     enemyWolf.Update();
                 }
                 _this._bullets.forEach(function (bullet) {
-                    if (bullet.active && managers.Collision.Check(enemyWolf, bullet)) {
+                    if (bullet.active && managers.Collision.Check(enemyWolf, bullet) && bullet.alpha != 0) {
                         enemyWolf.alpha = 0;
                     }
                 });
@@ -274,6 +285,9 @@ var scenes;
             });
             if (this._livesBoard.Lives <= 0) {
                 objects.Game.currentScene = config.Scene.OVER;
+            }
+            if (this._testObject.isColliding == true) {
+                objects.Game.currentScene = config.Scene.DESERT;
             }
             this._bullets.forEach(function (bullet) {
                 bullet.Update();
@@ -322,6 +336,10 @@ var scenes;
             var _this = this;
             // add city background to the scene
             this.addChild(this._mapCity);
+            for (var count = 0; count < this._bulletNum; count++) {
+                this._bullets[count] = new objects.Bullet(this.assetManager);
+                this.addChild(this._bullets[count]);
+            }
             // add the island to the scene
             // this.addChild(this._island);
             // add the obstacles to the scene

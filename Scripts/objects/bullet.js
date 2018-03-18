@@ -88,6 +88,7 @@ var objects;
             this.speedX = this.speed;
             this.speedY = 0;
             this.active = true;
+            this.alpha = 1;
         };
         Bullet.prototype.shootRight = function (x, y) {
             this.rotation = 90;
@@ -96,6 +97,7 @@ var objects;
             this.speedX = -this.speed;
             this.speedY = 0;
             this.active = true;
+            this.alpha = 1;
         };
         Bullet.prototype.shootForward = function (x, y) {
             this.rotation = 0;
@@ -104,6 +106,7 @@ var objects;
             this.speedX = 0;
             this.speedY = this.speed;
             this.active = true;
+            this.alpha = 1;
         };
         Bullet.prototype.shootBack = function (x, y) {
             this.rotation = 180;
@@ -112,6 +115,7 @@ var objects;
             this.speedX = 0;
             this.speedY = -this.speed;
             this.active = true;
+            this.alpha = 1;
         };
         return Bullet;
     }(objects.GameObject));

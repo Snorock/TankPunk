@@ -89,6 +89,7 @@ module objects {
       this.speedX = this.speed;
       this.speedY = 0;
       this.active = true;
+      this.alpha = 1;
     }
     public shootRight(x: number, y: number): void {
       this.rotation = 90;
@@ -97,6 +98,7 @@ module objects {
       this.speedX = -this.speed;
       this.speedY = 0;
       this.active = true;
+      this.alpha = 1;
     }
     public shootForward(x: number, y: number): void {
       this.rotation = 0;
@@ -105,6 +107,7 @@ module objects {
       this.speedX = 0;
       this.speedY = this.speed;
       this.active = true;
+      this.alpha = 1;
     }
     public shootBack(x: number, y: number): void {
       this.rotation = 180;
@@ -113,6 +116,7 @@ module objects {
       this.speedX = 0;
       this.speedY = -this.speed;
       this.active = true;
+      this.alpha = 1;
     }
   }
 }

@@ -17,18 +17,23 @@ var managers;
             //if((A1.x<=A2.x)&&(A2.x<=B1.x)&&(A1.y<=A2.y)&&(A2.y<=B1.y)){
             if (!(B1.x < A2.x || B2.x < A1.x || B1.y < A2.y || B2.y < A1.y)) {
                 if (!object2.isColliding) {
-                    console.log("Collision!!!");
+                    // console.log("Collision!!!");
                     object2.isColliding = true;
                     object1.isColliding = true;
                     switch (object2.name) {
                         case "cityEnemyWolf":
                             if (object2.alpha != 0) {
                                 objects.Game.livesBoard.Lives -= 1;
+                                console.log("Collision Damage!!!");
                             }
                             break;
                         case "bullet1":
-                            // if (object1.alpha != 0)
-                            object1.alpha = 0;
+                            // if (object2.alpha == 0) {
+                            //     object2.isColliding = false;
+                            // }
+                            // object2.alpha = 1;
+                            // objects.Game.livesBoard.Lives -= 0;
+                            console.log("Shooting Collision!!!");
                         default:
                             break;
                     }
