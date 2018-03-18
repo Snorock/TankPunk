@@ -55,6 +55,7 @@ var scenes;
             // enemy array
             _this._obstWolfX = [40,];
             _this._obstWolfY = [150,];
+            _this._bulletFire = _this._bulletFire.bind(_this);
             _this.Start();
             return _this;
         }
@@ -70,6 +71,11 @@ var scenes;
             this._mapCity = new objects.MapCity(this.assetManager);
             this._testObject = new objects.testObject(this.assetManager);
             this._tank = new objects.Tank(this.assetManager);
+            // bullets
+            this._bulletNum = 50;
+            this._bullets = new Array();
+            this._bulletCounter = 0;
+            this._canShoot = true;
             // this._island = new objects.Island(this.assetManager);
             // instantiate the cloud array
             // this._clouds = new Array<objects.Cloud>();
@@ -108,6 +114,10 @@ var scenes;
             // liveboard UI for the scene
             this._livesBoard = new managers.LivesBoard();
             objects.Game.livesBoard = this._livesBoard;
+            for (var count = 0; count < this._bulletNum; count++) {
+                this._bullets[count] = new objects.Bullet(this.assetManager);
+                this.addChild(this._bullets[count]);
+            }
             this.Main();
         };
         // triggered every frame
@@ -116,6 +126,8 @@ var scenes;
             // this._ocean.Update();
             this._testObject.Update();
             this._tank.Update();
+            // bullets
+            this._bulletFire();
             // this._island.Update();
             // check collision between test object and tank
             managers.Collision.Check(this._tank, this._testObject);
@@ -249,16 +261,58 @@ var scenes;
             });
             // End of collision check for _obstCar1
             this._enemyWolfs.forEach(function (enemyWolf) {
-                enemyWolf.Update();
+                if (enemyWolf != null) {
+                    enemyWolf.Update();
+                }
+                _this._bullets.forEach(function (bullet) {
+                    if (bullet.active && managers.Collision.Check(enemyWolf, bullet)) {
+                        enemyWolf.alpha = 0;
+                    }
+                });
                 // check collision between tank and enemy wolf
                 managers.Collision.Check(_this._tank, enemyWolf);
             });
             if (this._livesBoard.Lives <= 0) {
                 objects.Game.currentScene = config.Scene.OVER;
             }
-            // if the tank collides the testObject switch to over scene
-            if (this._testObject.isColliding == true) {
-                objects.Game.currentScene = config.Scene.DESERT;
+            this._bullets.forEach(function (bullet) {
+                bullet.Update();
+            });
+        };
+        CityScene.prototype._bulletFire = function () {
+            if (this._canShoot) {
+                var shot = false;
+                if (objects.Game.keyboardManager.shootLeft) {
+                    this._bullets[this._bulletCounter].shootLeft(this._tank.x, this._tank.y);
+                    console.log("Fired");
+                    shot = true;
+                }
+                else if (objects.Game.keyboardManager.shootRight) {
+                    this._bullets[this._bulletCounter].shootRight(this._tank.x, this._tank.y);
+                    shot = true;
+                }
+                else if (objects.Game.keyboardManager.shootForward) {
+                    this._bullets[this._bulletCounter].shootForward(this._tank.x, this._tank.y);
+                    shot = true;
+                }
+                else if (objects.Game.keyboardManager.shootBackward) {
+                    this._bullets[this._bulletCounter].shootBack(this._tank.x, this._tank.y);
+                    shot = true;
+                }
+                else if (objects.Game.keyboardManager.shoot) {
+                    this._bullets[this._bulletCounter].shoot(this._tank.x, this._tank.y, this._tank.rotation);
+                    shot = true;
+                }
+                if (shot) {
+                    this._canShoot = false;
+                    this._bulletCounter++;
+                    if (this._bulletCounter >= this._bulletNum - 1) {
+                        this._bulletCounter = 0;
+                    }
+                }
+            }
+            else if (!(objects.Game.keyboardManager.shootBackward || objects.Game.keyboardManager.shootForward || objects.Game.keyboardManager.shootRight || objects.Game.keyboardManager.shootLeft || objects.Game.keyboardManager.shoot)) {
+                this._canShoot = true;
             }
         };
         // This is where the fun happens

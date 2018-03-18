@@ -6,6 +6,12 @@ module scenes {
     private _mapCity: objects.MapCity;
     private _testObject: objects.testObject;
     private _tank: objects.Tank;
+
+    // bullets
+    private _bullets: objects.Bullet[];
+    private _bulletNum: number;
+    private _bulletCounter: number;
+    private _canShoot: boolean;
     // private _island: objects.Island;
     // private _clouds: objects.Cloud[];
     // private _cloudNum: number;
@@ -24,11 +30,7 @@ module scenes {
     private _enemyWolfs: objects.EnemyCity1[];
     private _obstWolfNum: number;
 
-    // bullets
-    private _bullets: objects.Bullet[];
-    private _bulletNum: number;
-    private _bulletCounter: number;
-    private _canShoot: boolean;
+    
 
     // lives
     private _livesBoard: managers.LivesBoard;
@@ -82,6 +84,8 @@ module scenes {
     constructor(assetManager: createjs.LoadQueue) {
       super(assetManager);
 
+      this._bulletFire = this._bulletFire.bind(this);
+
       this.Start();
     }
 
@@ -100,6 +104,13 @@ module scenes {
       this._mapCity = new objects.MapCity(this.assetManager);
       this._testObject = new objects.testObject(this.assetManager);
       this._tank = new objects.Tank(this.assetManager);
+
+      // bullets
+      this._bulletNum = 50;
+      this._bullets = new Array<objects.Bullet>();
+      this._bulletCounter = 0;
+      this._canShoot = true;
+
       // this._island = new objects.Island(this.assetManager);
 
       // instantiate the cloud array
@@ -145,6 +156,11 @@ module scenes {
       this._livesBoard = new managers.LivesBoard();
       objects.Game.livesBoard = this._livesBoard;
 
+      for (let count = 0; count < this._bulletNum; count++) {
+        this._bullets[count] = new objects.Bullet(this.assetManager);
+        this.addChild(this._bullets[count]);
+      }
+
       this.Main();
     }
 
@@ -153,6 +169,10 @@ module scenes {
       // this._ocean.Update();
       this._testObject.Update();
       this._tank.Update();
+
+      // bullets
+      this._bulletFire();
+      
       // this._island.Update();
 
       // check collision between test object and tank
@@ -305,20 +325,66 @@ module scenes {
       // End of collision check for _obstCar1
 
       this._enemyWolfs.forEach(enemyWolf => {
-        enemyWolf.Update();
+        if (enemyWolf != null) {
+          enemyWolf.Update();
+        }
+        this._bullets.forEach(bullet => {
+          if (bullet.active && managers.Collision.Check(enemyWolf, bullet)) {
+            enemyWolf.alpha = 0;
+          }
+        });
         // check collision between tank and enemy wolf
         managers.Collision.Check(this._tank, enemyWolf);
-      })
+      });
+
+
 
       if (this._livesBoard.Lives <= 0) {
         objects.Game.currentScene = config.Scene.OVER;
       }
 
-      // if the tank collides the testObject switch to over scene
-      if (this._testObject.isColliding == true) {
-        objects.Game.currentScene = config.Scene.DESERT;
-      }
+      this._bullets.forEach(bullet => {
+        bullet.Update();
+      });
+      
+    }
 
+    private _bulletFire(): void {
+      if (this._canShoot) {
+        let shot = false;
+        if (objects.Game.keyboardManager.shootLeft) {
+          this._bullets[this._bulletCounter].shootLeft(this._tank.x, this._tank.y);
+          console.log("Fired");
+          shot = true;
+        }
+        else if (objects.Game.keyboardManager.shootRight) {
+          this._bullets[this._bulletCounter].shootRight(this._tank.x, this._tank.y);
+          shot = true;
+        }
+        else if (objects.Game.keyboardManager.shootForward) {
+          this._bullets[this._bulletCounter].shootForward(this._tank.x, this._tank.y);
+          shot = true;
+        }
+        else if (objects.Game.keyboardManager.shootBackward) {
+          this._bullets[this._bulletCounter].shootBack(this._tank.x, this._tank.y);
+          shot = true;
+        }
+        else if (objects.Game.keyboardManager.shoot) {
+          this._bullets[this._bulletCounter].shoot(this._tank.x, this._tank.y, this._tank.rotation);
+          shot = true;
+        }
+
+        if (shot) {
+          this._canShoot = false;
+          this._bulletCounter++;
+          if (this._bulletCounter >= this._bulletNum - 1) {
+            this._bulletCounter = 0;
+          }
+        }
+      }
+      else if (!(objects.Game.keyboardManager.shootBackward || objects.Game.keyboardManager.shootForward || objects.Game.keyboardManager.shootRight || objects.Game.keyboardManager.shootLeft || objects.Game.keyboardManager.shoot)) {
+        this._canShoot = true;
+      }
     }
 
     // This is where the fun happens

@@ -25,9 +25,13 @@ module managers {
 
                     switch (object2.name) {
                         case "cityEnemyWolf":
-                            objects.Game.livesBoard.Lives -= 1;
+                            if (object2.alpha != 0) {
+                                objects.Game.livesBoard.Lives -= 1;
+                            }
                             break;
-                    
+                        case "bullet1":
+                            // if (object1.alpha != 0)
+                            object1.alpha = 0;
                         default:
                             break;
                     }
