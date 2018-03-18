@@ -27,8 +27,8 @@ var objects;
         // public methods
         // Initializes variables and creates new objects
         EnemyCity1.prototype.Start = function () {
-            console.log("x " + this.x);
-            console.log("y " + this.y);
+            // console.log("x " + this.x);
+            // console.log("y " + this.y);
             this.Reset();
         };
         // // updates the game object every frame

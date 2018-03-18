@@ -24,7 +24,7 @@
     { id: "nextButton", src: "./Assets/images/nextButton.png" },
     { id: "cityBackground", src: "./Assets/images/levels/city/background-level-1-with-trees.png" },
     { id: "desertBackground", src: "./Assets/images/levels/desert/background-level-2.png" },
-    { id: "house", src: "./Assets/images/levels/city/house.png" },
+    { id: "cityObstHouse1", src: "./Assets/images/levels/city/house.png" },
     { id: "desertTree", src: "./Assets/images/levels/desert/desert-tree.png" },
     { id: "green-tank", src: "./Assets/images/tanks/green-tank.png" },
     { id: "blue-tank", src: "./Assets/images/tanks/blue-tank.png" },
@@ -34,7 +34,8 @@
     // TODO: Replace assets below
     { id: "ocean", src: "./Assets/images/ocean.gif" },
     { id: "city", src: "./Assets/images/city1.png" },
-    { id: "cityObstacle1", src: "./Assets/images/Building1Small.png" },
+    { id: "cityObstCar1", src: "./Assets/images/flamingCarSmall.png" },
+    { id: "cityObstHouse2", src: "./Assets/images/Building1Small.png" },
     { id: "cityEnemyWolf", src: "./Assets/images/enemyWolf.png" },
     { id: "desert", src: "./Assets/images/desert.png" },
     { id: "frost", src: "./Assets/images/frost.png" },
@@ -62,8 +63,8 @@
     createjs.Ticker.on("tick", Update);
 
     objects.Game.stage = stage;
-    objects.Game.currentScene = config.Scene.START;
-    currentState = config.Scene.START;
+    objects.Game.currentScene = config.Scene.CITY;
+    currentState = config.Scene.CITY;
 
     keyboardManager = new managers.Keyboard();
     objects.Game.keyboardManager = keyboardManager;

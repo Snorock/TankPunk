@@ -10,13 +10,13 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var ObstCity1 = /** @class */ (function (_super) {
-        __extends(ObstCity1, _super);
+    var ObstCity2 = /** @class */ (function (_super) {
+        __extends(ObstCity2, _super);
         //   private instance variables
         // public properties
         // Constructor
-        function ObstCity1(assetManager, /*obst1: objects.GameObject*/ coorX, coorY) {
-            var _this = _super.call(this, assetManager, "cityObstHouse1") || this;
+        function ObstCity2(assetManager, /*obst1: objects.GameObject*/ coorX, coorY) {
+            var _this = _super.call(this, assetManager, "cityObstHouse2") || this;
             _this.coorX = coorX;
             _this.coorY = coorY;
             // let obstBuilding = new math.Vec2(obst1.x, obst1.y);
@@ -34,7 +34,7 @@ var objects;
         //     // this.Reset();
         // }
         // // updates the game object every frame
-        ObstCity1.prototype.Update = function () {
+        ObstCity2.prototype.Update = function () {
             // this.Move();
             this.CheckBounds();
         };
@@ -51,7 +51,7 @@ var objects;
         //     // this.x += this._dx;
         // }
         // // check to see if some boundary has been passed
-        ObstCity1.prototype.CheckBounds = function () {
+        ObstCity2.prototype.CheckBounds = function () {
             // // right boundary
             // if(this.x >= 640 - this.halfWidth) {
             //     this.x = 640 - this.halfWidth;
@@ -68,8 +68,8 @@ var objects;
                 this.y = this.halfHeight;
             }
         };
-        return ObstCity1;
+        return ObstCity2;
     }(objects.GameObject));
-    objects.ObstCity1 = ObstCity1;
+    objects.ObstCity2 = ObstCity2;
 })(objects || (objects = {}));
-//# sourceMappingURL=obstcity1.js.map
+//# sourceMappingURL=obstcity2.js.map

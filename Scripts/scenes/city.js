@@ -17,12 +17,44 @@ var scenes;
         function CityScene(assetManager) {
             var _this = _super.call(this, assetManager) || this;
             // The following arrays are used to place obstacles (houses)
-            _this._obstHouse1X = [308, 595, 80, 290, 560, 167, 370, 575];
-            _this._obstHouse1Y = [46, 46, 178, 200, 185, 337, 412, 402];
-            _this._obstRotation = [false, true, false, true, false, true, false, true];
+            _this._obstHouse1X = [340, /*525,*/ 80, 300, 560, 167, 410, 560];
+            _this._obstHouse1Y = [73, /*46,*/ 178, 200, 185, 337, 390, 380];
+            _this._obstHouse1Rotation = [false, /*true,*/ false, true, false, true, true, true];
+            _this._obstHouse2X = [
+                10, 46, 128, 168, 248,
+                140, 180, 430,
+                10, 50, 90, 130, 170, 210, 310, 350, 390, 430, 520,
+                80,
+                // Second part is vertical
+                320, 320, 320, 320,
+                520,
+            ];
+            _this._obstHouse2Y = [
+                75, 75, 75, 75, 15,
+                155, 155, 155,
+                280, 280, 280, 280, 280, 280, 265, 265, 265, 265, 265,
+                395,
+                // Second part is vertical
+                345, 385, 425, 465,
+                225,
+            ];
+            _this._obstCar1X = [
+                200, 270, 340, 480, 610,
+                310, 520,
+                100,
+                /*Second Part is vertical*/
+                480, 480, 480, 480, 490,
+            ];
+            _this._obstCar1Y = [
+                115, 135, 120, 115, 100,
+                310, 310,
+                435,
+                /*Second Part is vertical*/
+                20, 65, 160, 350, 400,
+            ];
             // enemy array
-            _this._obstWolfX = [40, 150, 260, 300, 340, 380, 450, 520, 600];
-            _this._obstWolfY = [150, 200, 120, 100, 190, 400, 300, 110, 240];
+            _this._obstWolfX = [40,];
+            _this._obstWolfY = [150,];
             _this.Start();
             return _this;
         }
@@ -52,10 +84,22 @@ var scenes;
             this._obstHouse1Num = this._obstHouse1X.length;
             for (var count = 0; count < this._obstHouse1Num; count++) {
                 this._obstHouse1s[count] = new objects.ObstCity1(this.assetManager, this._obstHouse1X.shift(), this._obstHouse1Y.shift());
-                if (this._obstRotation[count])
+                if (this._obstHouse1Rotation[count])
                     this._obstHouse1s[count].rotation = 90;
             }
-            // enemies that hurt player
+            // obstacle "House2" that block player's path
+            this._obstHouse2s = new Array();
+            this._obstHouse2Num = this._obstHouse2X.length;
+            for (var count = 0; count < this._obstHouse2Num; count++) {
+                this._obstHouse2s[count] = new objects.ObstCity2(this.assetManager, this._obstHouse2X.shift(), this._obstHouse2Y.shift());
+            }
+            // obstacle "Car1" that block player's path
+            this._obstCar1s = new Array();
+            this._obstCar1Num = this._obstCar1X.length;
+            for (var count = 0; count < this._obstCar1Num; count++) {
+                this._obstCar1s[count] = new objects.ObstCity3(this.assetManager, this._obstCar1X.shift(), this._obstCar1Y.shift());
+            }
+            // enemies "Wolf" that hurt player, moving, and invincible
             this._enemyWolfs = new Array();
             this._obstWolfNum = this._obstWolfX.length;
             for (var count = 0; count < this._obstWolfNum; count++) {
@@ -85,22 +129,25 @@ var scenes;
                 if (obstHouse1.isColliding == true && _this._tank.rotation == -90) {
                     objects.Game.keyboardManager.moveLeft = false;
                     config.Keys.A = null;
-                    // this._tank.x = obstPlane.x + 35;
+                    _this._tank.x = _this._tank.x + 2;
                     console.log("Can't move left" + _this._tank.rotation + _this.x);
                 }
                 if (obstHouse1.isColliding == true && _this._tank.rotation == 90) {
                     objects.Game.keyboardManager.moveRight = false;
                     config.Keys.D = null;
+                    _this._tank.x = _this._tank.x - 2;
                     console.log("Can't move right" + _this._tank.rotation);
                 }
                 if (obstHouse1.isColliding == true && _this._tank.rotation == 0) {
                     objects.Game.keyboardManager.moveForward = false;
                     config.Keys.W = null;
+                    _this._tank.y = _this._tank.y + 2;
                     console.log("Can't move forward" + _this._tank.rotation);
                 }
                 if (obstHouse1.isColliding == true && _this._tank.rotation == 180) {
                     objects.Game.keyboardManager.moveBackward = false;
                     config.Keys.S = null;
+                    _this._tank.y = _this._tank.y - 2;
                     console.log("Can't move back" + _this._tank.rotation);
                 }
                 if (_this._tank.rotation != -90) {
@@ -116,9 +163,91 @@ var scenes;
                     config.Keys.S = 83;
                 }
             });
-            // end of collision check for _obstHouse1
+            // End of collision check for _obstHouse1
             // Collision detection for _obstHouse2
+            this._obstHouse2s.forEach(function (obstHouse2) {
+                managers.Collision.Check(_this._tank, obstHouse2);
+                obstHouse2.Update();
+                if (obstHouse2.isColliding == true && _this._tank.rotation == -90) {
+                    objects.Game.keyboardManager.moveLeft = false;
+                    config.Keys.A = null;
+                    _this._tank.x = _this._tank.x + 2;
+                    console.log("Can't move left" + _this._tank.rotation + _this.x);
+                }
+                if (obstHouse2.isColliding == true && _this._tank.rotation == 90) {
+                    objects.Game.keyboardManager.moveRight = false;
+                    config.Keys.D = null;
+                    _this._tank.x = _this._tank.x - 2;
+                    console.log("Can't move right" + _this._tank.rotation);
+                }
+                if (obstHouse2.isColliding == true && _this._tank.rotation == 0) {
+                    objects.Game.keyboardManager.moveForward = false;
+                    config.Keys.W = null;
+                    _this._tank.y = _this._tank.y + 2;
+                    console.log("Can't move forward" + _this._tank.rotation);
+                }
+                if (obstHouse2.isColliding == true && _this._tank.rotation == 180) {
+                    objects.Game.keyboardManager.moveBackward = false;
+                    config.Keys.S = null;
+                    _this._tank.y = _this._tank.y - 2;
+                    console.log("Can't move back" + _this._tank.rotation);
+                }
+                if (_this._tank.rotation != -90) {
+                    config.Keys.A = 65;
+                }
+                if (_this._tank.rotation != 90) {
+                    config.Keys.D = 68;
+                }
+                if (_this._tank.rotation != 0) {
+                    config.Keys.W = 87;
+                }
+                if (_this._tank.rotation != 180) {
+                    config.Keys.S = 83;
+                }
+            });
             // End of collision check for _obstHouse2
+            // Collision detection for _obstCar1
+            this._obstCar1s.forEach(function (obstCar1) {
+                managers.Collision.Check(_this._tank, obstCar1);
+                obstCar1.Update();
+                if (obstCar1.isColliding == true && _this._tank.rotation == -90) {
+                    objects.Game.keyboardManager.moveLeft = false;
+                    config.Keys.A = null;
+                    _this._tank.x = _this._tank.x + 2;
+                    console.log("Can't move left" + _this._tank.rotation + _this.x);
+                }
+                if (obstCar1.isColliding == true && _this._tank.rotation == 90) {
+                    objects.Game.keyboardManager.moveRight = false;
+                    config.Keys.D = null;
+                    _this._tank.x = _this._tank.x - 2;
+                    console.log("Can't move right" + _this._tank.rotation);
+                }
+                if (obstCar1.isColliding == true && _this._tank.rotation == 0) {
+                    objects.Game.keyboardManager.moveForward = false;
+                    config.Keys.W = null;
+                    _this._tank.y = _this._tank.y + 2;
+                    console.log("Can't move forward" + _this._tank.rotation);
+                }
+                if (obstCar1.isColliding == true && _this._tank.rotation == 180) {
+                    objects.Game.keyboardManager.moveBackward = false;
+                    config.Keys.S = null;
+                    _this._tank.y = _this._tank.y - 2;
+                    console.log("Can't move back" + _this._tank.rotation);
+                }
+                if (_this._tank.rotation != -90) {
+                    config.Keys.A = 65;
+                }
+                if (_this._tank.rotation != 90) {
+                    config.Keys.D = 68;
+                }
+                if (_this._tank.rotation != 0) {
+                    config.Keys.W = 87;
+                }
+                if (_this._tank.rotation != 180) {
+                    config.Keys.S = 83;
+                }
+            });
+            // End of collision check for _obstCar1
             this._enemyWolfs.forEach(function (enemyWolf) {
                 enemyWolf.Update();
                 // check collision between tank and enemy wolf
@@ -142,11 +271,18 @@ var scenes;
             // add the island to the scene
             // this.addChild(this._island);
             // add the obstacles to the scene
-            this._obstHouse1s.forEach(function (obstPlane) {
-                _this.addChild(obstPlane);
+            this._obstHouse1s.forEach(function (obstHouse1) {
+                _this.addChild(obstHouse1);
             });
-            this._enemyWolfs.forEach(function (enemyPlane) {
-                _this.addChild(enemyPlane);
+            this._obstHouse2s.forEach(function (obstHouse2) {
+                _this.addChild(obstHouse2);
+            });
+            this._obstCar1s.forEach(function (obstCar1) {
+                _this.addChild(obstCar1);
+            });
+            // add enemies to the scene
+            this._enemyWolfs.forEach(function (enemyWolf) {
+                _this.addChild(enemyWolf);
             });
             // this.addChild(this._noarray);
             // add the testObject to the scene

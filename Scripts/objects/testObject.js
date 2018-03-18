@@ -24,7 +24,7 @@ var objects;
         // public methods
         // Initializes variables and creates new objects
         testObject.prototype.Start = function () {
-            this.x = 530; //this.x = 30;
+            this.x = 580; //this.x = 30;
             this.y = 45; //this.y = 380;
         };
         // updates the game object every frame

@@ -18,8 +18,8 @@ module objects {
 
         // Initializes variables and creates new objects
         public Start(): void {
-            console.log("x " + this.x);
-            console.log("y " + this.y);
+            // console.log("x " + this.x);
+            // console.log("y " + this.y);
             this.Reset();
         }
 
