@@ -75,8 +75,17 @@ module scenes {
                                    ];
 
     // enemy array
-    private _obstWolfX: number[] = [40, /*150, 260, 300, 340, 380, 450, 520, 600*/];
-    private _obstWolfY: number[] = [150, /*200, 120, 100, 190, 400, 300, 110, 240*/];
+
+    // Wolf: moving enemies, lots of property settings
+    private _obstWolfX: number[] = [80, 220, 320, 320, 180, 400/*150, 260, 300, 340, 380, 450, 520, 600*/];
+    private _obstWolfY: number[] = [100, 80, 180, 220, 400, 40/*200, 120, 100, 190, 400, 300, 110, 240*/];
+    // S for speed
+    private _obstWolfS: number[] = [2, 3, 4, 1.5, 3, 4];
+    // D for direction
+    private _obstWolfD: boolean[] = [true, true, false, false, false, true]; 
+    // N for distance
+    // K, I know but we already have D for direction
+    private _obstWolfN: number[] = [150, 150, 280, 280, 400, 410];
 
     // Public Properties
 
@@ -149,7 +158,7 @@ module scenes {
       this._enemyWolfs = new Array<objects.EnemyCity1>();
       this._obstWolfNum = this._obstWolfX.length;
       for (let count = 0; count < this._obstWolfNum; count++) {
-        this._enemyWolfs[count] = new objects.EnemyCity1(this.assetManager, this._obstWolfX.shift(), this._obstWolfY.shift());
+        this._enemyWolfs[count] = new objects.EnemyCity1(this.assetManager, this._obstWolfX.shift(), this._obstWolfY.shift(), this._obstWolfS.shift(), this._obstWolfD.shift(), this._obstWolfN.shift());
       }
 
       // liveboard UI for the scene

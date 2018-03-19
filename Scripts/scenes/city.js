@@ -53,8 +53,16 @@ var scenes;
                 20, 65, 160, 350, 400,
             ];
             // enemy array
-            _this._obstWolfX = [40,];
-            _this._obstWolfY = [150,];
+            // Wolf: moving enemies, lots of property settings
+            _this._obstWolfX = [80, 220, 320, 320, 180, 400 /*150, 260, 300, 340, 380, 450, 520, 600*/];
+            _this._obstWolfY = [100, 80, 180, 220, 400, 40 /*200, 120, 100, 190, 400, 300, 110, 240*/];
+            // S for speed
+            _this._obstWolfS = [2, 3, 4, 1.5, 3, 4];
+            // D for direction
+            _this._obstWolfD = [true, true, false, false, false, true];
+            // N for distance
+            // K, I know but we already have D for direction
+            _this._obstWolfN = [150, 150, 280, 280, 400, 410];
             _this._bulletFire = _this._bulletFire.bind(_this);
             _this.Start();
             return _this;
@@ -109,7 +117,7 @@ var scenes;
             this._enemyWolfs = new Array();
             this._obstWolfNum = this._obstWolfX.length;
             for (var count = 0; count < this._obstWolfNum; count++) {
-                this._enemyWolfs[count] = new objects.EnemyCity1(this.assetManager, this._obstWolfX.shift(), this._obstWolfY.shift());
+                this._enemyWolfs[count] = new objects.EnemyCity1(this.assetManager, this._obstWolfX.shift(), this._obstWolfY.shift(), this._obstWolfS.shift(), this._obstWolfD.shift(), this._obstWolfN.shift());
             }
             // liveboard UI for the scene
             this._livesBoard = new managers.LivesBoard();

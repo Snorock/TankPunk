@@ -14,12 +14,16 @@ var objects;
         __extends(EnemyCity1, _super);
         // public properties
         // Constructor
-        function EnemyCity1(assetManager, coorX, coorY) {
+        function EnemyCity1(assetManager, coorX, coorY, speedDy, direction, distance) {
             var _this = _super.call(this, assetManager, "cityEnemyWolf") || this;
             _this.coorX = coorX;
             _this.coorY = coorY;
+            _this.speedDy = speedDy;
+            _this.direction = direction;
+            _this.distance = distance;
             _this.x = coorX;
             _this.y = coorY;
+            // this._dx = sDy;
             _this.Start();
             return _this;
         }
@@ -41,25 +45,46 @@ var objects;
             // this.x = Math.floor((Math.random() * (640 - this.width)) + this.halfWidth);
             this.y = this.coorY;
             // this._dx = Math.floor((Math.random() * 4) - 2);
-            this._dy = Math.floor((Math.random() * 1) + 1);
+            // this._dy = Math.floor((Math.random() * 1) - 0.5);
         };
         // // move the object to some new location
         EnemyCity1.prototype.Move = function () {
-            this._dy = 1;
-            // this.dir = true;
-            if (this.y > this.coorY + 50) {
-                this.dir = true;
-                // console.log("Moving " + (this.y - this.coorY));
+            // this._dy = 0.3;
+            this._dy = this.speedDy;
+            if (this.direction == true) {
+                if (this.y > this.coorY + this.distance) {
+                    this.dir = true;
+                    // console.log("Moving " + (this.y - this.coorY));
+                }
+                else if (this.y < this.coorY) {
+                    this.dir = false;
+                    // console.log("Stopped " + (this.y - this.coorY));
+                }
+                if (this.dir) {
+                    this.y -= this._dy;
+                }
+                else if (!this.dir) {
+                    this.y += this._dy;
+                }
             }
-            else if (this.y < this.coorY) {
-                this.dir = false;
-                // console.log("Stopped " + (this.y - this.coorY));
-            }
-            if (this.dir) {
-                this.y -= this._dy;
-            }
-            else if (!this.dir) {
-                this.y += this._dy;
+            else if (this.direction == false) {
+                if (this.x > this.coorX + this.distance) {
+                    this.dir = true;
+                    // console.log("Moving " + (this.y - this.coorY));
+                }
+                else if (this.x < this.coorX) {
+                    this.dir = false;
+                    // console.log("Stopped " + (this.y - this.coorY));
+                }
+                /* _dy is used here because _dy & _dx both are speed
+                 the direction is predined,
+                 and the enemy object doesn't need to move in a slope*/
+                if (this.dir) {
+                    this.x -= this._dy;
+                }
+                else if (!this.dir) {
+                    this.x += this._dy;
+                }
             }
         };
         // check to see if some boundary has been passed
