@@ -19,6 +19,7 @@
 /// <reference path="../../Scripts/objects/mapFrost.ts"/>
 /// <reference path="../../Scripts/objects/mapDesert.ts"/>
 /// <reference path="../../Scripts/objects/mapCity.ts"/>
+/// <reference path="../../Scripts/objects/mapTutorial.ts"/>
 /// <reference path="../../Scripts/objects/ocean.ts"/>
 /// <reference path="../../Scripts/objects/testObject.ts"/>
 /// <reference path="../../Scripts/objects/tank.ts"/>
