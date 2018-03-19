@@ -91,8 +91,8 @@ module scenes {
     private _obstWolfN: number[] = [150, 150, 280, 280, 440, 410, 320, 130];
 
     // Corrupted: static enemies, instant kill on collision, not invincible
-    private _obstCorruptedX: number[] = [100];
-    private _obstCorruptedY: number[] = [350];
+    private _obstCorruptedX: number[] = [100, 90, 280, 400, 475, 160, 220, 560];
+    private _obstCorruptedY: number[] = [330, 65, 70,  180, 235, 460, 460, 235];
 
     // Public Properties
 

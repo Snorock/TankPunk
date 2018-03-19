@@ -64,8 +64,8 @@ var scenes;
             // K, I know but we already have D for direction
             _this._obstWolfN = [150, 150, 280, 280, 440, 410, 320, 130];
             // Corrupted: static enemies, instant kill on collision, not invincible
-            _this._obstCorruptedX = [100];
-            _this._obstCorruptedY = [350];
+            _this._obstCorruptedX = [100, 90, 280, 400, 475, 160, 220, 560];
+            _this._obstCorruptedY = [330, 65, 70, 180, 235, 460, 460, 235];
             _this._bulletFire = _this._bulletFire.bind(_this);
             _this.Start();
             return _this;

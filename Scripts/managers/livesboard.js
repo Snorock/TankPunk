@@ -35,7 +35,7 @@ var managers;
         });
         // private methods
         LivesBoard.prototype._initialize = function () {
-            this.LivesLabel = new objects.Label("Lives: 0", "20px", "Consolas", "#FFFF00", 540, 50, false);
+            this.LivesLabel = new objects.Label("Lives: 0", "20px", "Consolas", "#FF0000", 540, 50, false);
             // this.ScoreLabel = new objects.Label("Score: 99999", "20px", "Consolas", "#FFFF00", 500, 10, false);
             // this.HighScoreLabel = new objects.Label("HighScore: 99999", "40px", "Consolas", "#FFFF00", 320, 240, true);
             this.Lives = 5;
