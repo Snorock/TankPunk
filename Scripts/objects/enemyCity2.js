@@ -98,4 +98,4 @@ var objects;
     }(objects.GameObject));
     objects.EnemyCity2 = EnemyCity2;
 })(objects || (objects = {}));
-//# sourceMappingURL=enemyCity2.js.map
+//# sourceMappingURL=enemycity2.js.map
