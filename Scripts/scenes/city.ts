@@ -77,15 +77,15 @@ module scenes {
     // enemy array
 
     // Wolf: moving enemies, lots of property settings
-    private _obstWolfX: number[] = [80, 220, 320, 320, 180, 400/*150, 260, 300, 340, 380, 450, 520, 600*/];
-    private _obstWolfY: number[] = [100, 80, 180, 220, 400, 40/*200, 120, 100, 190, 400, 300, 110, 240*/];
+    private _obstWolfX: number[] = [80, 220, 320, 320, 140, 400, 620, 480/*150, 260, 300, 340, 380, 450, 520, 600*/];
+    private _obstWolfY: number[] = [100, 80, 180, 220, 400, 40, 140, 310/*200, 120, 100, 190, 400, 300, 110, 240*/];
     // S for speed
-    private _obstWolfS: number[] = [2, 3, 4, 1.5, 3, 4];
+    private _obstWolfS: number[] = [2, 3, 4, 1.5, 5, 1, 1.5, 0.5];
     // D for direction
-    private _obstWolfD: boolean[] = [true, true, false, false, false, true]; 
+    private _obstWolfD: boolean[] = [true, true, false, false, false, true, true, false]; 
     // N for distance
     // K, I know but we already have D for direction
-    private _obstWolfN: number[] = [150, 150, 280, 280, 400, 410];
+    private _obstWolfN: number[] = [150, 150, 280, 280, 440, 410, 320, 130];
 
     // Public Properties
 

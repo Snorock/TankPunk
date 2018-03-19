@@ -54,15 +54,15 @@ var scenes;
             ];
             // enemy array
             // Wolf: moving enemies, lots of property settings
-            _this._obstWolfX = [80, 220, 320, 320, 180, 400 /*150, 260, 300, 340, 380, 450, 520, 600*/];
-            _this._obstWolfY = [100, 80, 180, 220, 400, 40 /*200, 120, 100, 190, 400, 300, 110, 240*/];
+            _this._obstWolfX = [80, 220, 320, 320, 140, 400, 620, 480 /*150, 260, 300, 340, 380, 450, 520, 600*/];
+            _this._obstWolfY = [100, 80, 180, 220, 400, 40, 140, 310 /*200, 120, 100, 190, 400, 300, 110, 240*/];
             // S for speed
-            _this._obstWolfS = [2, 3, 4, 1.5, 3, 4];
+            _this._obstWolfS = [2, 3, 4, 1.5, 5, 1, 1.5, 0.5];
             // D for direction
-            _this._obstWolfD = [true, true, false, false, false, true];
+            _this._obstWolfD = [true, true, false, false, false, true, true, false];
             // N for distance
             // K, I know but we already have D for direction
-            _this._obstWolfN = [150, 150, 280, 280, 400, 410];
+            _this._obstWolfN = [150, 150, 280, 280, 440, 410, 320, 130];
             _this._bulletFire = _this._bulletFire.bind(_this);
             _this.Start();
             return _this;
