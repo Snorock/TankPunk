@@ -24,7 +24,13 @@ var managers;
                         case "cityEnemyWolf":
                             if (object2.alpha != 0) {
                                 objects.Game.livesBoard.Lives -= 1;
-                                console.log("Collision Damage!!!");
+                                console.log("Collision Wolf Damage!!!");
+                            }
+                            break;
+                        case "cityEnemyCorrupted":
+                            if (object2.alpha != 0) {
+                                objects.Game.livesBoard.Lives = 0;
+                                console.log("Collision Corrupted Damage!!!");
                             }
                             break;
                         case "bullet1":

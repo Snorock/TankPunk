@@ -18,6 +18,7 @@
 /// <reference path="../../Scripts/objects/tank.ts"/>
 /// <reference path="../../Scripts/objects/island.ts"/>
 /// <reference path="../../Scripts/objects/enemycity1.ts"/>
+/// <reference path="../../Scripts/objects/enemycity2.ts"/>
 /// <reference path="../../Scripts/objects/obstcity1.ts"/>
 /// <reference path="../../Scripts/objects/obstcity2.ts"/>
 /// <reference path="../../Scripts/objects/obstcity3.ts"/>

@@ -53,7 +53,7 @@ var scenes;
                 20, 65, 160, 350, 400,
             ];
             // enemy array
-            // Wolf: moving enemies, lots of property settings
+            // Wolf: moving enemies, lots of property settings, invincible
             _this._obstWolfX = [80, 220, 320, 320, 140, 400, 620, 480 /*150, 260, 300, 340, 380, 450, 520, 600*/];
             _this._obstWolfY = [100, 80, 180, 220, 400, 40, 140, 310 /*200, 120, 100, 190, 400, 300, 110, 240*/];
             // S for speed
@@ -63,6 +63,9 @@ var scenes;
             // N for distance
             // K, I know but we already have D for direction
             _this._obstWolfN = [150, 150, 280, 280, 440, 410, 320, 130];
+            // Corrupted: static enemies, instant kill on collision, not invincible
+            _this._obstCorruptedX = [100];
+            _this._obstCorruptedY = [350];
             _this._bulletFire = _this._bulletFire.bind(_this);
             _this.Start();
             return _this;
@@ -118,6 +121,12 @@ var scenes;
             this._obstWolfNum = this._obstWolfX.length;
             for (var count = 0; count < this._obstWolfNum; count++) {
                 this._enemyWolfs[count] = new objects.EnemyCity1(this.assetManager, this._obstWolfX.shift(), this._obstWolfY.shift(), this._obstWolfS.shift(), this._obstWolfD.shift(), this._obstWolfN.shift());
+            }
+            // enemies "Corrupted" that insta-kill player on contact, vunerable
+            this._enemyCorrupteds = new Array();
+            this._obstCorruptedNum = this._obstCorruptedX.length;
+            for (var count = 0; count < this._obstCorruptedNum; count++) {
+                this._enemyCorrupteds[count] = new objects.EnemyCity2(this.assetManager, this._obstCorruptedX.shift(), this._obstCorruptedY.shift());
             }
             // liveboard UI for the scene
             this._livesBoard = new managers.LivesBoard();
@@ -279,21 +288,32 @@ var scenes;
                 });
             });
             // End of collision check for _obstCar1
+            // Enemy "Wolves" Check
             this._enemyWolfs.forEach(function (enemyWolf) {
-                if (enemyWolf != null) {
-                    enemyWolf.Update();
-                }
-                _this._bullets.forEach(function (bullet) {
-                    if (bullet.active && managers.Collision.Check(enemyWolf, bullet) && bullet.alpha != 0) {
-                        enemyWolf.alpha = 0;
-                    }
-                });
+                enemyWolf.Update();
                 // check collision between tank and enemy wolf
                 managers.Collision.Check(_this._tank, enemyWolf);
             });
+            // End of Enemy "Wolves" Check
+            // Enemy "Corrupted" Check
+            this._enemyCorrupteds.forEach(function (enemyCorrupted) {
+                if (enemyCorrupted != null) {
+                    enemyCorrupted.Update();
+                }
+                _this._bullets.forEach(function (bullet) {
+                    if (bullet.active && managers.Collision.Check(enemyCorrupted, bullet) && bullet.alpha != 0) {
+                        enemyCorrupted.alpha = 0;
+                    }
+                });
+                // check collision between corrupted and tank
+                managers.Collision.Check(_this._tank, enemyCorrupted);
+            });
+            // End of Enemy "Corrupted" Check
+            // Game over check
             if (this._livesBoard.Lives <= 0) {
                 objects.Game.currentScene = config.Scene.OVER;
             }
+            // Plane that pick up player to next level
             if (this._testObject.isColliding == true) {
                 objects.Game.currentScene = config.Scene.DESERT;
             }
@@ -301,6 +321,7 @@ var scenes;
                 bullet.Update();
             });
         };
+        // Bullet fire mechanic
         CityScene.prototype._bulletFire = function () {
             if (this._canShoot) {
                 var shot = false;
@@ -360,11 +381,14 @@ var scenes;
             this._obstCar1s.forEach(function (obstCar1) {
                 _this.addChild(obstCar1);
             });
-            // add enemies to the scene
+            // add enemy "Wolves" to the scene
             this._enemyWolfs.forEach(function (enemyWolf) {
                 _this.addChild(enemyWolf);
             });
-            // this.addChild(this._noarray);
+            // add enemy "Corrupted" to the scene
+            this._enemyCorrupteds.forEach(function (enemyCorrupted) {
+                _this.addChild(enemyCorrupted);
+            });
             // add the testObject to the scene
             this.addChild(this._testObject);
             // add the tank to the scene
