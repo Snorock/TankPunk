@@ -12,7 +12,6 @@ var objects;
 (function (objects) {
     var Tank = /** @class */ (function (_super) {
         __extends(Tank, _super);
-        // public properties
         // Constructor
         function Tank(assetManager) {
             var _this = _super.call(this, assetManager, "dark-tank") || this;
@@ -20,9 +19,18 @@ var objects;
             return _this;
         }
         // private methods
+        Tank.prototype._animationEnded = function () {
+            if (this.alpha == 0) {
+                this.alpha = 1;
+                this.tankFlash.alpha = 0;
+            }
+        };
         // public methods
         // Initializes variables and creates new objects
         Tank.prototype.Start = function () {
+            this.tankFlash = new objects.TankFlash();
+            this.tankFlash.alpha = 0;
+            this.tankFlash.on("animationend", this._animationEnded.bind(this), false);
             this.x = 25;
             this.y = 434;
             //this.rotation = -90;
@@ -56,6 +64,9 @@ var objects;
                 this.y += speed;
                 this.rotation = 180;
             }
+            this.tankFlash.rotation = this.rotation;
+            this.tankFlash.x = this.x;
+            this.tankFlash.y = this.y;
         };
         // check to see if some boundary has been passed
         Tank.prototype.CheckBounds = function () {

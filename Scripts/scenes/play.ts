@@ -73,6 +73,7 @@ module scenes {
 
       this._testObject = new objects.testObject(this.assetManager);
       this._tank = new objects.Tank(this.assetManager);
+      managers.Game.tank = this._tank;
 
       this._bulletNum = 50;
       this._bullets = new Array<objects.Bullet>();
@@ -297,6 +298,9 @@ module scenes {
 
       // add the tank to the scene
       this.addChild(this._tank);
+
+      // add the tank flash effect
+      this.addChild(this._tank.tankFlash);
 
 
       // add the backButton to the scene

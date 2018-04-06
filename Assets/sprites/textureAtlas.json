@@ -1,0 +1,24 @@
+{
+
+"images": [
+    "textureAtlas.png"
+],
+
+"frames": [
+    [2, 2, 65, 65, 0, 0, 0],
+    [2, 69, 65, 65, 0, 0, 0]
+],
+
+"animations": {
+    "tankflash": { 
+        "frames": [0, 1, 0, 1, 0, 1, 0, 1],
+        "speed": 0.08
+    }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:ed77b4347d993f315529085e649e0888:edcd485cafdac011308d05a03a295a5e:2b5604bc88faefd55ddac16e9bce1532$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

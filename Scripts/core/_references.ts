@@ -1,3 +1,5 @@
+/// <reference path="../../Scripts/managers/game.ts"/>
+
 /// <reference path="../../Scripts/objects/game.ts"/>
 /// <reference path="../../Scripts/objects/label.ts"/>
 /// <reference path="../../Scripts/objects/button.ts"/>
@@ -10,6 +12,7 @@
 /// <reference path="../../Scripts/math/vec2.ts"/>
 
 /// <reference path="../../Scripts/objects/gameobject.ts"/>
+/// <reference path="../../Scripts/objects/gameobject2.ts"/>
 
 /// <reference path="../../Scripts/managers/keyboard.ts"/>
 /// <reference path="../../Scripts/managers/livesboard.ts"/>
@@ -23,6 +26,7 @@
 /// <reference path="../../Scripts/objects/ocean.ts"/>
 /// <reference path="../../Scripts/objects/testObject.ts"/>
 /// <reference path="../../Scripts/objects/tank.ts"/>
+/// <reference path="../../Scripts/objects/tankflash.ts"/>
 /// <reference path="../../Scripts/objects/island.ts"/>
 /// <reference path="../../Scripts/objects/enemycity1.ts"/>
 /// <reference path="../../Scripts/objects/enemycity2.ts"/>

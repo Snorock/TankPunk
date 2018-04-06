@@ -49,6 +49,7 @@ var scenes;
             this._mapTutorial = new objects.MapTutorial(this.assetManager);
             this._testObject = new objects.testObject(this.assetManager);
             this._tank = new objects.Tank(this.assetManager);
+            managers.Game.tank = this._tank;
             this._bulletNum = 50;
             this._bullets = new Array();
             this._bulletCounter = 0;
@@ -241,6 +242,8 @@ var scenes;
             this.addChild(this._testObject);
             // add the tank to the scene
             this.addChild(this._tank);
+            // add the tank flash effect
+            this.addChild(this._tank.tankFlash);
             // add the backButton to the scene
             this.addChild(this._exitBtn);
             this.addChild(this._livesBoard.LivesLabel);

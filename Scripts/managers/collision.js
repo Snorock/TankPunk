@@ -22,9 +22,12 @@ var managers;
                     object1.isColliding = true;
                     switch (object2.name) {
                         case "cityEnemyWolf":
-                            if (object2.alpha != 0) {
+                            if (object1.alpha != 0) {
                                 objects.Game.livesBoard.Lives -= 1;
                                 console.log("Collision Wolf Damage!!!");
+                                object1.alpha = 0; // make the plane object invisible
+                                managers.Game.tank.tankFlash.alpha = 1;
+                                managers.Game.tank.tankFlash.gotoAndPlay("planeflash");
                             }
                             break;
                         case "cityEnemyCorrupted":

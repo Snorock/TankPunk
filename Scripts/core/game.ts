@@ -13,8 +13,29 @@
   let currentScene: objects.Scene;
   let currentState: number;
   let keyboardManager: managers.Keyboard;
+  let textureAtlasData: any;
+  let textureAtlas: createjs.SpriteSheet;
+
+  textureAtlasData = {
+    "images": [
+      ""
+    ],
+
+    "frames": [
+      [2, 2, 65, 65, 0, 0, 0],
+      [2, 69, 65, 65, 0, 0, 0]
+    ],
+
+    "animations": {
+      "tankflash": {
+        "frames": [0, 1, 0, 1, 0, 1, 0, 1],
+        "speed": 0.08
+      }
+    },
+  }
 
   assetManifest = [
+    { id: "textureAtlas", src: "./Assets/sprites/textureAtlas.png" },
     { id: "startGameBackground", src: "./Assets/images/milestones/background-start-game.png" },
     { id: "gameOverBackground", src: "./Assets/images/milestones/background-game-over.png" },
     { id: "startButton", src: "./Assets/images/buttons/start-button.png" },
@@ -58,6 +79,9 @@
 
   function Start(): void {
     console.log("Starting Application...")
+    textureAtlasData.images = [assetManager.getResult("textureAtlas")];
+
+    textureAtlas = new createjs.SpriteSheet(textureAtlasData);
 
     stage = new createjs.Stage(canvas);
     stage.enableMouseOver(20); // turn this on for buttons
@@ -70,6 +94,8 @@
 
     keyboardManager = new managers.Keyboard();
     objects.Game.keyboardManager = keyboardManager;
+    managers.Game.assetManager = assetManager;
+    managers.Game.textureAtlas = textureAtlas;
 
     Main();
   }
