@@ -45,6 +45,7 @@
     { id: "nextButton", src: "./Assets/images/nextButton.png" },
     { id: "cityBackground", src: "./Assets/images/levels/city/background-level-1-with-trees.png" },
     { id: "desertBackground", src: "./Assets/images/levels/desert/background-level-2.png" },
+    { id: "frostBackground", src: "./Assets/images/levels/frost/background-level-3.png" },
     { id: "whiteExit", src: "./Assets/images/exit-white.png" },
     { id: "blackExit", src: "./Assets/images/exit-black.png" },
     { id: "cityObstHouse1", src: "./Assets/images/metal-crate.png" },
@@ -71,7 +72,7 @@
     { id: "cityEnemyCorrupted", src: "./Assets/images/enemyCorrupted.png" },
     { id: "tutorialLevel", src: "./Assets/images/TutorialLevel.png" },
     { id: "desert", src: "./Assets/images/desert.png" },
-    { id: "frost", src: "./Assets/images/frost.png" },
+    //{ id: "frost", src: "./Assets/images/frost.png" },
     { id: "island", src: "./Assets/images/island.png" },
     { id: "cloud", src: "./Assets/images/cloud.png" },
   ];

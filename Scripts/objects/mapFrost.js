@@ -15,7 +15,7 @@ var objects;
         // public properties
         // Constructor
         function MapFrost(assetManager) {
-            var _this = _super.call(this, assetManager.getResult("frost")) || this;
+            var _this = _super.call(this, assetManager.getResult("frostBackground")) || this;
             _this.Start();
             return _this;
         }
