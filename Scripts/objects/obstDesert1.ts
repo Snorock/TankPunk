@@ -10,6 +10,8 @@ module objects {
             // let obstBuilding = new math.Vec2(obst1.x, obst1.y);
             this.x = coorX;
             this.y = coorY;
+            this.scaleX = 0.8;
+            this.scaleY = 0.8;
             // this.Start();
         }
 

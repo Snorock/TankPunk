@@ -33,7 +33,7 @@
       }
     },
   }
-
+  
   assetManifest = [
     { id: "textureAtlas", src: "./Assets/images/tanks/dark-tank-up-transparent.png" },
     { id: "startGameBackground", src: "./Assets/images/milestones/background-start-game.png" },
@@ -72,7 +72,6 @@
     { id: "cityEnemyCorrupted", src: "./Assets/images/enemyCorrupted.png" },
     { id: "tutorialLevel", src: "./Assets/images/TutorialLevel.png" },
     { id: "desert", src: "./Assets/images/desert.png" },
-    //{ id: "frost", src: "./Assets/images/frost.png" },
     { id: "island", src: "./Assets/images/island.png" },
     { id: "cloud", src: "./Assets/images/cloud.png" },
   ];

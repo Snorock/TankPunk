@@ -22,6 +22,8 @@ var objects;
             // let obstBuilding = new math.Vec2(obst1.x, obst1.y);
             _this.x = coorX;
             _this.y = coorY;
+            _this.scaleX = 0.8;
+            _this.scaleY = 0.8;
             return _this;
             // this.Start();
         }

@@ -20,7 +20,7 @@ module scenes {
     private _obstHouse1s: objects.ObstCity1[];
     private _obstHouse1Num: number;
 
-    private _obstHouse2s: objects.ObstCity2[];
+    private _obstHouse2s: objects.ObstDesert1[];
     private _obstHouse2Num: number;
 
     private _obstCar1s: objects.ObstCity3[];
@@ -149,10 +149,10 @@ module scenes {
       }
 
       // obstacle "House2" that block player's path
-      this._obstHouse2s = new Array<objects.ObstCity2>();
+      this._obstHouse2s = new Array<objects.ObstDesert1>();
       this._obstHouse2Num = this._obstHouse2X.length;
       for (let count = 0; count < this._obstHouse2Num; count++) {
-        this._obstHouse2s[count] = new objects.ObstCity2(this.assetManager, this._obstHouse2X.shift(), this._obstHouse2Y.shift());
+        this._obstHouse2s[count] = new objects.ObstDesert1(this.assetManager, this._obstHouse2X.shift(), this._obstHouse2Y.shift());
       }
 
       // obstacle "Car1" that block player's path
