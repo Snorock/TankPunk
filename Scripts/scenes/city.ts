@@ -120,6 +120,7 @@ module scenes {
       this._mapCity = new objects.MapCity(this.assetManager);
       this._testObject = new objects.testObject(this.assetManager);
       this._tank = new objects.Tank(this.assetManager);
+      managers.Game.tank = this._tank;
 
       // bullets
       this._bulletNum = 50;
@@ -482,6 +483,9 @@ module scenes {
 
       // add the tank to the scene
       this.addChild(this._tank);
+
+      // add the tank to the scene
+      this.addChild(this._tank.tankFlash);
 
       // add clouds to the scene
 

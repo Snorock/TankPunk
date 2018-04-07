@@ -54,4 +54,4 @@ var objects;
     }(createjs.Sprite));
     objects.GameObject2 = GameObject2;
 })(objects || (objects = {}));
-//# sourceMappingURL=gameObject2.js.map
+//# sourceMappingURL=gameobject2.js.map
