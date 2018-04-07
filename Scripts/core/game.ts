@@ -33,7 +33,7 @@
       }
     },
   }
-  
+
   assetManifest = [
     { id: "textureAtlas", src: "./Assets/images/tanks/dark-tank-up-transparent.png" },
     { id: "startGameBackground", src: "./Assets/images/milestones/background-start-game.png" },
@@ -47,7 +47,7 @@
     { id: "desertBackground", src: "./Assets/images/levels/desert/background-level-2.png" },
     { id: "frostBackground", src: "./Assets/images/levels/frost/background-level-3.png" },
     { id: "whiteExit", src: "./Assets/images/exit-white.png" },
-    { id: "blackExit", src: "./Assets/images/exit-black.png" },
+    { id: "blackExit", src: "./Assets/images/plane.png" },
     { id: "cityObstHouse1", src: "./Assets/images/metal-crate.png" },
     { id: "cityObstCar1", src: "./Assets/images/wood-crate.png" },
     { id: "desertTree", src: "./Assets/images/levels/desert/desert-tree.png" },
