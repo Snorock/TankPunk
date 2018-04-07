@@ -16,7 +16,7 @@ var objects;
         // public properties
         // Constructor
         function testObject(assetManager) {
-            var _this = _super.call(this, assetManager, "test") || this;
+            var _this = _super.call(this, assetManager, "blackExit") || this;
             _this.Start();
             return _this;
         }
@@ -24,8 +24,10 @@ var objects;
         // public methods
         // Initializes variables and creates new objects
         testObject.prototype.Start = function () {
-            this.x = 600; //this.x = 30;
+            this.x = 615; //this.x = 30;
             this.y = 25; //this.y = 380;
+            this.scaleX = 0.5;
+            this.scaleY = 0.5;
         };
         // updates the game object every frame
         testObject.prototype.Update = function () {
