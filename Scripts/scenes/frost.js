@@ -109,7 +109,7 @@ var scenes;
             this._obstHouse2s = new Array();
             this._obstHouse2Num = this._obstHouse2X.length;
             for (var count = 0; count < this._obstHouse2Num; count++) {
-                this._obstHouse2s[count] = new objects.ObstCity2(this.assetManager, this._obstHouse2X.shift(), this._obstHouse2Y.shift());
+                this._obstHouse2s[count] = new objects.ObstFrost1(this.assetManager, this._obstHouse2X.shift(), this._obstHouse2Y.shift());
             }
             // obstacle "Car1" that block player's path
             this._obstCar1s = new Array();

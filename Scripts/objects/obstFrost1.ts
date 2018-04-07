@@ -1,17 +1,17 @@
 module objects {
-    export class ObstDesert1 extends objects.GameObject {
+    export class ObstFrost1 extends objects.GameObject {
         //   private instance variables
 
         // public properties
 
         // Constructor
         constructor(assetManager: createjs.LoadQueue, /*obst1: objects.GameObject*/private coorX: number, private coorY: number) {
-            super(assetManager, "desertTree");
+            super(assetManager, "rock");
             // let obstBuilding = new math.Vec2(obst1.x, obst1.y);
             this.x = coorX;
             this.y = coorY;
-            this.scaleX = 0.8;
-            this.scaleY = 0.8;
+            this.scaleX = 1;
+            this.scaleY = 1;
             // this.Start();
         }
 

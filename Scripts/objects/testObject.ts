@@ -16,10 +16,10 @@ module objects {
   
       // Initializes variables and creates new objects
       public Start():void {
-        this.x = 615; //this.x = 30;
-        this.y = 25; //this.y = 380;
-        this.scaleX = 0.5;
-        this.scaleY = 0.5; 
+        this.x = 600; // 615 //this.x = 30;
+        this.y = 30; //25 //this.y = 380;
+        this.scaleX = 1; // 0.5;
+        this.scaleY = 1; // 0.5; 
       }
   
       // updates the game object every frame
