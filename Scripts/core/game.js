@@ -29,7 +29,7 @@
         },
     };
     assetManifest = [
-        { id: "textureAtlas", src: "./Assets/sprites/textureAtlas.png" },
+        { id: "textureAtlas", src: "./Assets/images/tanks/dark-tank-up-transparent.png" },
         { id: "startGameBackground", src: "./Assets/images/milestones/background-start-game.png" },
         { id: "gameOverBackground", src: "./Assets/images/milestones/background-game-over.png" },
         { id: "startButton", src: "./Assets/images/buttons/start-button.png" },
