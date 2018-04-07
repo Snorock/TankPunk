@@ -7,7 +7,7 @@ module objects {
   
       // Constructor
       constructor(assetManager: createjs.LoadQueue) {
-        super(assetManager.getResult("frost"));
+        super(assetManager.getResult("frostBackground"));
         this.Start();
       }
   
