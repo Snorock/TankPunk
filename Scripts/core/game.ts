@@ -46,6 +46,7 @@
     { id: "cityBackground", src: "./Assets/images/levels/city/background-level-1-with-trees.png" },
     { id: "desertBackground", src: "./Assets/images/levels/desert/background-level-2.png" },
     { id: "frostBackground", src: "./Assets/images/levels/frost/background-level-3.png" },
+    { id: "rock", src: "./Assets/images/levels/frost/rock.png" },
     { id: "whiteExit", src: "./Assets/images/exit-white.png" },
     { id: "blackExit", src: "./Assets/images/plane.png" },
     { id: "cityObstHouse1", src: "./Assets/images/metal-crate.png" },
