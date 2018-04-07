@@ -52,14 +52,12 @@
         // TODO: Replace assets below
         { id: "ocean", src: "./Assets/images/ocean.gif" },
         { id: "city", src: "./Assets/images/city1.png" },
-        //{ id: "cityObstCar1", src: "./Assets/images/flamingCarSmall.png" },
         { id: "cityObstHouse2", src: "./Assets/images/Building1Small.png" },
         { id: "cityEnemyWolf", src: "./Assets/images/enemyWolf.png" },
         { id: "cityEnemyCorrupted", src: "./Assets/images/enemyCorrupted.png" },
         { id: "tutorialLevel", src: "./Assets/images/TutorialLevel.png" },
         { id: "desert", src: "./Assets/images/desert.png" },
         { id: "frost", src: "./Assets/images/frost.png" },
-        //{ id: "test", src: "./Assets/images/test.png" },
         { id: "island", src: "./Assets/images/island.png" },
         { id: "cloud", src: "./Assets/images/cloud.png" },
     ];
