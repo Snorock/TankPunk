@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.6.1</string>
         <key>fileName</key>
-        <string>D:/zCentennial/winter2018/Webgaming/TankPunkMap/Assets/sprites/textureAtlas.tps</string>
+        <string>D:/zCentennial/winter2018/Webgaming/TankPunkMap/Assets/sprites/textureAtlasIntro.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -21,9 +21,9 @@
                 <key>maxTextureSize</key>
                 <QSize>
                     <key>width</key>
-                    <int>-1</int>
+                    <int>16384</int>
                     <key>height</key>
-                    <int>-1</int>
+                    <int>16384</int>
                 </QSize>
             </struct>
         </array>
@@ -36,7 +36,7 @@
         <key>dataFormat</key>
         <string>easeljs</string>
         <key>textureFileName</key>
-        <filename>textureAtlas.png</filename>
+        <filename>textureAtlasIntro.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -90,9 +90,9 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>4096</int>
             <key>height</key>
-            <int>2048</int>
+            <int>4096</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -150,7 +150,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>textureAtlas.json</filename>
+                <filename>textureAtlasIntro.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -213,19 +213,17 @@
             <key type="filename">../../../TankAsset/story/intro_pic01_event02_Fading07.png</key>
             <key type="filename">../../../TankAsset/story/intro_pic01_event02_Fading08.png</key>
             <key type="filename">../../../TankAsset/story/intro_pic01_event02_Fading09.png</key>
-            <key type="filename">../../../TankAsset/story/intro_pic02_event02_01Setting.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic02_event02_Setting01.png</key>
             <key type="filename">../../../TankAsset/story/intro_pic02_event03_Setting02.png</key>
             <key type="filename">../../../TankAsset/story/intro_pic02_event03_Setting03.png</key>
             <key type="filename">../../../TankAsset/story/intro_pic02_event03_Setting04.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer01.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer02.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer03.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer04.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer05.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer06.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer07.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer08.png</key>
-            <key type="filename">../../../TankAsset/story/story01_pic02_layer09.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic03_event04_FindTank01.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic03_event04_FindTank02.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic03_event04_FindTank03.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic04_event05_UseTank01.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic04_event05_UseTank02.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic04_event05_UseTank03.png</key>
+            <key type="filename">../../../TankAsset/story/intro_pic04_event05_UseTank04.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -255,15 +253,6 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>../../../TankAsset/story/story01_pic02_layer01.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer02.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer03.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer04.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer05.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer06.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer07.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer08.png</filename>
-            <filename>../../../TankAsset/story/story01_pic02_layer09.png</filename>
             <filename>../images/tanks/dark-tank-up-transparent.png</filename>
             <filename>../images/tanks/dark-tank-up-transparent02.png</filename>
             <filename>../../../TankAsset/story/intro_pic01_event01_Conversation01.png</filename>
@@ -280,10 +269,17 @@
             <filename>../../../TankAsset/story/intro_pic01_event02_Fading07.png</filename>
             <filename>../../../TankAsset/story/intro_pic01_event02_Fading08.png</filename>
             <filename>../../../TankAsset/story/intro_pic01_event02_Fading09.png</filename>
-            <filename>../../../TankAsset/story/intro_pic02_event02_01Setting.png</filename>
+            <filename>../../../TankAsset/story/intro_pic02_event02_Setting01.png</filename>
             <filename>../../../TankAsset/story/intro_pic02_event03_Setting02.png</filename>
             <filename>../../../TankAsset/story/intro_pic02_event03_Setting03.png</filename>
             <filename>../../../TankAsset/story/intro_pic02_event03_Setting04.png</filename>
+            <filename>../../../TankAsset/story/intro_pic03_event04_FindTank01.png</filename>
+            <filename>../../../TankAsset/story/intro_pic03_event04_FindTank02.png</filename>
+            <filename>../../../TankAsset/story/intro_pic03_event04_FindTank03.png</filename>
+            <filename>../../../TankAsset/story/intro_pic04_event05_UseTank01.png</filename>
+            <filename>../../../TankAsset/story/intro_pic04_event05_UseTank02.png</filename>
+            <filename>../../../TankAsset/story/intro_pic04_event05_UseTank03.png</filename>
+            <filename>../../../TankAsset/story/intro_pic04_event05_UseTank04.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

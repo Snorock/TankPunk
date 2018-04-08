@@ -31,12 +31,19 @@ var managers;
                             }
                             break;
                         case "cityEnemyCorrupted":
-                            if (object2.alpha != 0) {
+                            if (object2.alpha != 0 && object1.alpha != 0) {
                                 objects.Game.livesBoard.Lives = 0;
                                 console.log("Collision Corrupted Damage!!!");
                                 // object1.alpha = 0; // make the plane object invisible
                                 // managers.Game.tank.tankFlash.alpha = 1;
                                 // managers.Game.tank.tankFlash.gotoAndPlay("planeflash");
+                                // if (object1.alpha != 0) {
+                                //         // objects.Game.livesBoard.Lives = 0;
+                                //         console.log("Collision Corrupted Damage!!!");
+                                //         object1.alpha = 0; // make the plane object invisible
+                                //         managers.Game.tank.tankFlash.alpha = 1;
+                                //         managers.Game.tank.tankFlash.gotoAndPlay("planeflash");
+                                // }
                             }
                             // else if (object1.alpha != 0) {
                             //     // objects.Game.livesBoard.Lives = 0;

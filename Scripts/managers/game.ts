@@ -6,7 +6,7 @@ module managers {
         public static currentSceneObject: objects.Scene;
         public static keyboardManager: managers.Keyboard;
         public static HighScore: number = 0;
-        public static textureAtlas: createjs.SpriteSheet;
+        public static textureAtlasIntro: createjs.SpriteSheet;
         public static tank: objects.Tank;
     }
 }

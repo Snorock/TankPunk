@@ -13,28 +13,107 @@
   let currentScene: objects.Scene;
   let currentState: number;
   let keyboardManager: managers.Keyboard;
-  let textureAtlasData: any;
-  let textureAtlas: createjs.SpriteSheet;
+  
+  // Story Atlas Begin
+  let textureAtlasDataIntro: any;
+  let textureAtlasIntro: createjs.SpriteSheet;
 
-  textureAtlasData = {
+  let textureAtlasDataStory01: any;
+  let textureAtlasStory01: createjs.SpriteSheet;
+
+  let textureAtlasDataStory02: any;
+  let textureAtlasStory02: createjs.SpriteSheet;
+
+  let textureAtlasDataStory03: any;
+  let textureAtlasStory03: createjs.SpriteSheet;
+
+  let textureAtlasDataStory04: any;
+  let textureAtlasStory04: createjs.SpriteSheet;
+  // Story Atlas End
+
+  textureAtlasDataIntro = {
     "images": [
       ""
     ],
 
     "frames": [
-      [2, 2, 65, 65, 0, 0, 0],
-      [2, 69, 65, 65, 0, 0, 0]
-    ],
+      [2, 2, 43, 47, 0, 0, 0],
+      [47, 2, 42, 46, 0, 0, 0],
+      [91, 2, 640, 480, 0, 0, 0],
+      [733, 2, 640, 480, 0, 0, 0],
+      [1375, 2, 640, 480, 0, 0, 0],
+      [2017, 2, 640, 480, 0, 0, 0],
+      [2659, 2, 640, 480, 0, 0, 0],
+      [3301, 2, 640, 480, 0, 0, 0],
+      [3943, 2, 640, 480, 0, 0, 0],
+      [4585, 2, 640, 480, 0, 0, 0],
+      [5227, 2, 640, 480, 0, 0, 0],
+      [5869, 2, 640, 480, 0, 0, 0],
+      [6511, 2, 640, 480, 0, 0, 0],
+      [7153, 2, 640, 480, 0, 0, 0],
+      [7795, 2, 640, 480, 0, 0, 0],
+      [8437, 2, 640, 480, 0, 0, 0],
+      [9079, 2, 640, 480, 0, 0, 0],
+      [9721, 2, 640, 480, 0, 0, 0],
+      [10363, 2, 640, 480, 0, 0, 0],
+      [11005, 2, 640, 480, 0, 0, 0],
+      [11647, 2, 640, 480, 0, 0, 0],
+      [12289, 2, 640, 480, 0, 0, 0],
+      [12931, 2, 640, 480, 0, 0, 0],
+      [13573, 2, 640, 480, 0, 0, 0],
+      [14215, 2, 640, 480, 0, 0, 0],
+      [14857, 2, 640, 480, 0, 0, 0],
+      [15499, 2, 640, 480, 0, 0, 0]
+  ],
 
     "animations": {
       "tankflash": {
         "frames": [0, 1, 0, 1, 0, 1, 0, 1],
         "speed": 0.08
-      }
+      },
+      "introstory": {
+        "frames": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 
+                   3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 
+                   4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+                   5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+                   6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 
+                   7, 8, 9, 10,11,12,13,14,15,
+                   16,16,16,16,16,16,16,16,
+                   16,16,16,16,16,16,16,16,
+                   16,16,16,16,16,16,16,16,
+                   17,18,19,
+                   20,20,20,20,20,20,20,20,20,20,20,
+                   20,20,20,20,20,20,20,20,20,20,20,
+                   20,20,20,20,20,20,20,20,20,20,20,
+                   20,20,20,20,20,20,20,20,20,20,20,
+                   21,22,
+                   23,23,23,23,23,23,23,23,23,23,23,23,23,23,
+                   23,23,23,23,23,23,23,23,23,23,23,23,23,23,
+                   23,23,23,23,23,23,23,23,23,23,23,23,23,23,
+                   23,23,23,23,23,23,23,23,23,23,23,23,23,23,
+                   24,24,24,24,24,24,24,24,24,24,24,24,24,24,
+                   24,24,24,24,24,24,24,24,24,24,24,24,24,24,
+                   24,24,24,24,24,24,24,24,24,24,24,24,24,24,
+                   24,24,24,24,24,24,24,24,24,24,24,24,24,24,
+                   25,26],
+        "speed": 0.05
+      },
     },
   }
 
   assetManifest = [
+
+    // texture atlas
+    { id: "textureAtlasIntro", src: "./Assets/sprites/textureAtlasIntro.png" },
+    { id: "textureAtlasStory01", src: "./Assets/sprites/textureAtlasStory01.png" },
+    { id: "textureAtlasStory02", src: "./Assets/sprites/textureAtlasStory02.png" },
+    { id: "textureAtlasStory03", src: "./Assets/sprites/textureAtlasStory03.png" },
+    { id: "textureAtlasStory04", src: "./Assets/sprites/textureAtlasStory04.png" },
+
+
+
+
+
     { id: "textureAtlas", src: "./Assets/images/tanks/dark-tank-up-transparent.png" },
     { id: "startGameBackground", src: "./Assets/images/milestones/background-start-game.png" },
     { id: "gameOverBackground", src: "./Assets/images/milestones/background-game-over.png" },
@@ -89,9 +168,12 @@
 
   function Start(): void {
     console.log("Starting Application...")
-    textureAtlasData.images = [assetManager.getResult("textureAtlas")];
 
-    textureAtlas = new createjs.SpriteSheet(textureAtlasData);
+    // Story Atlas
+    textureAtlasDataIntro.images = [assetManager.getResult("textureAtlasIntro")];
+    textureAtlasIntro = new createjs.SpriteSheet(textureAtlasDataIntro);
+
+    // Story Atlas End
 
     stage = new createjs.Stage(canvas);
     stage.enableMouseOver(20); // turn this on for buttons
@@ -105,8 +187,10 @@
     keyboardManager = new managers.Keyboard();
     objects.Game.keyboardManager = keyboardManager;
     managers.Game.assetManager = assetManager;
-    managers.Game.textureAtlas = textureAtlas;
 
+    // Story Atlas
+    managers.Game.textureAtlasIntro = textureAtlasIntro;
+    // Story Atlas End
     Main();
   }
 
@@ -129,18 +213,33 @@
       case config.Scene.START:
         currentScene = new scenes.StartScene(assetManager);
         break;
+      case config.Scene.INTRO:
+        currentScene = new scenes.Story00Scene(assetManager);
+        break;
       case config.Scene.PLAY:
         currentScene = new scenes.PlayScene(assetManager);
+        break;
+      case config.Scene.STORY01:
+        currentScene = new scenes.Story01Scene(assetManager);
         break;
       case config.Scene.CITY:
         currentScene = new scenes.CityScene(assetManager);
         break;
+      // case config.Scene.PLAY:
+      // currentScene = new scenes.PlayScene(assetManager);
+      // break;
       case config.Scene.DESERT:
         currentScene = new scenes.DesertScene(assetManager);
         break;
+      // case config.Scene.PLAY:
+      // currentScene = new scenes.PlayScene(assetManager);
+      // break;
       case config.Scene.FROST:
         currentScene = new scenes.FrostScene(assetManager);
         break;
+      // case config.Scene.PLAY:
+      // currentScene = new scenes.PlayScene(assetManager);
+      // break;
       case config.Scene.OVER:
         currentScene = new scenes.OverScene(assetManager);
         break;

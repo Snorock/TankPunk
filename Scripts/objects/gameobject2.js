@@ -16,7 +16,7 @@ var objects;
         // public B: math.Vec2; //right bottom corner
         // constructors
         function GameObject2(imageString) {
-            var _this = _super.call(this, managers.Game.textureAtlas, imageString) || this;
+            var _this = _super.call(this, managers.Game.textureAtlasIntro, imageString) || this;
             _this.name = imageString;
             _this._initialize();
             return _this;

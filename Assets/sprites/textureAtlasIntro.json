@@ -1,0 +1,72 @@
+{
+
+"images": [
+    "textureAtlasIntro.png"
+],
+
+"frames": [
+    [2, 2, 43, 47, 0, 0, 0],
+    [47, 2, 42, 46, 0, 0, 0],
+    [91, 2, 640, 480, 0, 0, 0],
+    [733, 2, 640, 480, 0, 0, 0],
+    [1375, 2, 640, 480, 0, 0, 0],
+    [2017, 2, 640, 480, 0, 0, 0],
+    [2659, 2, 640, 480, 0, 0, 0],
+    [3301, 2, 640, 480, 0, 0, 0],
+    [3943, 2, 640, 480, 0, 0, 0],
+    [4585, 2, 640, 480, 0, 0, 0],
+    [5227, 2, 640, 480, 0, 0, 0],
+    [5869, 2, 640, 480, 0, 0, 0],
+    [6511, 2, 640, 480, 0, 0, 0],
+    [7153, 2, 640, 480, 0, 0, 0],
+    [7795, 2, 640, 480, 0, 0, 0],
+    [8437, 2, 640, 480, 0, 0, 0],
+    [9079, 2, 640, 480, 0, 0, 0],
+    [9721, 2, 640, 480, 0, 0, 0],
+    [10363, 2, 640, 480, 0, 0, 0],
+    [11005, 2, 640, 480, 0, 0, 0],
+    [11647, 2, 640, 480, 0, 0, 0],
+    [12289, 2, 640, 480, 0, 0, 0],
+    [12931, 2, 640, 480, 0, 0, 0],
+    [13573, 2, 640, 480, 0, 0, 0],
+    [14215, 2, 640, 480, 0, 0, 0],
+    [14857, 2, 640, 480, 0, 0, 0],
+    [15499, 2, 640, 480, 0, 0, 0]
+],
+
+"animations": {
+    "dark-tank-up-transparent": { "frames": [0] },
+    "dark-tank-up-transparent02": { "frames": [1] },
+    "intro_pic01_event01_Conversation01": { "frames": [2] },
+    "intro_pic01_event01_Conversation02": { "frames": [3] },
+    "intro_pic01_event01_Conversation03": { "frames": [4] },
+    "intro_pic01_event01_Conversation04": { "frames": [5] },
+    "intro_pic01_event01_Conversation05": { "frames": [6] },
+    "intro_pic01_event02_Fading01": { "frames": [7] },
+    "intro_pic01_event02_Fading02": { "frames": [8] },
+    "intro_pic01_event02_Fading03": { "frames": [9] },
+    "intro_pic01_event02_Fading04": { "frames": [10] },
+    "intro_pic01_event02_Fading05": { "frames": [11] },
+    "intro_pic01_event02_Fading06": { "frames": [12] },
+    "intro_pic01_event02_Fading07": { "frames": [13] },
+    "intro_pic01_event02_Fading08": { "frames": [14] },
+    "intro_pic01_event02_Fading09": { "frames": [15] },
+    "intro_pic02_event02_Setting01": { "frames": [16] },
+    "intro_pic02_event03_Setting02": { "frames": [17] },
+    "intro_pic02_event03_Setting03": { "frames": [18] },
+    "intro_pic02_event03_Setting04": { "frames": [19] },
+    "intro_pic03_event04_FindTank01": { "frames": [20] },
+    "intro_pic03_event04_FindTank02": { "frames": [21] },
+    "intro_pic03_event04_FindTank03": { "frames": [22] },
+    "intro_pic04_event05_UseTank01": { "frames": [23] },
+    "intro_pic04_event05_UseTank02": { "frames": [24] },
+    "intro_pic04_event05_UseTank03": { "frames": [25] },
+    "intro_pic04_event05_UseTank04": { "frames": [26] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:2b49a96da8ae1df6ea3569c52988b2c8:96742f4b7e30a7bfef3d1f19427d8796:03e5019807efd760e719738b37f9ec5d$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

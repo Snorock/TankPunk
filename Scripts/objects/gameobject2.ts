@@ -16,7 +16,7 @@ module objects {
   
       // constructors
       constructor(imageString:string) {
-        super(managers.Game.textureAtlas, imageString);
+        super(managers.Game.textureAtlasIntro, imageString);
         this.name = imageString;
         this._initialize();
     }

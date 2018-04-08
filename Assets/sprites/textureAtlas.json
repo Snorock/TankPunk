@@ -5,19 +5,35 @@
 ],
 
 "frames": [
-    [2, 2, 65, 65, 0, 0, 0],
-    [2, 69, 65, 65, 0, 0, 0]
+    [2, 2, 43, 47, 0, 0, 0],
+    [47, 2, 42, 46, 0, 0, 0],
+    [91, 2, 640, 480, 0, 0, 0],
+    [733, 2, 640, 480, 0, 0, 0],
+    [1375, 2, 640, 480, 0, 0, 0],
+    [2, 484, 640, 480, 0, 0, 0],
+    [644, 484, 640, 480, 0, 0, 0],
+    [1286, 484, 640, 480, 0, 0, 0],
+    [2, 966, 640, 480, 0, 0, 0],
+    [644, 966, 640, 480, 0, 0, 0],
+    [1286, 966, 640, 480, 0, 0, 0]
 ],
 
 "animations": {
-    "tankflash": { 
-        "frames": [0, 1, 0, 1, 0, 1, 0, 1],
-        "speed": 0.08
-    }
+    "dark-tank-up-transparent": { "frames": [0] },
+    "dark-tank-up-transparent02": { "frames": [1] },
+    "story01_pic02_layer01": { "frames": [2] },
+    "story01_pic02_layer02": { "frames": [3] },
+    "story01_pic02_layer03": { "frames": [4] },
+    "story01_pic02_layer04": { "frames": [5] },
+    "story01_pic02_layer05": { "frames": [6] },
+    "story01_pic02_layer06": { "frames": [7] },
+    "story01_pic02_layer07": { "frames": [8] },
+    "story01_pic02_layer08": { "frames": [9] },
+    "story01_pic02_layer09": { "frames": [10] }
 },
 
 "texturepacker": [
-        "SmartUpdateHash: $TexturePacker:SmartUpdate:ed77b4347d993f315529085e649e0888:edcd485cafdac011308d05a03a295a5e:2b5604bc88faefd55ddac16e9bce1532$",
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:8226eeaf58d8c5822f42acd1338ebe95:12db0363cb0f9ca531f2357b555e3d6b:2b5604bc88faefd55ddac16e9bce1532$",
         "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
 ]
 
