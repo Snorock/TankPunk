@@ -20,7 +20,7 @@ module scenes {
       // Public Methods
       // Initialize Game Variables and objects
       public Start(): void {
-        this._story = new objects.Story01Obj();
+        this._story = new objects.Story00Obj();
         this._story.on("animationend", this._animationEnded.bind(this), false);
         this.Main();
       }

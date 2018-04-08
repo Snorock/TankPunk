@@ -64,7 +64,7 @@
       [14215, 2, 640, 480, 0, 0, 0],
       [14857, 2, 640, 480, 0, 0, 0],
       [15499, 2, 640, 480, 0, 0, 0]
-  ],
+    ],
 
     "animations": {
       "tankflash": {
@@ -96,6 +96,31 @@
                    24,24,24,24,24,24,24,24,24,24,24,24,24,24,
                    24,24,24,24,24,24,24,24,24,24,24,24,24,24,
                    25,26],
+        "speed": 0.05
+      },
+    },
+  }
+
+  textureAtlasDataStory01 = {
+    "images": [
+      ""
+    ],
+
+    "frames": [
+      [1, 1, 640, 480, 0, 0, 0],
+      [643, 1, 640, 480, 0, 0, 0],
+      [1285, 1, 640, 480, 0, 0, 0],
+      [1, 483, 640, 480, 0, 0, 0],
+      [643, 483, 640, 480, 0, 0, 0],
+      [643, 483, 640, 480, 0, 0, 0]
+    ],
+
+    "animations": {
+      "story01": { 
+        "frames": [0, 0, 0, 0, 0, 0, 0,
+                   1, 2,
+                   3, 3, 3, 3, 3, 3, 3,
+                   4, 5],
         "speed": 0.05
       },
     },
@@ -173,6 +198,10 @@
     textureAtlasDataIntro.images = [assetManager.getResult("textureAtlasIntro")];
     textureAtlasIntro = new createjs.SpriteSheet(textureAtlasDataIntro);
 
+    textureAtlasDataStory01.images = [assetManager.getResult("textureAtlasStory01")];
+    textureAtlasStory01 = new createjs.SpriteSheet(textureAtlasDataStory01);
+
+
     // Story Atlas End
 
     stage = new createjs.Stage(canvas);
@@ -190,6 +219,7 @@
 
     // Story Atlas
     managers.Game.textureAtlasIntro = textureAtlasIntro;
+    managers.Game.textureAtlasStory01 = textureAtlasStory01;
     // Story Atlas End
     Main();
   }

@@ -16,7 +16,7 @@ var objects;
         // public properties
         // constructors
         function Story01Obj() {
-            var _this = _super.call(this, "introstory") || this;
+            var _this = _super.call(this, "story01") || this;
             _this.Start();
             return _this;
         }
@@ -27,7 +27,7 @@ var objects;
         Story01Obj.prototype.Update = function () {
         };
         return Story01Obj;
-    }(objects.GameObject2));
+    }(objects.GameObject3s1));
     objects.Story01Obj = Story01Obj;
 })(objects || (objects = {}));
 //# sourceMappingURL=story01Obj.js.map

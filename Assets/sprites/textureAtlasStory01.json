@@ -1,0 +1,30 @@
+{
+
+"images": [
+    "textureAtlasStory01.png"
+],
+
+"frames": [
+    [1, 1, 640, 480, 0, 0, 0],
+    [643, 1, 640, 480, 0, 0, 0],
+    [1285, 1, 640, 480, 0, 0, 0],
+    [1, 483, 640, 480, 0, 0, 0],
+    [643, 483, 640, 480, 0, 0, 0],
+    [643, 483, 640, 480, 0, 0, 0]
+],
+
+"animations": {
+    "story01_pic01_event01_Logo01": { "frames": [0] },
+    "story01_pic01_event01_Logo02": { "frames": [1] },
+    "story01_pic01_event01_Logo03": { "frames": [2] },
+    "story01_pic02_event02_Decision01": { "frames": [3] },
+    "story01_pic02_event02_Decision02": { "frames": [4] },
+    "story01_pic02_event02_Decision03": { "frames": [5] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:26ca7c9d03ac3f1c6b60cf06432ebbec:56f4f4209c79804f76229afb359cbf3b:49d6c772c1f03c2da6f805ec1e44b0b1$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

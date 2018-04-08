@@ -90,6 +90,28 @@
             },
         },
     };
+    textureAtlasDataStory01 = {
+        "images": [
+            ""
+        ],
+        "frames": [
+            [1, 1, 640, 480, 0, 0, 0],
+            [643, 1, 640, 480, 0, 0, 0],
+            [1285, 1, 640, 480, 0, 0, 0],
+            [1, 483, 640, 480, 0, 0, 0],
+            [643, 483, 640, 480, 0, 0, 0],
+            [643, 483, 640, 480, 0, 0, 0]
+        ],
+        "animations": {
+            "story01": {
+                "frames": [0, 0, 0, 0, 0, 0, 0,
+                    1, 2,
+                    3, 3, 3, 3, 3, 3, 3,
+                    4, 5],
+                "speed": 0.05
+            },
+        },
+    };
     assetManifest = [
         // texture atlas
         { id: "textureAtlasIntro", src: "./Assets/sprites/textureAtlasIntro.png" },
@@ -152,6 +174,8 @@
         // Story Atlas
         textureAtlasDataIntro.images = [assetManager.getResult("textureAtlasIntro")];
         textureAtlasIntro = new createjs.SpriteSheet(textureAtlasDataIntro);
+        textureAtlasDataStory01.images = [assetManager.getResult("textureAtlasStory01")];
+        textureAtlasStory01 = new createjs.SpriteSheet(textureAtlasDataStory01);
         // Story Atlas End
         stage = new createjs.Stage(canvas);
         stage.enableMouseOver(20); // turn this on for buttons
@@ -165,6 +189,7 @@
         managers.Game.assetManager = assetManager;
         // Story Atlas
         managers.Game.textureAtlasIntro = textureAtlasIntro;
+        managers.Game.textureAtlasStory01 = textureAtlasStory01;
         // Story Atlas End
         Main();
     }

@@ -1,12 +1,12 @@
 module objects {
-    export class Story01Obj extends objects.GameObject2 {
+    export class Story01Obj extends objects.GameObject3s1 {
         // private instance variables
 
         // public properties
 
         // constructors
         constructor() {
-            super("introstory")
+            super("story01")
             this.Start();
         }
 
