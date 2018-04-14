@@ -46,7 +46,7 @@ module scenes {
     private _obstHouse2X: number[] = [/*First Part is horizontal*/
                                         10,   46, 128, 168, 248, // First line, include top 
                                         140, 180, 430,// Second Line
-                                        10,   50,  90, 130, 170, 210, 310, 350, 390, 430, 520, // Third Line
+                                        10,   50,  90, 130, 170, 210, 350, 390, 520, // Third Line
                                         80,// Fourth Line
                                         // Second part is vertical
                                         320, 320, 320, 320,// Vertical First Line
@@ -55,7 +55,7 @@ module scenes {
     private _obstHouse2Y: number[] = [// First part is horizontal
                                         75,  75,  75,   75,  15, // First line, include top
                                         155, 155, 155,// Second Line
-                                        280, 280, 280, 280, 280, 280, 265, 265, 265, 265, 265, // Thrid Line
+                                        280, 280, 280, 280, 280, 280, 265, 265, 265, // Thrid Line
                                         395, // Fourth Line
                                         // Second part is vertical
                                         345, 385, 425, 465,// Vertical First Line
@@ -64,7 +64,7 @@ module scenes {
 
     private _obstCar1X: number[] = [/*First Part is horizontal*/
                                       200, 270, 340, 480, 610,// First Line
-                                      310, 520,// Second Line
+                                      330, 520,// Second Line
                                       100,// Third Line
                                     /*Second Part is vertical*/
                                       480, 480, 480, 480, 490, 
@@ -391,7 +391,7 @@ module scenes {
 
       // Plane that pick up player to next level
       if(this._testObject.isColliding == true){
-        objects.Game.currentScene = config.Scene.DESERT;
+        objects.Game.currentScene = config.Scene.OVER;
       }
 
       this._bullets.forEach(bullet => {

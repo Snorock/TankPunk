@@ -23,7 +23,7 @@ var scenes;
             _this._obstHouse2X = [
                 10, 46, 128, 168, 248,
                 140, 180, 430,
-                10, 50, 90, 130, 170, 210, 310, 350, 390, 430, 520,
+                10, 50, 90, 130, 170, 210, 350, 390, 520,
                 80,
                 // Second part is vertical
                 320, 320, 320, 320,
@@ -32,7 +32,7 @@ var scenes;
             _this._obstHouse2Y = [
                 75, 75, 75, 75, 15,
                 155, 155, 155,
-                280, 280, 280, 280, 280, 280, 265, 265, 265, 265, 265,
+                280, 280, 280, 280, 280, 280, 265, 265, 265,
                 395,
                 // Second part is vertical
                 345, 385, 425, 465,
@@ -40,7 +40,7 @@ var scenes;
             ];
             _this._obstCar1X = [
                 200, 270, 340, 480, 610,
-                310, 520,
+                330, 520,
                 100,
                 /*Second Part is vertical*/
                 480, 480, 480, 480, 490,
@@ -316,7 +316,7 @@ var scenes;
             }
             // Plane that pick up player to next level
             if (this._testObject.isColliding == true) {
-                objects.Game.currentScene = config.Scene.DESERT;
+                objects.Game.currentScene = config.Scene.OVER;
             }
             this._bullets.forEach(function (bullet) {
                 bullet.Update();

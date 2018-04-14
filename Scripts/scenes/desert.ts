@@ -46,7 +46,7 @@ module scenes {
     private _obstHouse2X: number[] = [/*First Part is horizontal*/
                                         10,   46, 128, 168, 248, // First line, include top 
                                         140, 180, 430,// Second Line
-                                        10,   50,  90, 130, 170, 210, 310, 350, 390, 430, 520, // Third Line
+                                        10,   50,  90, 130, 170, 210, 310, 350, 390, 410, 520, // Third Line
                                         80,// Fourth Line
                                         // Second part is vertical
                                         320, 320, 320, 320,// Vertical First Line
@@ -391,7 +391,7 @@ module scenes {
 
       // Plane that pick up player to next level
       if(this._testObject.isColliding == true){
-        objects.Game.currentScene = config.Scene.DESERT;
+        objects.Game.currentScene = config.Scene.FROST;
       }
 
       this._bullets.forEach(bullet => {
