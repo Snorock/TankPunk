@@ -12,9 +12,10 @@ module scenes {
       }
   
       // Private Mathods
-  
+
       private _animationEnded(): void {
-        objects.Game.currentScene = config.Scene.DESERT;
+        objects.Game.currentScene = config.Scene.STORY02p2;
+        console.log(managers.Game.currentScene);
       }
   
       // Public Methods
@@ -35,7 +36,6 @@ module scenes {
       public Main(): void {
         // add transition to the scene
         this.addChild(this._story);
-        
       }
     }
   }

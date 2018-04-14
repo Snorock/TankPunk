@@ -10,39 +10,38 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var Story02Scene = /** @class */ (function (_super) {
-        __extends(Story02Scene, _super);
+    var Story02p2Scene = /** @class */ (function (_super) {
+        __extends(Story02p2Scene, _super);
         // Public Properties
         // Constructor
-        function Story02Scene(assetManager) {
+        function Story02p2Scene(assetManager) {
             var _this = _super.call(this, assetManager) || this;
             _this.Start();
             return _this;
         }
         // Private Mathods
-        Story02Scene.prototype._animationEnded = function () {
-            objects.Game.currentScene = config.Scene.STORY02p2;
-            console.log(managers.Game.currentScene);
+        Story02p2Scene.prototype._animationEnded = function () {
+            objects.Game.currentScene = config.Scene.DESERT;
         };
         // Public Methods
         // Initialize Game Variables and objects
-        Story02Scene.prototype.Start = function () {
-            this._story = new objects.Story02Obj();
+        Story02p2Scene.prototype.Start = function () {
+            this._story = new objects.Story02Obj02();
             this._story.on("animationend", this._animationEnded.bind(this), false);
             this.Main();
         };
-        Story02Scene.prototype.Update = function () {
+        Story02p2Scene.prototype.Update = function () {
             this._story.x = 320;
             this._story.y = 240;
             this._story.Update();
         };
         // This is where the fun happens
-        Story02Scene.prototype.Main = function () {
+        Story02p2Scene.prototype.Main = function () {
             // add transition to the scene
             this.addChild(this._story);
         };
-        return Story02Scene;
+        return Story02p2Scene;
     }(objects.Scene));
-    scenes.Story02Scene = Story02Scene;
+    scenes.Story02p2Scene = Story02p2Scene;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=story02.js.map
+//# sourceMappingURL=story02p2.js.map

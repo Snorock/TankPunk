@@ -15,6 +15,7 @@
 /// <reference path="../../Scripts/objects/gameobject2.ts"/>
 /// <reference path="../../Scripts/objects/gameobject3s1.ts"/>
 /// <reference path="../../Scripts/objects/gameobject4cd01.ts"/>
+/// <reference path="../../Scripts/objects/gameobject4cd02.ts"/>
 
 /// <reference path="../../Scripts/managers/keyboard.ts"/>
 /// <reference path="../../Scripts/managers/livesboard.ts"/>
@@ -50,6 +51,7 @@
 /// <reference path="../../Scripts/scenes/frost.ts"/>
 /// <reference path="../../Scripts/scenes/story03.ts"/>
 /// <reference path="../../Scripts/scenes/desert.ts"/>
+/// <reference path="../../Scripts/scenes/story02p2.ts"/>
 /// <reference path="../../Scripts/scenes/story02.ts"/>
 /// <reference path="../../Scripts/scenes/city.ts"/>
 /// <reference path="../../Scripts/scenes/story01.ts"/>

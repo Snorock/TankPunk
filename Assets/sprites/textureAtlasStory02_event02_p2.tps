@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.6.1</string>
         <key>fileName</key>
-        <string>D:/zCentennial/winter2018/Webgaming/TankPunkMap/Assets/sprites/textureAtlasStory01.tps</string>
+        <string>D:/zCentennial/winter2018/Webgaming/TankPunkMap/Assets/sprites/textureAtlasStory02_event02_p2.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -36,7 +36,7 @@
         <key>dataFormat</key>
         <string>easeljs</string>
         <key>textureFileName</key>
-        <filename>textureAtlasStory01.png</filename>
+        <filename>textureAtlasStory02_event02_p2.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -150,7 +150,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>textureAtlasStory01.json</filename>
+                <filename>textureAtlasStory02_event02_p2.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -187,7 +187,7 @@
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">None</enum>
+            <enum type="SpriteSettings::TrimMode">Trim</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -199,12 +199,13 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../../../TankAsset/story/tutorial-city/story01_pic01_event01_Logo01.png</key>
-            <key type="filename">../../../TankAsset/story/tutorial-city/story01_pic01_event01_Logo02.png</key>
-            <key type="filename">../../../TankAsset/story/tutorial-city/story01_pic01_event01_Logo03.png</key>
-            <key type="filename">../../../TankAsset/story/tutorial-city/story01_pic02_event02_Decision01.png</key>
-            <key type="filename">../../../TankAsset/story/tutorial-city/story01_pic02_event02_Decision02.png</key>
-            <key type="filename">../../../TankAsset/story/tutorial-city/story01_pic02_event02_Decision03.png</key>
+            <key type="filename">../../../TankAsset/story/city-desert/story02_pic02_event02_Escape01.png</key>
+            <key type="filename">../../../TankAsset/story/city-desert/story02_pic03_event03_Confused01.png</key>
+            <key type="filename">../../../TankAsset/story/city-desert/story02_pic04_event04_Storm01.png</key>
+            <key type="filename">../../../TankAsset/story/city-desert/story02_pic05_event05_Crash01.png</key>
+            <key type="filename">../../../TankAsset/story/city-desert/story02_pic06_event06_Saver01.png</key>
+            <key type="filename">../../../TankAsset/story/city-desert/story02_pic06_event06_Saver02.png</key>
+            <key type="filename">../../../TankAsset/story/city-desert/story02_pic06_event06_Saver03.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -220,12 +221,13 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>../../../TankAsset/story/tutorial-city/story01_pic02_event02_Decision01.png</filename>
-            <filename>../../../TankAsset/story/tutorial-city/story01_pic02_event02_Decision02.png</filename>
-            <filename>../../../TankAsset/story/tutorial-city/story01_pic02_event02_Decision03.png</filename>
-            <filename>../../../TankAsset/story/tutorial-city/story01_pic01_event01_Logo01.png</filename>
-            <filename>../../../TankAsset/story/tutorial-city/story01_pic01_event01_Logo02.png</filename>
-            <filename>../../../TankAsset/story/tutorial-city/story01_pic01_event01_Logo03.png</filename>
+            <filename>../../../TankAsset/story/city-desert/story02_pic02_event02_Escape01.png</filename>
+            <filename>../../../TankAsset/story/city-desert/story02_pic03_event03_Confused01.png</filename>
+            <filename>../../../TankAsset/story/city-desert/story02_pic04_event04_Storm01.png</filename>
+            <filename>../../../TankAsset/story/city-desert/story02_pic05_event05_Crash01.png</filename>
+            <filename>../../../TankAsset/story/city-desert/story02_pic06_event06_Saver01.png</filename>
+            <filename>../../../TankAsset/story/city-desert/story02_pic06_event06_Saver02.png</filename>
+            <filename>../../../TankAsset/story/city-desert/story02_pic06_event06_Saver03.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

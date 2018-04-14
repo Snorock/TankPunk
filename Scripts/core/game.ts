@@ -195,15 +195,52 @@
     "animations": {
       "story02p1": {
         "frames": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-                   11,12,13,14,15,16,17,18,19,20,21,
-                   22,23,24,25,26,27,28,29,30,31,32,
-                   33,34,35,36,37,38,39,40,41,42,43,
-                   44,45,46,47],
+          11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+          22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
+          33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43,
+          44, 45, 46, 47],
+        next: false,
         "speed": 0.25
       },
     },
   }
 
+  textureAtlasDataStory02p2 = {
+    "images": [
+      ""
+    ],
+
+    "frames": [
+      [1, 1, 640, 480, 0, 0, 0],
+      [1, 483, 640, 480, 0, 0, 0],
+      [1, 965, 640, 480, 0, 0, 0],
+      [1, 1447, 640, 480, 0, 0, 0],
+      [1, 1929, 640, 480, 0, 0, 0],
+      [1, 2411, 640, 480, 0, 0, 0],
+      [1, 2893, 640, 480, 0, 0, 0]
+    ],
+
+    "animations": {
+      "story02p2": {
+        "frames": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+          1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+          2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+          2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+          3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+          4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+          4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+          4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+          4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+          5, 6,
+
+        ],
+        "speed": 0.05
+      },
+    },
+  }
 
   assetManifest = [
 
@@ -286,7 +323,8 @@
     textureAtlasDataStory02p1.images = [assetManager.getResult("textureAtlasStory02p1")];
     textureAtlasStory02p1 = new createjs.SpriteSheet(textureAtlasDataStory02p1);
 
-
+    textureAtlasDataStory02p2.images = [assetManager.getResult("textureAtlasStory02p2")];
+    textureAtlasStory02p2 = new createjs.SpriteSheet(textureAtlasDataStory02p2);
     // Story Atlas End
 
     stage = new createjs.Stage(canvas);
@@ -295,7 +333,7 @@
     createjs.Ticker.on("tick", Update);
 
     objects.Game.stage = stage;
-    objects.Game.currentScene = config.Scene.START;
+    objects.Game.currentScene = config.Scene.STORY02;
     currentState = config.Scene.START;
 
     keyboardManager = new managers.Keyboard();
@@ -306,6 +344,7 @@
     managers.Game.textureAtlasIntro = textureAtlasIntro;
     managers.Game.textureAtlasStory01 = textureAtlasStory01;
     managers.Game.textureAtlasStory02p1 = textureAtlasStory02p1;
+    managers.Game.textureAtlasStory02p2 = textureAtlasStory02p2;
     // Story Atlas End
     Main();
   }
@@ -343,6 +382,9 @@
         break;
       case config.Scene.STORY02:
         currentScene = new scenes.Story02Scene(assetManager);
+        break;
+      case config.Scene.STORY02p2:
+        currentScene = new scenes.Story02p2Scene(assetManager);
         break;
       case config.Scene.DESERT:
         currentScene = new scenes.DesertScene(assetManager);

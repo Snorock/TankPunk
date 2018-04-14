@@ -6,6 +6,7 @@ module config {
     STORY01,
     CITY,
     STORY02,
+    STORY02p2,
     DESERT,
     STORY03,
     FROST,

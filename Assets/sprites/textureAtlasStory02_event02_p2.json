@@ -1,0 +1,32 @@
+{
+
+"images": [
+    "textureAtlasStory02_event02_p2.png"
+],
+
+"frames": [
+    [1, 1, 640, 480, 0, 0, 0],
+    [1, 483, 640, 480, 0, 0, 0],
+    [1, 965, 640, 480, 0, 0, 0],
+    [1, 1447, 640, 480, 0, 0, 0],
+    [1, 1929, 640, 480, 0, 0, 0],
+    [1, 2411, 640, 480, 0, 0, 0],
+    [1, 2893, 640, 480, 0, 0, 0]
+],
+
+"animations": {
+    "story02_pic02_event02_Escape01": { "frames": [0] },
+    "story02_pic03_event03_Confused01": { "frames": [1] },
+    "story02_pic04_event04_Storm01": { "frames": [2] },
+    "story02_pic05_event05_Crash01": { "frames": [3] },
+    "story02_pic06_event06_Saver01": { "frames": [4] },
+    "story02_pic06_event06_Saver02": { "frames": [5] },
+    "story02_pic06_event06_Saver03": { "frames": [6] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:4f1a5aa5510b95f9ba27ac753e387f95:4b94868cff57fe68c24954d244281b8c:09fd672bf0d8256fd72cb2d9aba38933$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}
