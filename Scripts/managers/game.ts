@@ -8,6 +8,7 @@ module managers {
         public static HighScore: number = 0;
         public static textureAtlasIntro: createjs.SpriteSheet;
         public static textureAtlasStory01: createjs.SpriteSheet;
+        public static textureAtlasStory02p1: createjs.SpriteSheet;
         public static tank: objects.Tank;
     }
 }

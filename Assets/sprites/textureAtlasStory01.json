@@ -8,9 +8,9 @@
     [1, 1, 640, 480, 0, 0, 0],
     [643, 1, 640, 480, 0, 0, 0],
     [1285, 1, 640, 480, 0, 0, 0],
-    [1, 483, 640, 480, 0, 0, 0],
-    [643, 483, 640, 480, 0, 0, 0],
-    [643, 483, 640, 480, 0, 0, 0]
+    [1927, 1, 640, 480, 0, 0, 0],
+    [2569, 1, 640, 480, 0, 0, 0],
+    [3211, 1, 640, 480, 0, 0, 0]
 ],
 
 "animations": {
@@ -23,7 +23,7 @@
 },
 
 "texturepacker": [
-        "SmartUpdateHash: $TexturePacker:SmartUpdate:26ca7c9d03ac3f1c6b60cf06432ebbec:56f4f4209c79804f76229afb359cbf3b:49d6c772c1f03c2da6f805ec1e44b0b1$",
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:c91e5bd87591b39deaac8fe346b2a58a:11e088e544395782048e5fa58a790826:49d6c772c1f03c2da6f805ec1e44b0b1$",
         "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
 ]
 

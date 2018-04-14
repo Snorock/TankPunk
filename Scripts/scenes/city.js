@@ -316,7 +316,7 @@ var scenes;
             }
             // Plane that pick up player to next level
             if (this._testObject.isColliding == true) {
-                objects.Game.currentScene = config.Scene.DESERT;
+                objects.Game.currentScene = config.Scene.STORY02;
             }
             this._bullets.forEach(function (bullet) {
                 bullet.Update();

@@ -14,6 +14,7 @@
 /// <reference path="../../Scripts/objects/gameobject.ts"/>
 /// <reference path="../../Scripts/objects/gameobject2.ts"/>
 /// <reference path="../../Scripts/objects/gameobject3s1.ts"/>
+/// <reference path="../../Scripts/objects/gameobject4cd01.ts"/>
 
 /// <reference path="../../Scripts/managers/keyboard.ts"/>
 /// <reference path="../../Scripts/managers/livesboard.ts"/>
@@ -24,6 +25,7 @@
 /// <reference path="../../Scripts/objects/mapFrost.ts"/>
 /// <reference path="../../Scripts/objects/story03Obj.ts"/>
 /// <reference path="../../Scripts/objects/mapDesert.ts"/>
+/// <reference path="../../Scripts/objects/story02Obj02.ts"/>
 /// <reference path="../../Scripts/objects/story02Obj.ts"/>
 /// <reference path="../../Scripts/objects/mapCity.ts"/>
 /// <reference path="../../Scripts/objects/story01Obj.ts"/>

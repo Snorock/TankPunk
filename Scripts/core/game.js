@@ -18,6 +18,12 @@
     var textureAtlasStory01;
     var textureAtlasDataStory02;
     var textureAtlasStory02;
+    var textureAtlasDataStory02p1;
+    var textureAtlasStory02p1;
+    var textureAtlasDataStory02p2;
+    var textureAtlasStory02p2;
+    var textureAtlasDataStory02p3;
+    var textureAtlasStory02p3;
     var textureAtlasDataStory03;
     var textureAtlasStory03;
     var textureAtlasDataStory04;
@@ -98,17 +104,86 @@
             [1, 1, 640, 480, 0, 0, 0],
             [643, 1, 640, 480, 0, 0, 0],
             [1285, 1, 640, 480, 0, 0, 0],
-            [1, 483, 640, 480, 0, 0, 0],
-            [643, 483, 640, 480, 0, 0, 0],
-            [643, 483, 640, 480, 0, 0, 0]
+            [1927, 1, 640, 480, 0, 0, 0],
+            [2569, 1, 640, 480, 0, 0, 0],
+            [3211, 1, 640, 480, 0, 0, 0]
         ],
         "animations": {
             "story01": {
-                "frames": [0, 0, 0, 0, 0, 0, 0,
+                "frames": [2, 2, 1, 1,
+                    0, 0, 0, 0, 0, 0, 0,
                     1, 2,
+                    3, 3, 3, 3, 3, 3, 3,
+                    3, 3, 3, 3, 3, 3, 3,
+                    3, 3, 3, 3, 3, 3, 3,
                     3, 3, 3, 3, 3, 3, 3,
                     4, 5],
                 "speed": 0.05
+            },
+        },
+    };
+    textureAtlasDataStory02p1 = {
+        "images": [
+            ""
+        ],
+        "frames": [
+            [1, 1, 640, 480, 0, 0, 0],
+            [643, 1, 640, 480, 0, 0, 0],
+            [1285, 1, 640, 480, 0, 0, 0],
+            [1927, 1, 640, 480, 0, 0, 0],
+            [2569, 1, 640, 480, 0, 0, 0],
+            [3211, 1, 640, 480, 0, 0, 0],
+            [1, 483, 640, 480, 0, 0, 0],
+            [643, 483, 640, 480, 0, 0, 0],
+            [1285, 483, 640, 480, 0, 0, 0],
+            [1927, 483, 640, 480, 0, 0, 0],
+            [2569, 483, 640, 480, 0, 0, 0],
+            [3211, 483, 640, 480, 0, 0, 0],
+            [1, 965, 640, 480, 0, 0, 0],
+            [643, 965, 640, 480, 0, 0, 0],
+            [1285, 965, 640, 480, 0, 0, 0],
+            [1927, 965, 640, 480, 0, 0, 0],
+            [2569, 965, 640, 480, 0, 0, 0],
+            [3211, 965, 640, 480, 0, 0, 0],
+            [1, 1447, 640, 480, 0, 0, 0],
+            [643, 1447, 640, 480, 0, 0, 0],
+            [1285, 1447, 640, 480, 0, 0, 0],
+            [1927, 1447, 640, 480, 0, 0, 0],
+            [2569, 1447, 640, 480, 0, 0, 0],
+            [3211, 1447, 640, 480, 0, 0, 0],
+            [1, 1929, 640, 480, 0, 0, 0],
+            [643, 1929, 640, 480, 0, 0, 0],
+            [1285, 1929, 640, 480, 0, 0, 0],
+            [1927, 1929, 640, 480, 0, 0, 0],
+            [2569, 1929, 640, 480, 0, 0, 0],
+            [3211, 1929, 640, 480, 0, 0, 0],
+            [1, 2411, 640, 480, 0, 0, 0],
+            [643, 2411, 640, 480, 0, 0, 0],
+            [1285, 2411, 640, 480, 0, 0, 0],
+            [1927, 2411, 640, 480, 0, 0, 0],
+            [2569, 2411, 640, 480, 0, 0, 0],
+            [3211, 2411, 640, 480, 0, 0, 0],
+            [1, 2893, 640, 480, 0, 0, 0],
+            [643, 2893, 640, 480, 0, 0, 0],
+            [1285, 2893, 640, 480, 0, 0, 0],
+            [1927, 2893, 640, 480, 0, 0, 0],
+            [2569, 2893, 640, 480, 0, 0, 0],
+            [3211, 2893, 640, 480, 0, 0, 0],
+            [1, 3375, 640, 480, 0, 0, 0],
+            [643, 3375, 640, 480, 0, 0, 0],
+            [1285, 3375, 640, 480, 0, 0, 0],
+            [1927, 3375, 640, 480, 0, 0, 0],
+            [2569, 3375, 640, 480, 0, 0, 0],
+            [3211, 3375, 640, 480, 0, 0, 0]
+        ],
+        "animations": {
+            "story02p1": {
+                "frames": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                    11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+                    22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
+                    33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43,
+                    44, 45, 46, 47],
+                "speed": 0.25
             },
         },
     };
@@ -117,6 +192,9 @@
         { id: "textureAtlasIntro", src: "./Assets/sprites/textureAtlasIntro.png" },
         { id: "textureAtlasStory01", src: "./Assets/sprites/textureAtlasStory01.png" },
         { id: "textureAtlasStory02", src: "./Assets/sprites/textureAtlasStory02.png" },
+        { id: "textureAtlasStory02p1", src: "./Assets/sprites/textureAtlasStory02_event02_p1.png" },
+        { id: "textureAtlasStory02p2", src: "./Assets/sprites/textureAtlasStory02_event02_p2.png" },
+        { id: "textureAtlasStory02p3", src: "./Assets/sprites/textureAtlasStory02_event02_p3.png" },
         { id: "textureAtlasStory03", src: "./Assets/sprites/textureAtlasStory03.png" },
         { id: "textureAtlasStory04", src: "./Assets/sprites/textureAtlasStory04.png" },
         { id: "textureAtlas", src: "./Assets/images/tanks/dark-tank-up-transparent.png" },
@@ -176,6 +254,8 @@
         textureAtlasIntro = new createjs.SpriteSheet(textureAtlasDataIntro);
         textureAtlasDataStory01.images = [assetManager.getResult("textureAtlasStory01")];
         textureAtlasStory01 = new createjs.SpriteSheet(textureAtlasDataStory01);
+        textureAtlasDataStory02p1.images = [assetManager.getResult("textureAtlasStory02p1")];
+        textureAtlasStory02p1 = new createjs.SpriteSheet(textureAtlasDataStory02p1);
         // Story Atlas End
         stage = new createjs.Stage(canvas);
         stage.enableMouseOver(20); // turn this on for buttons
@@ -190,6 +270,7 @@
         // Story Atlas
         managers.Game.textureAtlasIntro = textureAtlasIntro;
         managers.Game.textureAtlasStory01 = textureAtlasStory01;
+        managers.Game.textureAtlasStory02p1 = textureAtlasStory02p1;
         // Story Atlas End
         Main();
     }
@@ -220,9 +301,9 @@
             case config.Scene.CITY:
                 currentScene = new scenes.CityScene(assetManager);
                 break;
-            // case config.Scene.PLAY:
-            // currentScene = new scenes.PlayScene(assetManager);
-            // break;
+            case config.Scene.STORY02:
+                currentScene = new scenes.Story02Scene(assetManager);
+                break;
             case config.Scene.DESERT:
                 currentScene = new scenes.DesertScene(assetManager);
                 break;
