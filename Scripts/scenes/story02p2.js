@@ -23,9 +23,13 @@ var scenes;
         Story02p2Scene.prototype._animationEnded = function () {
             objects.Game.currentScene = config.Scene.DESERT;
         };
+        Story02p2Scene.prototype._backBtnClick = function () {
+            objects.Game.currentScene = config.Scene.DESERT;
+        };
         // Public Methods
         // Initialize Game Variables and objects
         Story02p2Scene.prototype.Start = function () {
+            this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
             this._story = new objects.Story02Obj02();
             this._story.on("animationend", this._animationEnded.bind(this), false);
             this.Main();
@@ -39,6 +43,8 @@ var scenes;
         Story02p2Scene.prototype.Main = function () {
             // add transition to the scene
             this.addChild(this._story);
+            this.addChild(this._exitBtn);
+            this._exitBtn.on("click", this._backBtnClick);
         };
         return Story02p2Scene;
     }(objects.Scene));
