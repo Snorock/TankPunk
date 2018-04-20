@@ -107,7 +107,7 @@ module scenes {
 
     // Private Methods
     private _backBtnClick(): void {
-      objects.Game.currentScene = config.Scene.START;
+      objects.Game.currentScene = config.Scene.STORY04;
     }
 
 
@@ -391,7 +391,7 @@ module scenes {
 
       // Plane that pick up player to next level
       if(this._testObject.isColliding == true){
-        objects.Game.currentScene = config.Scene.OVER;
+        objects.Game.currentScene = config.Scene.STORY04;
       }
 
       this._bullets.forEach(bullet => {

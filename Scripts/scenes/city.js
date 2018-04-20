@@ -72,7 +72,7 @@ var scenes;
         }
         // Private Methods
         CityScene.prototype._backBtnClick = function () {
-            objects.Game.currentScene = config.Scene.START;
+            objects.Game.currentScene = config.Scene.STORY02;
         };
         // Public Methods
         // Initialize Game Variables and objects

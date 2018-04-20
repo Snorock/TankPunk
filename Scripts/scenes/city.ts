@@ -107,7 +107,7 @@ module scenes {
 
     // Private Methods
     private _backBtnClick(): void {
-      objects.Game.currentScene = config.Scene.START;
+      objects.Game.currentScene = config.Scene.STORY02;
     }
 
 

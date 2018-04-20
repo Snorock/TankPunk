@@ -23,10 +23,13 @@
 
   let textureAtlasDataStory02: any;
   let textureAtlasStory02: createjs.SpriteSheet;
+
   let textureAtlasDataStory02p1: any;
   let textureAtlasStory02p1: createjs.SpriteSheet;
+
   let textureAtlasDataStory02p2: any;
   let textureAtlasStory02p2: createjs.SpriteSheet;
+
   let textureAtlasDataStory02p3: any;
   let textureAtlasStory02p3: createjs.SpriteSheet;
 
@@ -227,7 +230,7 @@
       "story02p2": {
         "frames": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
           0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
           1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
           2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -243,6 +246,58 @@
         "speed": 0.05
       },
     },
+
+
+  }
+
+  textureAtlasDataStory03 = {
+    "images": [
+      ""
+    ],
+
+    "frames": [
+      [1, 1, 640, 480, 0, 0, 0],
+      [643, 1, 640, 480, 0, 0, 0],
+      [1285, 1, 640, 480, 0, 0, 0]
+    ],
+
+    "animations": {
+      "story03": {
+        "frames": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          1, 2,
+        ],
+        "speed": 0.05
+      },
+    },
+
+
+  }
+
+  textureAtlasDataStory04 = {
+    "images": [
+      ""
+    ],
+
+    "frames": [
+      [1, 1, 640, 480, 0, 0, 0],
+      [643, 1, 640, 480, 0, 0, 0],
+      [1285, 1, 640, 480, 0, 0, 0]
+    ],
+
+    "animations": {
+      "story04": {
+        "frames": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+          1, 2,
+        ],
+        "speed": 0.05
+      },
+    },
+
+
   }
 
   assetManifest = [
@@ -328,6 +383,12 @@
 
     textureAtlasDataStory02p2.images = [assetManager.getResult("textureAtlasStory02p2")];
     textureAtlasStory02p2 = new createjs.SpriteSheet(textureAtlasDataStory02p2);
+
+    textureAtlasDataStory03.images = [assetManager.getResult("textureAtlasStory03")];
+    textureAtlasStory03 = new createjs.SpriteSheet(textureAtlasDataStory03);
+
+    textureAtlasDataStory04.images = [assetManager.getResult("textureAtlasStory04")];
+    textureAtlasStory04 = new createjs.SpriteSheet(textureAtlasDataStory04);
     // Story Atlas End
 
     stage = new createjs.Stage(canvas);
@@ -348,6 +409,8 @@
     managers.Game.textureAtlasStory01 = textureAtlasStory01;
     managers.Game.textureAtlasStory02p1 = textureAtlasStory02p1;
     managers.Game.textureAtlasStory02p2 = textureAtlasStory02p2;
+    managers.Game.textureAtlasStory03 = textureAtlasStory03;
+    managers.Game.textureAtlasStory04 = textureAtlasStory04;
     // Story Atlas End
     Main();
   }
@@ -392,15 +455,15 @@
       case config.Scene.DESERT:
         currentScene = new scenes.DesertScene(assetManager);
         break;
-      // case config.Scene.PLAY:
-      // currentScene = new scenes.PlayScene(assetManager);
-      // break;
+      case config.Scene.STORY03:
+        currentScene = new scenes.Story03Scene(assetManager);
+        break;
       case config.Scene.FROST:
         currentScene = new scenes.FrostScene(assetManager);
         break;
-      // case config.Scene.PLAY:
-      // currentScene = new scenes.PlayScene(assetManager);
-      // break;
+      case config.Scene.STORY04:
+        currentScene = new scenes.Story04Scene(assetManager);
+        break;
       case config.Scene.OVER:
         currentScene = new scenes.OverScene(assetManager);
         break;

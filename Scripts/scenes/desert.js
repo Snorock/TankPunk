@@ -72,7 +72,7 @@ var scenes;
         }
         // Private Methods
         DesertScene.prototype._backBtnClick = function () {
-            objects.Game.currentScene = config.Scene.START;
+            objects.Game.currentScene = config.Scene.STORY03;
         };
         // Public Methods
         // Initialize Game Variables and objects
@@ -316,7 +316,7 @@ var scenes;
             }
             // Plane that pick up player to next level
             if (this._testObject.isColliding == true) {
-                objects.Game.currentScene = config.Scene.FROST;
+                objects.Game.currentScene = config.Scene.STORY03;
             }
             this._bullets.forEach(function (bullet) {
                 bullet.Update();

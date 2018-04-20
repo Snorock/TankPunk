@@ -1,0 +1,24 @@
+{
+
+"images": [
+    "textureAtlasStory03.png"
+],
+
+"frames": [
+    [1, 1, 640, 480, 0, 0, 0],
+    [643, 1, 640, 480, 0, 0, 0],
+    [1285, 1, 640, 480, 0, 0, 0]
+],
+
+"animations": {
+    "story03_pic01_event01_Crash01": { "frames": [0] },
+    "story03_pic01_event01_Crash02": { "frames": [1] },
+    "story03_pic01_event01_Crash03": { "frames": [2] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:9068468ea83dc0609ce3036318e26b01:8c339b8c2bc09161c023d86bcb4a563e:05071a60077d9b53db00e1803581bd32$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}

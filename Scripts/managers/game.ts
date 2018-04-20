@@ -10,6 +10,8 @@ module managers {
         public static textureAtlasStory01: createjs.SpriteSheet;
         public static textureAtlasStory02p1: createjs.SpriteSheet;
         public static textureAtlasStory02p2: createjs.SpriteSheet;
+        public static textureAtlasStory03: createjs.SpriteSheet;
+        public static textureAtlasStory04: createjs.SpriteSheet;
         public static tank: objects.Tank;
     }
 }
