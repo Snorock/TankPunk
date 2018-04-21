@@ -46,12 +46,12 @@ module scenes {
     private _obstHouse1Rotation: boolean[] = [false, /*true,*/ false, true, false, true, true, true];
 
     private _obstHouse2X: number[] = [/*First Part is horizontal*/
-                                        10,   46, 128, 168, 248, // First line, include top 
-                                        140, 180, 430,// Second Line
-                                        10,   50,  90, 130, 170, 210, 310, 350, 390, 410, 520, // Third Line
+                                        -40,   46, -128, 168, 248, // First line, include top 
+                                        100, 180, 430,// Second Line
+                                        10,   -50,  90, -130, 170, -210, 310, -350, 390, -410, -520, // Third Line
                                         80,// Fourth Line
                                         // Second part is vertical
-                                        320, 320, 320, 320,// Vertical First Line
+                                        320, -320, 320, -320,// Vertical First Line
                                         520,// Vertical Second Line
                                       ];
     private _obstHouse2Y: number[] = [// First part is horizontal
@@ -65,11 +65,11 @@ module scenes {
                                       ];
 
     private _obstCar1X: number[] = [/*First Part is horizontal*/
-                                      200, 270, 340, 480, 610,// First Line
-                                      310, 520,// Second Line
+                                      200, -270, 340, -480, 610,// First Line
+                                      310, -520,// Second Line
                                       100,// Third Line
                                     /*Second Part is vertical*/
-                                      480, 480, 480, 480, 490, 
+                                      480, -480, 480, -480, 490, 
                                    ];
     private _obstCar1Y: number[] = [/*First Part is horizontal*/
                                       115, 135, 120, 115, 100,// First Line
@@ -82,7 +82,7 @@ module scenes {
     // enemy array
 
     // Wolf: moving enemies, lots of property settings, invincible
-    private _obstWolfX: number[] = [80, 220, 320, 320, 140, 400, 620, 480/*150, 260, 300, 340, 380, 450, 520, 600*/];
+    private _obstWolfX: number[] = [80, -220, 320, -320, 140, -400, 620, -480/*150, 260, 300, 340, 380, 450, 520, 600*/];
     private _obstWolfY: number[] = [100, 80, 180, 220, 400, 40, 140, 310/*200, 120, 100, 190, 400, 300, 110, 240*/];
     // S for speed
     private _obstWolfS: number[] = [2, 3, 4, 1.5, 5, 1, 1.5, 0.5];
@@ -93,7 +93,7 @@ module scenes {
     private _obstWolfN: number[] = [150, 150, 280, 280, 440, 410, 320, 130];
 
     // Corrupted: static enemies, instant kill on collision, not invincible
-    private _obstCorruptedX: number[] = [100, 90, 280, 400, 475, 160, 220, 560];
+    private _obstCorruptedX: number[] = [100, -90, 280, -400, 475, -160, 220, -560];
     private _obstCorruptedY: number[] = [330, 65, 70,  180, 235, 460, 460, 235];
 
     // Public Properties

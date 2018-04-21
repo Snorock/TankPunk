@@ -21,13 +21,13 @@ var scenes;
             _this._obstHouse1Y = [73, /*46,*/ 178, 200, 185, 337, 390, 380];
             _this._obstHouse1Rotation = [false, /*true,*/ false, true, false, true, true, true];
             _this._obstHouse2X = [
-                10, 46, 128, 168, 248,
-                140, 180, 430,
-                10, 50, 90, 130, 170, 210, 310, 350, 390, 430, 520,
+                40, -46, 128, -168, 248,
+                -100, 180, -430,
+                -10, -50, -90, 130, -170, 210, -310, 350, -390, 410, -520,
                 80,
                 // Second part is vertical
-                320, 320, 320, 320,
-                520,
+                -320, 320, -320, 320,
+                -520,
             ];
             _this._obstHouse2Y = [
                 75, 75, 75, 75, 15,
@@ -39,11 +39,11 @@ var scenes;
                 225,
             ];
             _this._obstCar1X = [
-                200, 270, 340, 480, 610,
-                310, 520,
+                -200, -270, -340, 480, -610,
+                -310, 520,
                 100,
                 /*Second Part is vertical*/
-                480, 480, 480, 480, 490,
+                -480, 480, -480, -480, -490,
             ];
             _this._obstCar1Y = [
                 115, 135, 120, 115, 100,
@@ -54,8 +54,8 @@ var scenes;
             ];
             // enemy array
             // Wolf: moving enemies, lots of property settings, invincible
-            _this._obstWolfX = [80, 220, 320, 320, 140, 400, 620, 480 /*150, 260, 300, 340, 380, 450, 520, 600*/];
-            _this._obstWolfY = [100, 80, 180, 220, 400, 40, 140, 310 /*200, 120, 100, 190, 400, 300, 110, 240*/];
+            _this._obstWolfX = [-80, -220, -320, 320, -140, 400, -620, 480 /*150, 260, 300, 340, 380, 450, 520, 600*/];
+            _this._obstWolfY = [100, 80, 180, 220, 500, 40, 140, 310 /*200, 120, 100, 190, 400, 300, 110, 240*/];
             // S for speed
             _this._obstWolfS = [2, 3, 4, 1.5, 5, 1, 1.5, 0.5];
             // D for direction
@@ -64,7 +64,7 @@ var scenes;
             // K, I know but we already have D for direction
             _this._obstWolfN = [150, 150, 280, 280, 440, 410, 320, 130];
             // Corrupted: static enemies, instant kill on collision, not invincible
-            _this._obstCorruptedX = [100, 90, 280, 400, 475, 160, 220, 560];
+            _this._obstCorruptedX = [-100, 90, -280, -400, -475, 160, -220, -560];
             _this._obstCorruptedY = [330, 65, 70, 180, 235, 460, 460, 235];
             _this._bulletFire = _this._bulletFire.bind(_this);
             _this.Start();
