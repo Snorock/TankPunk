@@ -26,7 +26,7 @@ var objects;
             this.active = false;
         };
         Bullet.prototype._checkBounds = function () {
-            if (this.x <= 0 || this.x >= 640 || this.y <= 0 || this.y >= 480 || this.isColliding) {
+            if (this.active && (this.x <= 0 || this.x >= 640 || this.y <= 0 || this.y >= 480 || this.isColliding)) {
                 this._reset();
             }
             else {
