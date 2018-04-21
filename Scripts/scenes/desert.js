@@ -72,11 +72,16 @@ var scenes;
         }
         // Private Methods
         DesertScene.prototype._backBtnClick = function () {
+            createjs.Sound.stop();
             objects.Game.currentScene = config.Scene.STORY03;
         };
         // Public Methods
         // Initialize Game Variables and objects
         DesertScene.prototype.Start = function () {
+            // Sound
+            this._beginningBGM = createjs.Sound.play("desertSound");
+            this._beginningBGM.loop = -1;
+            this._beginningBGM.volume = 0.3;
             this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
             // this._ocean = new objects.Ocean(this.assetManager);
             this._mapCity = new objects.MapDesert(this.assetManager);
@@ -312,10 +317,12 @@ var scenes;
             // End of Enemy "Corrupted" Check
             // Game over check
             if (this._livesBoard.Lives <= 0) {
+                this._beginningBGM.stop();
                 objects.Game.currentScene = config.Scene.OVER;
             }
             // Plane that pick up player to next level
             if (this._testObject.isColliding == true) {
+                this._beginningBGM.stop();
                 objects.Game.currentScene = config.Scene.STORY03;
             }
             this._bullets.forEach(function (bullet) {

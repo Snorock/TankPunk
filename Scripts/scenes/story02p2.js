@@ -21,9 +21,11 @@ var scenes;
         }
         // Private Mathods
         Story02p2Scene.prototype._animationEnded = function () {
+            createjs.Sound.stop();
             objects.Game.currentScene = config.Scene.DESERT;
         };
         Story02p2Scene.prototype._backBtnClick = function () {
+            createjs.Sound.stop();
             objects.Game.currentScene = config.Scene.DESERT;
         };
         // Public Methods

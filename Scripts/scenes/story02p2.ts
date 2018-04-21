@@ -15,10 +15,12 @@ module scenes {
       // Private Mathods
       
       private _animationEnded(): void {
+        createjs.Sound.stop();
         objects.Game.currentScene = config.Scene.DESERT;
       }
 
       private _backBtnClick(): void {
+        createjs.Sound.stop();
         objects.Game.currentScene = config.Scene.DESERT;
       }
   

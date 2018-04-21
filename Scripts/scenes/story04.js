@@ -21,14 +21,20 @@ var scenes;
         }
         // Private Mathods
         Story04Scene.prototype._animationEnded = function () {
-            objects.Game.currentScene = config.Scene.OVER;
+            this._beginningBGM.stop();
+            objects.Game.currentScene = config.Scene.START;
         };
         Story04Scene.prototype._backBtnClick = function () {
-            objects.Game.currentScene = config.Scene.OVER;
+            createjs.Sound.stop();
+            objects.Game.currentScene = config.Scene.START;
         };
         // Public Methods
         // Initialize Game Variables and objects
         Story04Scene.prototype.Start = function () {
+            // Sound
+            this._beginningBGM = createjs.Sound.play("ending");
+            this._beginningBGM.loop = -1;
+            this._beginningBGM.volume = 0.3;
             this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
             this._story = new objects.Story04();
             this._story.on("animationend", this._animationEnded.bind(this), false);
@@ -43,7 +49,7 @@ var scenes;
         Story04Scene.prototype.Main = function () {
             // add transition to the scene
             this.addChild(this._story);
-            this.addChild(this._exitBtn);
+            // this.addChild(this._exitBtn);
             this._exitBtn.on("click", this._backBtnClick);
         };
         return Story04Scene;

@@ -27,6 +27,10 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         Story02Scene.prototype.Start = function () {
+            // Sound
+            this._beginningBGM = createjs.Sound.play("catastrophic");
+            this._beginningBGM.loop = -1;
+            this._beginningBGM.volume = 0.3;
             this._story = new objects.Story02Obj();
             this._story.on("animationend", this._animationEnded.bind(this), false);
             this.Main();

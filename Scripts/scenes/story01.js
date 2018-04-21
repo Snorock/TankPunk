@@ -21,14 +21,20 @@ var scenes;
         }
         // Private Mathods
         Story01Scene.prototype._animationEnded = function () {
+            this._beginningBGM.stop();
             objects.Game.currentScene = config.Scene.CITY;
         };
         Story01Scene.prototype._backBtnClick = function () {
+            createjs.Sound.stop();
             objects.Game.currentScene = config.Scene.CITY;
         };
         // Public Methods
         // Initialize Game Variables and objects
         Story01Scene.prototype.Start = function () {
+            // Sound
+            this._beginningBGM = createjs.Sound.play("citySound");
+            this._beginningBGM.loop = -1;
+            this._beginningBGM.volume = 0.3;
             this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
             this._story = new objects.Story01Obj();
             this._story.on("animationend", this._animationEnded.bind(this), false);

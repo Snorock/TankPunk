@@ -251,14 +251,27 @@
         "frames": [
             [1, 1, 640, 480, 0, 0, 0],
             [643, 1, 640, 480, 0, 0, 0],
-            [1285, 1, 640, 480, 0, 0, 0]
+            [1285, 1, 640, 480, 0, 0, 0],
+            [1927, 1, 640, 480, 0, 0, 0],
+            [2569, 1, 640, 480, 0, 0, 0],
+            [3211, 1, 640, 480, 0, 0, 0]
         ],
         "animations": {
             "story04": {
                 "frames": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    1, 2,
+                    0, 0, 0, 0,
+                    1, 1, 1, 1, 1, 1, 1, 1,
+                    2, 2, 2, 2, 2, 2, 2, 2,
+                    3, 3, 3, 3, 3, 3, 3, 3,
+                    4, 4, 4, 4, 4, 4, 4, 4,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
                 ],
                 "speed": 0.05
             },
@@ -304,6 +317,15 @@
         { id: "dark-tank-down-transparent", src: "./Assets/images/tanks/dark-tank-down-transparent.png" },
         { id: "dark-tank-left-transparent", src: "./Assets/images/tanks/dark-tank-left-transparent.png" },
         { id: "dark-tank-right-transparent", src: "./Assets/images/tanks/dark-tank-right-transparent.png" },
+        // sound
+        { id: "engine", src: "./Assets/audio/engine.ogg" },
+        { id: "beginning", src: "./Assets/audio/Beginning.mp3" },
+        { id: "catastrophic", src: "./Assets/audio/Catastrophic.mp3" },
+        { id: "ending", src: "./Assets/audio/Ending.mp3" },
+        { id: "tutorial", src: "./Assets/audio/Tutorial.mp3" },
+        { id: "citySound", src: "./Assets/audio/City.mp3" },
+        { id: "desertSound", src: "./Assets/audio/Desert.mp3" },
+        { id: "frostSound", src: "./Assets/audio/Frost.mp3" },
         // TODO: Replace assets below
         { id: "ocean", src: "./Assets/images/ocean.gif" },
         { id: "city", src: "./Assets/images/city1.png" },

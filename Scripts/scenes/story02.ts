@@ -1,6 +1,7 @@
 module scenes {
     export class Story02Scene extends objects.Scene {
       
+      private _beginningBGM: createjs.AbstractSoundInstance;
       private _story: objects.Story02Obj;
   
       // Public Properties
@@ -21,6 +22,12 @@ module scenes {
       // Public Methods
       // Initialize Game Variables and objects
       public Start(): void {
+
+        // Sound
+        this._beginningBGM = createjs.Sound.play("catastrophic");
+        this._beginningBGM.loop = -1;
+        this._beginningBGM.volume = 0.3;
+
         this._story = new objects.Story02Obj();
         this._story.on("animationend", this._animationEnded.bind(this), false);
         this.Main();

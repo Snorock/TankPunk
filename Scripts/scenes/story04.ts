@@ -1,6 +1,7 @@
 module scenes {
     export class Story04Scene extends objects.Scene {
       
+      private _beginningBGM: createjs.AbstractSoundInstance;
       private _story: objects.Story04;
       private _exitBtn: objects.Button;
   
@@ -15,16 +16,24 @@ module scenes {
       // Private Mathods
       
       private _animationEnded(): void {
-        objects.Game.currentScene = config.Scene.OVER;
+        this._beginningBGM.stop();
+        objects.Game.currentScene = config.Scene.START;
       }
 
       private _backBtnClick(): void {
-        objects.Game.currentScene = config.Scene.OVER;
+        createjs.Sound.stop();
+        objects.Game.currentScene = config.Scene.START;
       }
   
       // Public Methods
       // Initialize Game Variables and objects
       public Start(): void {
+
+        // Sound
+        this._beginningBGM = createjs.Sound.play("ending");
+        this._beginningBGM.loop = -1;
+        this._beginningBGM.volume = 0.3;
+
         this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
         this._story = new objects.Story04();
         this._story.on("animationend", this._animationEnded.bind(this), false);
@@ -42,7 +51,7 @@ module scenes {
         // add transition to the scene
         this.addChild(this._story);
 
-        this.addChild(this._exitBtn);
+        // this.addChild(this._exitBtn);
 
         this._exitBtn.on("click", this._backBtnClick);
       }

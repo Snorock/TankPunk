@@ -7,17 +7,23 @@
 "frames": [
     [1, 1, 640, 480, 0, 0, 0],
     [643, 1, 640, 480, 0, 0, 0],
-    [1285, 1, 640, 480, 0, 0, 0]
+    [1285, 1, 640, 480, 0, 0, 0],
+    [1927, 1, 640, 480, 0, 0, 0],
+    [2569, 1, 640, 480, 0, 0, 0],
+    [3211, 1, 640, 480, 0, 0, 0]
 ],
 
 "animations": {
     "story04_pic01_event01_End01": { "frames": [0] },
-    "story04_pic01_event01_End02": { "frames": [1] },
-    "story04_pic01_event01_End03": { "frames": [2] }
+    "story04_pic01_event02_Log01": { "frames": [1] },
+    "story04_pic01_event02_Log02": { "frames": [2] },
+    "story04_pic01_event02_Log03": { "frames": [3] },
+    "story04_pic01_event02_Log04": { "frames": [4] },
+    "story04_pic01_event02_Log05": { "frames": [5] }
 },
 
 "texturepacker": [
-        "SmartUpdateHash: $TexturePacker:SmartUpdate:d8f53d13bd2060aa88ccfe1457e653a7:0f25f33076540a66849d82b608d88f76:07de5ce6d5c63590e902f047c8be8fdd$",
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:e670a20239120258fd75dbdf30d2455d:69eb18aee14684a55ce6f70851e1d130:07de5ce6d5c63590e902f047c8be8fdd$",
         "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
 ]
 

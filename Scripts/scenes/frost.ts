@@ -1,6 +1,7 @@
 module scenes {
   export class FrostScene extends objects.Scene {
     // Private Instance Variables
+    private _beginningBGM: createjs.AbstractSoundInstance;
     private _exitBtn: objects.Button;
     // private _ocean: objects.Ocean;
     private _mapCity: objects.MapFrost;
@@ -107,6 +108,7 @@ module scenes {
 
     // Private Methods
     private _backBtnClick(): void {
+      createjs.Sound.stop();
       objects.Game.currentScene = config.Scene.STORY04;
     }
 
@@ -115,6 +117,12 @@ module scenes {
 
     // Initialize Game Variables and objects
     public Start(): void {
+
+      // Sound
+      this._beginningBGM = createjs.Sound.play("frostSound");
+      this._beginningBGM.loop = -1;
+      this._beginningBGM.volume = 0.3;
+
       this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
       // this._ocean = new objects.Ocean(this.assetManager);
       this._mapCity = new objects.MapFrost(this.assetManager);
@@ -386,11 +394,13 @@ module scenes {
 
       // Game over check
       if (this._livesBoard.Lives <= 0) {
+        this._beginningBGM.stop();
         objects.Game.currentScene = config.Scene.OVER;
       }
 
       // Plane that pick up player to next level
       if(this._testObject.isColliding == true){
+        this._beginningBGM.stop();
         objects.Game.currentScene = config.Scene.STORY04;
       }
 

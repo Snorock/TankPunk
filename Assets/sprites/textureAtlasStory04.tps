@@ -200,8 +200,11 @@
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
             <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event01_End01.png</key>
-            <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event01_End02.png</key>
-            <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event01_End03.png</key>
+            <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event02_Log01.png</key>
+            <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event02_Log02.png</key>
+            <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event02_Log03.png</key>
+            <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event02_Log04.png</key>
+            <key type="filename">../../../TankAsset/story/frost-over/story04_pic01_event02_Log05.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -218,8 +221,11 @@
         <key>fileList</key>
         <array>
             <filename>../../../TankAsset/story/frost-over/story04_pic01_event01_End01.png</filename>
-            <filename>../../../TankAsset/story/frost-over/story04_pic01_event01_End02.png</filename>
-            <filename>../../../TankAsset/story/frost-over/story04_pic01_event01_End03.png</filename>
+            <filename>../../../TankAsset/story/frost-over/story04_pic01_event02_Log05.png</filename>
+            <filename>../../../TankAsset/story/frost-over/story04_pic01_event02_Log01.png</filename>
+            <filename>../../../TankAsset/story/frost-over/story04_pic01_event02_Log02.png</filename>
+            <filename>../../../TankAsset/story/frost-over/story04_pic01_event02_Log03.png</filename>
+            <filename>../../../TankAsset/story/frost-over/story04_pic01_event02_Log04.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

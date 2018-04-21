@@ -21,14 +21,20 @@ var scenes;
         }
         // Private Mathods
         Story03Scene.prototype._animationEnded = function () {
+            this._beginningBGM.stop();
             objects.Game.currentScene = config.Scene.FROST;
         };
         Story03Scene.prototype._backBtnClick = function () {
+            createjs.Sound.stop();
             objects.Game.currentScene = config.Scene.FROST;
         };
         // Public Methods
         // Initialize Game Variables and objects
         Story03Scene.prototype.Start = function () {
+            // Sound
+            this._beginningBGM = createjs.Sound.play("frostSound");
+            this._beginningBGM.loop = -1;
+            this._beginningBGM.volume = 0.3;
             this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
             this._story = new objects.Story03();
             this._story.on("animationend", this._animationEnded.bind(this), false);

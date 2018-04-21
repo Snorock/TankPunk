@@ -40,11 +40,18 @@ var scenes;
         }
         // Private Methods
         PlayScene.prototype._backBtnClick = function () {
-            objects.Game.currentScene = config.Scene.START;
+            // this._engineSound = createjs.Sound.play("engine");
+            // this._engineSound.stop();
+            createjs.Sound.stop();
+            objects.Game.currentScene = config.Scene.STORY01;
         };
         // Public Methods
         // Initialize Game Variables and objects
         PlayScene.prototype.Start = function () {
+            // sound
+            this._engineSound = createjs.Sound.play("tutorial");
+            this._engineSound.loop = -1; // play forever
+            this._engineSound.volume = 0.3;
             this._exitBtn = new objects.Button(this.assetManager, "exitButton", 60, 30, 0.7);
             this._mapTutorial = new objects.MapTutorial(this.assetManager);
             this._testObject = new objects.testObject(this.assetManager);
@@ -171,10 +178,12 @@ var scenes;
             // }
             // Game over check
             if (this._livesBoard.Lives <= 0) {
+                this._engineSound.stop();
                 objects.Game.currentScene = config.Scene.OVER;
             }
             // Plane that pick up player to next level
             if (this._testObject.isColliding == true) {
+                this._engineSound.stop();
                 objects.Game.currentScene = config.Scene.STORY01;
             }
             this._bullets.forEach(function (bullet) {
